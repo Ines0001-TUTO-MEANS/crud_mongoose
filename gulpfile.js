@@ -44,15 +44,12 @@ gulp.task('default', ['index']);
 gulp.task('hello',function(){ console.log('hello gulp..')});
 gulp.task('watch',watchTask);
 gulp.task('refresh',refreshTask);
-gulp.task('browser', function(){
-  // Start a Browsersync static file server
-       browserSync.init({
-            proxy: "https://crud-mongoose.glitch.me/"
-        }); 
-
-                           
-  
-  
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
 });
 
 /*
