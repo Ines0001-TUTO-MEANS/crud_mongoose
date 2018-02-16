@@ -13,13 +13,15 @@
     <h1 class="md-display-1 text-center">CrudMongoose</h1>
     <!--div class="text-center"><md-icon md-svg-src="/public/images/angular-logo.svg" aria-label="Angular"></md-icon></div-->
     <md-content class="md-padding" layout="row" layout-align="center">
-        <md-nav-bar md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
-            <md-nav-item md-nav-sref="list"  name="list" value="list" >List Users</md-nav-item>
-            <md-nav-item md-nav-sref="detail" name="detail" value="detail">Detail</md-nav-item>
-            
-        </md-nav-bar>
+      <md-nav-bar md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
+          <md-nav-item md-nav-sref="list"  name="list" value="list" >List Users</md-nav-item>
+          <md-nav-item md-nav-sref="detail" name="detail" value="detail">Detail</md-nav-item>
+
+      </md-nav-bar>
+    
+      <div ui-view></div>
     </md-content>
-    <div ui-view></div>
+    
     <!-- bower:js -->
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.min.js"></script>
