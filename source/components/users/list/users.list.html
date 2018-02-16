@@ -1,10 +1,10 @@
 
-<!--div >
+<!--div ng-repeat="user in users">
   <code>{{user|json}}<a ng-href="#" ng-click="detail(user)"><i class="material-icons">zoom_in</i></a></code>
 
   
 </div-->
-<md-grid-list md-cols="5" md-gutter="1em" md-row-height="4:3">
+<md-grid-list md-cols="3" md-gutter="1em" md-row-height="4:3">
   <md-grid-tile ng-repeat="user in users">
     <md-grid-tile-header>
         <h3>{{user.name}}</h3>
