@@ -4,8 +4,8 @@
 
   
 </div-->
-<md-grid-list md-cols="3" md-gutter="1em" md-row-height="4:3">
-  <md-grid-tile ng-repeat="user in users">
+<md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6" md-gutter="12px" md-row-height="4:2">
+  <md-grid-tile ng-repeat="user in users" class="green">
     <md-grid-tile-header>
         <h3>{{user.name}}</h3>
     </md-grid-tile-header>
