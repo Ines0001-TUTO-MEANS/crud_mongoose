@@ -48,7 +48,10 @@
         });
       
     }
-    
+   
+   var EraseUser = function(id){
+     User_factory.delete({id:user._id})
+    }
    $scope.$watch(function(){
       $scope.users=this.users;
     });
