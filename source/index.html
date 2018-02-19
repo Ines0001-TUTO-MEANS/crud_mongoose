@@ -10,7 +10,7 @@
 </head>
 <body ng-app="myApp" layout="column"
   layout-fill
-  ng-controller="">
+  ng-controller="DiveSitesController">
     <md-toolbar>
       <div class="md-toolbar-tools">
         My favorite dive sites
@@ -85,7 +85,7 @@
   <!-- endinject -->
   <script>
       angular
-      .module('myApp', ['ngMaterial', 'divesites'])
+      .module('myApp', ['ngMaterial'])
       .controller('DiveSitesController', ['$scope', function($scope) {
               $scope.diveSites = [
                 "Small Giftun",
