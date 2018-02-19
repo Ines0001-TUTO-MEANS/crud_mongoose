@@ -34,10 +34,9 @@
       })
     }
     
-    $rootScope.$on('$stateChangeStart', 
-        function(event, toState, toParams, fromState, fromParams, options){ 
-          console.log("event state",event);
-        })
+     $rootScope.$on('$routeChangeSuccess', function(event, current) {
+         console.log('current:',current)
+       });
     
     
 	}]);
