@@ -13,8 +13,8 @@
     }) 
     */
     User_factory.query(function(data){
-        this.users = data;
-        $scope.$digest();
+        $scope.users = data;
+        
     },function(err){
         this.users = err || 'Request failed';
     })
@@ -35,26 +35,22 @@
           .cancel('Non');
 
       $mdDialog.show(confirm).then(function() {
-          User_factory.delete({id:user._id},function(data){
-            var pos = this.users.find(function(elem){
-              elem._id===user._id})
-            this.users.splice(pos,1)
-            $scope.$digest(); 
-          },function(err){
-              this.users = err || 'Request failed';
-          },function(err){
-              console.log(err)
-          })
+          EraseUser(user._id);
+          $state.go('list')
         });
       
     }
    
    var EraseUser = function(id){
-     User_factory.delete({id:user._id})
+     User_factory.delete({id:id},
+                          function(data){
+                             // success
+                          },function(err){
+                             // error
+                             console.log(err);
+      })
     }
-   $scope.$watch(function(){
-      $scope.users=this.users;
-    });
+   
     
      
     
