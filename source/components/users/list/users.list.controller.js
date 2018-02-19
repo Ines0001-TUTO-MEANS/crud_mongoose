@@ -13,7 +13,8 @@
     }) 
     */
     User_factory.query(function(data){
-        this.users = data; 
+        this.users = data;
+        $scope.$digest();
     },function(err){
         this.users = err || 'Request failed';
     })
@@ -33,21 +34,24 @@
           .ok('Oui')
           .cancel('Non');
 
-    $mdDialog.show(confirm).then(function() {
-      User_factory.delete({id:user._id},function(data){
-        var pos = this.users.find(function(elem){
-          elem._id===user._id})
-        this.users.splice(pos,1)
-        //$scope.users = data;  
-      },function(err){
-          this.users = err || 'Request failed';
-      },function(err){
-          console.log(err)
-      })
-    });
-      
+      $mdDialog.show(confirm).then(function() {
+          User_factory.delete({id:user._id},function(data){
+            var pos = this.users.find(function(elem){
+              elem._id===user._id})
+            this.users.splice(pos,1)
+            $scope.$digest(); 
+          },function(err){
+              this.users = err || 'Request failed';
+          },function(err){
+              console.log(err)
+          })
+        });
       
     }
+    
+   $scope.$watch(function(){
+      $scope.users=this.users;
+    });
     
      
     
