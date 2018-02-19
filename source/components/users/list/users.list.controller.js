@@ -21,7 +21,7 @@
       
       console.log('id:',user._id);
       $state.go('detail',{idUser:user._id});
-      $rootScope.selectedIndex=1;
+      
     }
      
     $scope.delete = function(user){
@@ -34,7 +34,11 @@
       })
     }
     
-
+    $rootScope.$on('$stateChangeStart', 
+        function(event, toState, toParams, fromState, fromParams, options){ 
+          console.log("event state",event);
+        })
+    
     
 	}]);
 })(CrudMongoose);

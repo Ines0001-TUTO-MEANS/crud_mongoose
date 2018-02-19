@@ -11,8 +11,8 @@
             url: '/users/:idUser',
             templateUrl: 'components/users/detail/user.detail.html',
             controller: 'UserDetailController'
-        });
+        })
       
-        $urlRouterProvider.otherwise('')
+        $urlRouterProvider.otherwise('/users')
     }]);
 })(CrudMongoose);
