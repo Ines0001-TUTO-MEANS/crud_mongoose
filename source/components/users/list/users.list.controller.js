@@ -30,22 +30,19 @@
       var confirm = $mdDialog.confirm()
           .title('Voulez-vous vraiment supprimer la fiche '+user.name+'?')
           .ariaLabel('Lucky day')
-          .targetEvent(ev)
           .ok('Oui')
-          .cancel('N');
+          .cancel('Non');
 
     $mdDialog.show(confirm).then(function() {
-      $scope.status = 'You decided to get rid of your debt.';
-    }, function() {
-      $scope.status = 'You decided to keep your debt.';
-    });
-      
       User_factory.delete({id:user._id},function(data){
         
         $scope.users = data;  
       },function(err){
           $scope.users = err || 'Request failed';
       })
+    });
+      
+      
     }
     
      
