@@ -21,7 +21,7 @@
       
       console.log('id:',user._id);
       $state.go('detail',{idUser:user._id});
-      $rootScope.currentNavItem='detail';
+      $rootScope.selectedIndex=1;
     }
       
 
