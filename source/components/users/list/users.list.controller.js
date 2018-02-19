@@ -22,6 +22,7 @@
       console.log('id:',user._id);
       $state.go('detail',{idUser:user._id});
       
+      
     }
      
     $scope.delete = function(user){
@@ -34,10 +35,7 @@
       })
     }
     
-     $rootScope.$on('$routeChangeSuccess', function(event, current) {
-         console.log('current:',current)
-       });
-    
+     
     
 	}]);
 })(CrudMongoose);
