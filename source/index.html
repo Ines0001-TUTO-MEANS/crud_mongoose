@@ -25,16 +25,26 @@
       <md-icon md-svg-src="img/icons/add_black_24px.svg"></md-icon>
     </md-button>
     <!--div class="text-center"><md-icon md-svg-src="/public/images/angular-logo.svg" aria-label="Angular"></md-icon></div-->
-    <md-content layout="column" flex ng-controller="TabsCtrl">
+    <md-content layout="column" flex >
       <!--div>
         <md-nav-bar md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
           <md-nav-item md-nav-sref="list"  name="list" value="list" >List Users</md-nav-item>
           <md-nav-item md-nav-sref="detail" name="detail" value="detail">Detail</md-nav-item>
         </md-nav-bar>  
       </div-->
-      <md-tabs md-center-tabs md-selected="selectedIndex">
-        <md-tab label="list" ></md-tab>
-        <md-tab label="detail"></md-tab>
+      <md-tabs md-align-tabs="top">
+          <md-tab>
+            <md-tab-label>
+              <span ui-sref="list">list</span>
+            </md-tab-label>
+          </md-tab>
+
+
+          <md-tab>
+            <md-tab-label>
+              <span ui-sref="detail">detail</span>
+            </md-tab-label>
+          </md-tab>
       </md-tabs>
       <div ui-view flex></div>
     </md-content>
