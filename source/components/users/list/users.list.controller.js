@@ -35,7 +35,8 @@
 
     $mdDialog.show(confirm).then(function() {
       User_factory.delete({id:user._id},function(data){
-        
+        $scope.users.find(function(elem){
+          elem._id===user._id})
         $scope.users = data;  
       },function(err){
           $scope.users = err || 'Request failed';
