@@ -1,6 +1,6 @@
 (function(app) {
 	app.controller('UsersListController', ['$scope','$rootScope','$state','User_factory','$mdDialog',function($scope,$rootScope,$state,User_factory,$mdDialog) {
-    $scope.users=[];
+    var users=[];
     $rootScope.currentNavItem ='list';
     /*   
     $http.get('/data/users.json').
@@ -13,9 +13,9 @@
     }) 
     */
     User_factory.query(function(data){
-        $scope.users = data; 
+        this.users = data; 
     },function(err){
-        $scope.users = err || 'Request failed';
+        this.users = err || 'Request failed';
     })
     
     $scope.detail = function(user){
@@ -35,12 +35,12 @@
 
     $mdDialog.show(confirm).then(function() {
       User_factory.delete({id:user._id},function(data){
-        var pos = $scope.users.find(function(elem){
+        var pos = this.users.find(function(elem){
           elem._id===user._id})
-        $scope.splice(pos,1)
+        this.users.splice(pos,1)
         //$scope.users = data;  
       },function(err){
-          $scope.users = err || 'Request failed';
+          this.users = err || 'Request failed';
       },function(err){
           console.log(err)
       })
