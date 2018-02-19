@@ -25,14 +25,14 @@
       <md-icon md-svg-src="img/icons/add_black_24px.svg"></md-icon>
     </md-button>
     <!--div class="text-center"><md-icon md-svg-src="/public/images/angular-logo.svg" aria-label="Angular"></md-icon></div-->
-    <md-content layout="column" flex >
+    <md-content layout="column" >
       <!--div>
         <md-nav-bar md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
           <md-nav-item md-nav-sref="list"  name="list" value="list" >List Users</md-nav-item>
           <md-nav-item md-nav-sref="detail" name="detail" value="detail">Detail</md-nav-item>
         </md-nav-bar>  
       </div-->
-      <md-tabs md-align-tabs="top" md-selected="selectedIndex">
+      <md-tabs md-align-tabs="top" md-stretch-tabs="always" md-selected="selectedIndex">
           <md-tab>
             <md-tab-label>
               <span ui-sref="list">list</span>
@@ -59,18 +59,7 @@
     <!-- endinject -->
     
     <!-- js:js -->
-  
-  <script src="/app.config.js"></script>
-  
-  <script src="/components/users/users.routes.js"></script>
-  
-  <script src="/components/users/detail/user.detail.controller.js"></script>
-  
-  <script src="/components/users/list/users.list.controller.js"></script>
-  
-  <script src="/services/users.service.js"></script>
-  
-  <!-- endinject -->
+    <!-- endinject -->
   
 </body>
 
