@@ -8,8 +8,46 @@
     <!-- endinject -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-
-<body ng-app="CrudMongoose" ng-cloak>
+<body ng-app="myApp" layout="column"
+  layout-fill
+  ng-controller="">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        My favorite dive sites
+        <span flex></span>
+        <md-button ng-click="disableEven = false">
+          Enable all tabs
+        </md-button>
+        <md-button ng-click="disableEven = true">
+          Disable even tabs
+        </md-button>
+        <md-button ng-click="selectedIndex = 2">
+          Select tab #3
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-content>
+      <md-tabs md-border-bottom
+               md-selected="selectedIndex">
+        <md-tab ng-repeat="site in diveSites" label="{{site.toString()}}"
+                ng-disabled="disableEven && $index%2 == 0">
+          <md-content class="md-padding">
+            <h1 class="md-display-1">{{site.toString()}}</h1>
+            <p class="md-body-1">
+              This is a beatiful dive site!
+            </p>
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-content>
+    <md-toolbar class="md-accent">
+      <div class="md-toolbar-tools">
+        Younderwater, 2015
+      </div>
+    </md-toolbar>
+  
+    
+<!--body ng-app="CrudMongoose" ng-cloak>
     <md-toolbar>
       <div class="md-toolbar-tools">
         
@@ -21,9 +59,9 @@
     </md-toolbar>  
     <md-button class='md-fab md-fab-bottom-right my-fab-button md-accent md-hue-3' style="position:fixed !important;" aria-label="Add user">
       <md-icon md-svg-src="img/icons/add_black_24px.svg"></md-icon>
-    </md-button>
+    </md-button-->
     <!--div class="text-center"><md-icon md-svg-src="/public/images/angular-logo.svg" aria-label="Angular"></md-icon></div-->
-    <md-content flex>
+    <!--md-content flex>
       <div class="md-padding" layout="row" layout-align="center">
         <md-nav-bar md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
           <md-nav-item md-nav-sref="list"  name="list" value="list" >List Users</md-nav-item>
@@ -31,7 +69,7 @@
         </md-nav-bar>  
       </div>
       <div ui-view ></div>
-    </md-content>
+    </md-content-->
     <!-- bower:js -->
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.min.js"></script>
@@ -43,12 +81,30 @@
     <!-- endinject -->
     
     <!-- js:js -->
-  <script src="/app.config.js"></script>
-  <script src="/components/users/users.routes.js"></script>
-  <script src="/components/users/detail/user.detail.controller.js"></script>
-  <script src="/components/users/list/users.list.controller.js"></script>
-  <script src="/services/users.service.js"></script>
+  
   <!-- endinject -->
+  <script>
+      angular
+      .module('myApp', ['ngMaterial', 'divesites'])
+      .controller('DiveSitesController', ['$scope', function($scope) {
+              $scope.diveSites = [
+                "Small Giftun",
+                "Shaab El Erg",
+                "Abu Ramada",
+                "Fanous North",
+                "Fanadir",
+                "Turtle Bay",
+                "Erg Somaya",
+                "Gotta Abu Ramada",
+                "Um Gamar",
+                "Bluff Point"
+              ];
+
+              $scope.selectedIndex = 0;
+              $scope.disableEven = false;
+            }]);
+  
+    </script>
 </body>
 
 </html>
