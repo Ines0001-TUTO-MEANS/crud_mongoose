@@ -26,13 +26,17 @@
     </md-button>
     <!--div class="text-center"><md-icon md-svg-src="/public/images/angular-logo.svg" aria-label="Angular"></md-icon></div-->
     <md-content layout="column" flex>
-      <div class="md-padding" layout="row" layout-align="center">
+      <!--div>
         <md-nav-bar md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
           <md-nav-item md-nav-sref="list"  name="list" value="list" >List Users</md-nav-item>
           <md-nav-item md-nav-sref="detail" name="detail" value="detail">Detail</md-nav-item>
         </md-nav-bar>  
-      </div>
-      <div ui-view ></div>
+      </div-->
+      <md-tabs md-center-tabs>
+        <md-tab label="list" ui-sref=""></md-tab>
+        <md-tab label="detail" ui-sref=""></md-tab>
+      </md-tabs>
+      <!--div ui-view ></div-->
     </md-content>
     <!-- bower:js -->
     <script src="/bower_components/angular/angular.min.js"></script>
