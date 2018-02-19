@@ -39,6 +39,8 @@
         $scope.users = data;  
       },function(err){
           $scope.users = err || 'Request failed';
+      },function(err){
+          console.log(err)
       })
     });
       
