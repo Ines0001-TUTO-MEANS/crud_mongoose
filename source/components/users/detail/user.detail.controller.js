@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('UserDetailController', ['$scope', '$stateParams','User_factory',function($scope,$stateParams,User_factory) {
+	app.controller('UserDetailController', ['$scope', '$stateParams','User_factory','$mdDialog',function($scope,$stateParams,User_factory,$mdDialog) {
     $scope.user={};
     
     /*

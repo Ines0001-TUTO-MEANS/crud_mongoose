@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('UsersListController', ['$scope','$rootScope','$state','User_factory',function($scope,$rootScope,$state,User_factory) {
+	app.controller('UsersListController', ['$scope','$rootScope','$state','User_factory','$mdDialog',function($scope,$rootScope,$state,User_factory,$mdDialog) {
     $scope.users=[];
     $rootScope.currentNavItem ='list';
     /*   
@@ -26,6 +26,19 @@
     }
      
     $scope.delete = function(user){
+      
+      var confirm = $mdDialog.confirm()
+          .title('Voulez-vous vraiment supprimer la fiche '+user.name+'?')
+          .ariaLabel('Lucky day')
+          .targetEvent(ev)
+          .ok('Oui')
+          .cancel('N');
+
+    $mdDialog.show(confirm).then(function() {
+      $scope.status = 'You decided to get rid of your debt.';
+    }, function() {
+      $scope.status = 'You decided to keep your debt.';
+    });
       
       User_factory.delete({id:user._id},function(data){
         
