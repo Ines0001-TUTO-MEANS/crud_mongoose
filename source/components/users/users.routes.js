@@ -12,5 +12,7 @@
             templateUrl: 'components/users/detail/user.detail.html',
             controller: 'UserDetailController'
         });
+      
+        $urlRouterProvider.otherwise('')
     }]);
 })(CrudMongoose);
