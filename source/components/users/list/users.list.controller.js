@@ -23,7 +23,17 @@
       $state.go('detail',{idUser:user._id});
       $rootScope.selectedIndex=1;
     }
+     
+    $scope.delete = function(user){
       
+      User_factory.delete({id:user._id},function(data){
+
+        $scope.users = data;  
+      },function(err){
+          $scope.users = err || 'Request failed';
+      })
+    }
+    
 
     
 	}]);
