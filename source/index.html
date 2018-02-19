@@ -25,28 +25,12 @@
       <md-icon md-svg-src="img/icons/add_black_24px.svg"></md-icon>
     </md-button>
     <!--div class="text-center"><md-icon md-svg-src="/public/images/angular-logo.svg" aria-label="Angular"></md-icon></div-->
-    <md-content layout="column" >
-      <!--div>
+     <md-content class="md-padding" layout="row" layout-align="center">
         <md-nav-bar md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
-          <md-nav-item md-nav-sref="list"  name="list" value="list" >List Users</md-nav-item>
-          <md-nav-item md-nav-sref="detail" name="detail" value="detail">Detail</md-nav-item>
-        </md-nav-bar>  
-      </div-->
-      <md-tabs md-align-tabs="top" md-stretch-tabs="always" md-selected="selectedIndex">
-          <md-tab>
-            <md-tab-label>
-              <span ui-sref="list">list</span>
-            </md-tab-label>
-          </md-tab>
-
-
-          <md-tab ng-disabled="selectedIndex==0">
-            <md-tab-label>
-              <span ui-sref="detail">detail</span>
-            </md-tab-label>
-          </md-tab>
-      </md-tabs>
-      <div ui-view flex></div>
+            <md-nav-item md-nav-sref="list"  name="list" value="list" >List Users</md-nav-item>
+            <md-nav-item md-nav-sref="detail" name="detail" value="detail">detail</md-nav-item>
+            
+        </md-nav-bar>
     </md-content>
     <!-- bower:js -->
     <script src="/bower_components/angular/angular.min.js"></script>

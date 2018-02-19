@@ -1,6 +1,6 @@
 (function(app) {
 	app.controller('UsersListController', ['$scope','$rootScope','$state','User_factory',function($scope,$rootScope,$state,User_factory) {
-    $scope.users={};
+    $scope.users=[];
     /*   
     $http.get('/data/users.json').
       then(function(response) {
@@ -27,7 +27,7 @@
     $scope.delete = function(user){
       
       User_factory.delete({id:user._id},function(data){
-
+        
         $scope.users = data;  
       },function(err){
           $scope.users = err || 'Request failed';
