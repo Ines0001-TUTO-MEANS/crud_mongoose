@@ -14,5 +14,5 @@
         })
       
         $urlRouterProvider.otherwise('/users')
-    }]);
+    }]).run();
 })(CrudMongoose);
