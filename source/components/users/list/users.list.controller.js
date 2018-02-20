@@ -35,8 +35,8 @@
           .cancel('Non');
 
       $mdDialog.show(confirm).then(function() {
-          //EraseUser(user._id);
-          //$state.go('list')
+          EraseUser(user._id);
+          $state.go('list')
         });
       
     }
