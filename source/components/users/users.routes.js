@@ -14,5 +14,10 @@
         })
       
         $urlRouterProvider.otherwise('/users')
-    }]).run();
+    }]);
+  
+    app.run(['$scope','$state',function($scope,$state){
+        $state.go('list',undefined,{reload:true})
+    
+    });
 })(CrudMongoose);
