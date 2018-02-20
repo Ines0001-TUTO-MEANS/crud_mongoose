@@ -12,12 +12,7 @@
 
     }) 
     */
-    User_factory.query(function(data){
-          $scope.users = data;
-
-    },function(err){
-        this.users = err || 'Request failed';
-    })
+    ListUser();
     
     $scope.detail = function(user){
       
@@ -41,10 +36,21 @@
       
     }
  
+     $scope.$watchCollection('users',function(){
+       console.log('watcher')
+       })
    
-   
+    function ListUser(){
+      User_factory.query(function(data){
+            $scope.users = data;
+
+      },function(err){
+          $scope.users = err || 'Request failed';
+      })
     
-   var EraseUser = function(id){
+    }
+    
+    function EraseUser(id){
      User_factory.delete({id:id},
                           function(data){
                              // success
