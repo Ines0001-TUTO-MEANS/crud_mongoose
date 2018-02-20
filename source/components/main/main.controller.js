@@ -8,13 +8,20 @@ Les actions:
 
 */
 (function(app) {
-	app.controller('MainController', ['$scope',function($scope) {
-    $scope.
+	app.controller('MainController', ['$scope','$state',function($scope,$state) {
+    $scope.tabCreateShow = false;
+    $scope.currentNavItem ='list';
     
     $scope.mainEventCreate = function(){
-      console.log('create event');
-    
+      $scope.tabCreateShow = true;
+      $scope.currentNavItem ='create';
+      $state.go('create',undefined,{reload:true});
     }
+    
+    $scope.$watch('isCreate',function($scope){
+      
+    
+    })
     
 	}]);
 })(CrudMongoose);

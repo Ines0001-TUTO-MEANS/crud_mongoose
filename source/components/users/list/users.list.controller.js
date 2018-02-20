@@ -1,7 +1,7 @@
 (function(app) {
 	app.controller('UsersListController', ['$scope','$rootScope','$state','User_factory','$mdDialog',function($scope,$rootScope,$state,User_factory,$mdDialog) {
     $scope.users={};
-    $rootScope.currentNavItem ='list';
+    
     /*   
     $http.get('/data/users.json').
       then(function(response) {
