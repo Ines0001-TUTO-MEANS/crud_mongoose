@@ -35,11 +35,11 @@
         });
       
     }
- 
+     /*
      $scope.$watchCollection('users',function(){
        console.log('watcher')
        })
-   
+     */
     function ListUser(){
       User_factory.query(function(data){
             $scope.users = data;
