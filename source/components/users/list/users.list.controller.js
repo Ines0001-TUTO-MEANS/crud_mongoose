@@ -36,7 +36,7 @@
 
       $mdDialog.show(confirm).then(function() {
           EraseUser(user._id);
-          $state.go('list',undefined,{reload:true})
+          
         });
       
     }
@@ -48,6 +48,7 @@
      User_factory.delete({id:id},
                           function(data){
                              // success
+                             $state.reload();
                           },function(err){
                              // error
                              console.log(err);
