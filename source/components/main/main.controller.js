@@ -8,8 +8,13 @@ Les actions:
 
 */
 (function(app) {
-	app.controller('MainController', ['$scope', '$stateParams','User_factory','$mdDialog',function($scope,$stateParams,User_factory,$mdDialog) {
+	app.controller('MainController', ['$scope',function($scope) {
+    $scope.
     
+    $scope.mainEventCreate = function(){
+      console.log('create event');
+    
+    }
     
 	}]);
 })(CrudMongoose);
