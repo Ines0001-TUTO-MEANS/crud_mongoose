@@ -6,10 +6,14 @@
             templateUrl: 'components/users/list/users.list.html',
             controller: 'UsersListController'
         })
-
         .state('detail', {
-            url: '/user/list/:idUser',
+            url: '/user/detail/:idUser',
             templateUrl: 'components/users/detail/user.detail.html',
+            controller: 'UserDetailController'
+        })
+        .state('create', {
+            url: '/user/create',
+            templateUrl: 'components/users/create/user.create.html',
             controller: 'UserDetailController'
         })
       
