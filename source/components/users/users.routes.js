@@ -17,7 +17,7 @@
     }]);
   
     app.run(['$state',function($state){
-        $state.go('list',undefined,{reload:true})
+        //$state.go('list',undefined,{reload:true})
     
     }]);
 })(CrudMongoose);
