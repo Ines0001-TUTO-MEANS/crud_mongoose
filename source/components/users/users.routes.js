@@ -16,8 +16,8 @@
         $urlRouterProvider.otherwise('/users')
     }]);
   
-    app.run(['$scope','$state',function($scope,$state){
+    app.run(['$state',function($state){
         $state.go('list',undefined,{reload:true})
     
-    });
+    }]);
 })(CrudMongoose);
