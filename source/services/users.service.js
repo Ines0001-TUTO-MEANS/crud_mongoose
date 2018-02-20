@@ -6,7 +6,7 @@
                                  // the server return all the todos after you create a record
                                  'save':   {method:'POST', isArray:true},
                                  'query':   {method:'GET', isArray:true},
-                                 'delete':   {method:'DELETE', isArray:true}
+                                 'delete':   {method:'DELETE'}
                                 };
       return $resource('/users/:id',
                        // paramètre résolue automatiquement sur $save(), $update(), $delete()

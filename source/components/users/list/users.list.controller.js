@@ -54,7 +54,8 @@
      User_factory.delete({id:id},
                           function(data){
                              // success
-                             $state.reload();
+                             ListUser();
+                            //$state.reload();
                           },function(err){
                              // error
                              console.log(err);
