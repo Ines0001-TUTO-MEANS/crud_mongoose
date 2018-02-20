@@ -1,16 +1,6 @@
 (function(app) {
 	app.controller('UsersListController', ['$scope','$rootScope','$state','User_factory','$mdDialog',function($scope,$rootScope,$state,User_factory,$mdDialog) {
-    var ListUsers = function(){
-     User_factory.query(function(data){
-          $scope.users = data;
-
-      },function(err){
-          this.users = err || 'Request failed';
-      })
-   
-   } 
-    
-    var users=[];
+    $scope.users={};
     $rootScope.currentNavItem ='list';
     /*   
     $http.get('/data/users.json').
@@ -22,11 +12,16 @@
 
     }) 
     */
-    this.ListUsers()
+    User_factory.query(function(data){
+          $scope.users = data;
+
+    },function(err){
+        this.users = err || 'Request failed';
+    })
     
     $scope.detail = function(user){
       
-      $state.go('detail',{idUser:user._id});
+      $state.go('detail',{idUser:user._id},{reload:true});
       $rootScope.currentNavItem ='detail';
       
     }
@@ -41,15 +36,11 @@
 
       $mdDialog.show(confirm).then(function() {
           EraseUser(user._id);
-          $state.go('list')
+          $state.go('list',undefined,{reload:true})
         });
       
     }
-    
-    $scope.$watch('users', function(){
-      $state.go('list',{reload:true});
-    
-    })
+ 
    
    
     
