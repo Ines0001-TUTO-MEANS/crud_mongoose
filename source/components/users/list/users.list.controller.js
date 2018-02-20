@@ -12,12 +12,7 @@
 
     }) 
     */
-    User_factory.query(function(data){
-        $scope.users = data;
-        
-    },function(err){
-        this.users = err || 'Request failed';
-    })
+    $scope.$apply()
     
     $scope.detail = function(user){
       
@@ -40,6 +35,16 @@
         });
       
     }
+    
+    $scope.$watch(function(){
+      User_factory.query(function(data){
+          $scope.users = data;
+
+      },function(err){
+          this.users = err || 'Request failed';
+      })
+    
+    })
    
    var EraseUser = function(id){
      User_factory.delete({id:id},
@@ -50,6 +55,8 @@
                              console.log(err);
       })
     }
+   
+    
    
     
      
