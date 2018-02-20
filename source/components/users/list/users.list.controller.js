@@ -1,5 +1,15 @@
 (function(app) {
 	app.controller('UsersListController', ['$scope','$rootScope','$state','User_factory','$mdDialog',function($scope,$rootScope,$state,User_factory,$mdDialog) {
+    var ListUsers = function(){
+     User_factory.query(function(data){
+          $scope.users = data;
+
+      },function(err){
+          this.users = err || 'Request failed';
+      })
+   
+   } 
+    
     var users=[];
     $rootScope.currentNavItem ='list';
     /*   
@@ -12,7 +22,7 @@
 
     }) 
     */
-    $scope.$apply()
+    this.ListUsers()
     
     $scope.detail = function(user){
       
@@ -36,16 +46,13 @@
       
     }
     
-    $scope.$watch(function(){
-      User_factory.query(function(data){
-          $scope.users = data;
-
-      },function(err){
-          this.users = err || 'Request failed';
-      })
+    $scope.$watch('users', function(){
+      $state.go('list',{reload:true});
     
     })
    
+   
+    
    var EraseUser = function(id){
      User_factory.delete({id:id},
                           function(data){
