@@ -11,7 +11,7 @@
 
   
     
-<body ng-app="CrudMongoose" ng-cloak >
+<body ng-app="CrudMongoose" ng-cloak ng-controller="MainController">
     <md-toolbar>
       <div class="md-toolbar-tools">
         
@@ -28,7 +28,8 @@
      <md-content class="md-padding" layout-align="center">
         <md-nav-bar md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
             <md-nav-item md-nav-sref="list"  name="list" value="list" >List Users</md-nav-item>
-            <md-nav-item md-nav-sref="detail" name="detail" value="detail">detail</md-nav-item>
+            <md-nav-item md-nav-sref="detail" name="detail" value="detail">Detail User</md-nav-item>
+            <md-nav-item md-nav-sref="create" name="create" value="create" ng-hide="true">Create User</md-nav-item>
             
         </md-nav-bar>
         <div ui-view layout="column"></div>  
@@ -45,7 +46,9 @@
     
     <!-- js:js -->
     <script src="/app.config.js"></script>
+    <script src="/components/main/main.controller.js"></script>
     <script src="/components/users/users.routes.js"></script>
+    <script src="/components/users/create/user.create.controller.js"></script>
     <script src="/components/users/detail/user.detail.controller.js"></script>
     <script src="/components/users/list/users.list.controller.js"></script>
     <script src="/services/users.service.js"></script>
