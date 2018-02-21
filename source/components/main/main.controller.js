@@ -18,8 +18,9 @@ Les actions:
       $state.go('create',undefined,{reload:true});
     }
     
-    $scope.$watch('isCreate',function($scope){
-      
+    $scope.$on('EVENT_MAIN_NOTIFICATION',function(event,data){
+      console.log('EVENT_MAIN_NOTIFICATION :', event.name,data.json)
+      if(data.
     
     })
     
