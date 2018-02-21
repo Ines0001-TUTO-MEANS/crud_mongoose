@@ -22,7 +22,7 @@ Les actions:
       console.log('EVENT_MAIN_CLOSE_CREATE :', event.name)
       $scope.tabCreateShow = false;
       $scope.currentNavItem ='list';
-      
+      $state.go('list',undefined,{reload:true});
     })
     
 	}]);

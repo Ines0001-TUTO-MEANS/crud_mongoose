@@ -14,7 +14,7 @@
         .state('create', {
             url: '/user/create',
             templateUrl: 'components/users/create/user.create.html',
-            controller: 'UserDetailController'
+            controller: 'UserCreateController'
         })
       
         $urlRouterProvider.otherwise('/users/list')
