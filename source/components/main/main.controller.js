@@ -18,10 +18,11 @@ Les actions:
       $state.go('create',undefined,{reload:true});
     }
     
-    $scope.$on('EVENT_MAIN_NOTIFICATION',function(event,data){
-      console.log('EVENT_MAIN_NOTIFICATION :', event.name,data.json)
-      if(data.
-    
+    $scope.$on('EVENT_MAIN_CLOSE_CREATE',function(event){
+      console.log('EVENT_MAIN_CLOSE_CREATE :', event.name)
+      $scope.tabCreateShow = false;
+      $scope.currentNavItem ='list';
+      
     })
     
 	}]);
