@@ -25,11 +25,12 @@ Les actions:
       $state.go('list',undefined,{reload:true});
     })
     
-    $scope.$on('EVENT_MAIN_SHOW_DETAIL',function(event){
+    $scope.$on('EVENT_MAIN_NOTIFICATION',function(event,data){
       
-      $scope.show_detail = true;
-      $scope.currentNavItem ='detail';
-      //$state.go('detail',undefined,{reload:true});
+      $scope.show_state = data.state;
+      $scope.currentNavItem =data.state;
+      $state.go(data.state,{idUser:data.id},{reload:true});
+      
     })
     
     $scope.$on('EVENT_MAIN_CLOSE_DETAIL',function(event){
