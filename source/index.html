@@ -11,7 +11,7 @@
           content="initial-scale=1, maximum-scale=1, user-scalable=no" />
   
     <!-- css:css -->
-    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css">
+    <!--link rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css"-->
     <!-- endinject -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
@@ -29,14 +29,14 @@
       </div>
     </md-toolbar>  
     
-    <md-button ng-click="mainEventCreate()" class='md-fab md-fab-bottom-right my-fab-button md-accent md-hue-3' style="position:fixed !important;" aria-label="Add user">
+    <!--md-button ng-click="mainEventCreate()" class='md-fab md-fab-bottom-right my-fab-button md-accent md-hue-3' style="position:fixed !important;" aria-label="Add user">
       <md-icon md-svg-src="img/icons/add_black_24px.svg"></md-icon>
-    </md-button>
+    </md-button-->
     <!--div class="text-center"><md-icon md-svg-src="/public/images/angular-logo.svg" aria-label="Angular"></md-icon></div-->
      <md-content class="md-padding" layout-align="center" layout="column">
         <md-nav-bar md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
             <md-nav-item md-nav-sref="list"  name="list" value="list" >List Users</md-nav-item>
-            <md-nav-item md-nav-sref="detail" name="detail" value="detail">Detail User</md-nav-item>
+            <md-nav-item md-nav-sref="detail" name="detail" value="detail" ng-disabled="1">Detail User</md-nav-item>
             <md-nav-item md-nav-sref="create" name="create" value="create" ng-show="tabCreateShow">Create User</md-nav-item>
             
         </md-nav-bar>

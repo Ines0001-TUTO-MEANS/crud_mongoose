@@ -19,8 +19,15 @@ Les actions:
     }
     
     $scope.$on('EVENT_MAIN_CLOSE_CREATE',function(event){
-      console.log('EVENT_MAIN_CLOSE_CREATE :', event.name)
+      
       $scope.tabCreateShow = false;
+      $scope.currentNavItem ='list';
+      $state.go('list',undefined,{reload:true});
+    })
+    
+    $scope.$on('EVENT_MAIN_CLOSE_DETAIL',function(event){
+      
+      //$scope.tabCreateShow = false;
       $scope.currentNavItem ='list';
       $state.go('list',undefined,{reload:true});
     })
