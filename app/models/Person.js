@@ -5,6 +5,7 @@ module.exports =  mongoose.Schema({
     type: String,
     required: 'name is mandatory'
   },
+  company: String,
   email: String,
   password: String
 });

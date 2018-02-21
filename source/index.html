@@ -3,23 +3,45 @@
 
 <head>
     <title>CrudMongoose</title>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport"
+          content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+  
     <!-- css:css -->
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css">
     <!-- endinject -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
-<body ng-app="CrudMongoose" ng-cloak>
-    <h1 class="md-display-1 text-center">CrudMongoose</h1>
+  
+    
+<body ng-app="CrudMongoose" ng-cloak ng-controller="MainController">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        
+        <h2  md-truncate fle>Crudd Mongoose </h2>
+        
+        <span flex></span>
+        
+      </div>
+    </md-toolbar>  
+    
+    <md-button ng-click="mainEventCreate()" class='md-fab md-fab-bottom-right my-fab-button md-accent md-hue-3' style="position:fixed !important;" aria-label="Add user">
+      <md-icon md-svg-src="img/icons/add_black_24px.svg"></md-icon>
+    </md-button>
     <!--div class="text-center"><md-icon md-svg-src="/public/images/angular-logo.svg" aria-label="Angular"></md-icon></div-->
-    <md-content class="md-padding" layout="row" layout-align="center">
+     <md-content class="md-padding" layout-align="center" layout="column">
         <md-nav-bar md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
             <md-nav-item md-nav-sref="list"  name="list" value="list" >List Users</md-nav-item>
-            <md-nav-item md-nav-sref="detail" name="detail" value="detail">detail</md-nav-item>
+            <md-nav-item md-nav-sref="detail" name="detail" value="detail">Detail User</md-nav-item>
+            <md-nav-item md-nav-sref="create" name="create" value="create" ng-show="tabCreateShow">Create User</md-nav-item>
             
         </md-nav-bar>
-    </md-content>
-    <div ui-view></div>
+        <div ui-view layout="column"></div>  
+  </md-content>
     <!-- bower:js -->
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.min.js"></script>
@@ -31,12 +53,15 @@
     <!-- endinject -->
     
     <!-- js:js -->
-  <script src="/app.config.js"></script>
-  <script src="/components/users/users.routes.js"></script>
-  <script src="/components/users/detail/user.detail.controller.js"></script>
-  <script src="/components/users/list/users.list.controller.js"></script>
-  <script src="/services/users.service.js"></script>
-  <!-- endinject -->
+    <script src="/app.config.js"></script>
+    <script src="/components/main/main.controller.js"></script>
+    <script src="/components/users/users.routes.js"></script>
+    <script src="/components/users/create/user.create.controller.js"></script>
+    <script src="/components/users/detail/user.detail.controller.js"></script>
+    <script src="/components/users/list/users.list.controller.js"></script>
+    <script src="/services/users.service.js"></script>
+    <!-- endinject -->
+  
 </body>
 
 </html>

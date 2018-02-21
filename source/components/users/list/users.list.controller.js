@@ -1,6 +1,7 @@
 (function(app) {
-	app.controller('UsersListController', ['$scope','$rootScope','$state','User_factory',function($scope,$rootScope,$state,User_factory) {
+	app.controller('UsersListController', ['$scope','$rootScope','$state','User_factory','$mdDialog',function($scope,$rootScope,$state,User_factory,$mdDialog) {
     $scope.users={};
+    
     /*   
     $http.get('/data/users.json').
       then(function(response) {
@@ -11,20 +12,60 @@
 
     }) 
     */
-    User_factory.query(function(data){
-        $scope.users = data; 
-    },function(err){
-        $scope.users = err || 'Request failed';
-    })
+    ListUser();
     
     $scope.detail = function(user){
       
-      console.log('id:',user._id);
-      $state.go('detail',{idUser:user._id});
-      $rootScope.currentNavItem='detail';
-    }
+      $state.go('detail',{idUser:user._id},{reload:true});
+      $rootScope.currentNavItem ='detail';
       
+    }
+     
+    $scope.delete = function(user){
+      
+      var confirm = $mdDialog.confirm()
+          .title('Voulez-vous vraiment supprimer la fiche '+user.name+'?')
+          .ariaLabel('Lucky day')
+          .ok('Oui')
+          .cancel('Non');
 
+      $mdDialog.show(confirm).then(function() {
+          EraseUser(user._id);
+          
+        });
+      
+    }
+     /*
+     $scope.$watchCollection('users',function(){
+       console.log('watcher')
+       })
+     */
+    function ListUser(){
+      User_factory.query(function(data){
+            $scope.users = data;
+
+      },function(err){
+          $scope.users = err || 'Request failed';
+      })
+    
+    }
+    
+    function EraseUser(id){
+     User_factory.delete({id:id},
+                          function(data){
+                             // success
+                             ListUser();
+                            //$state.reload();
+                          },function(err){
+                             // error
+                             console.log(err);
+      })
+    }
+   
+    
+   
+    
+     
     
 	}]);
 })(CrudMongoose);
