@@ -20,14 +20,21 @@ Les actions:
     
     $scope.$on('EVENT_MAIN_CLOSE_CREATE',function(event){
       
-      $scope.tabCreateShow = false;
+      $scope.show_create = false;
       $scope.currentNavItem ='list';
       $state.go('list',undefined,{reload:true});
     })
     
+    $scope.$on('EVENT_MAIN_SHOW_DETAIL',function(event){
+      
+      $scope.show_detail = true;
+      $scope.currentNavItem ='detail';
+      //$state.go('detail',undefined,{reload:true});
+    })
+    
     $scope.$on('EVENT_MAIN_CLOSE_DETAIL',function(event){
       
-      //$scope.tabCreateShow = false;
+      $scope.show_detail = false;
       $scope.currentNavItem ='list';
       $state.go('list',undefined,{reload:true});
     })
