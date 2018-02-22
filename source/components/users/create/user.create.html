@@ -1,8 +1,8 @@
-<content class="debug" layout-padding>
+<content class="" layout="column" layout-padding>
 
-<form class="layout-row" class="md-inline-form">
-  <div layout="row">
-    <md-input-container flex="30">
+<form name="create" class="md-inline-form">
+  <div layout="row" layout-xs="column">
+    <md-input-container flex>
       <md-icon class="material-icons lab-icon">person</md-icon>
         <label>Name</label>
         <input name="name" ng-model="user.name" required md-maxlength="10"/>
@@ -11,14 +11,14 @@
           <div ng-message="md-maxlength">Le nom est trop long!</div>
         </div>
     </md-input-container>
-    <md-input-container flex >
-      <md-icon class="material-icons lab-icon">person</md-icon>
-        <label>Name</label>
-        <input name="name" ng-model="user.name" required md-maxlength="10"/>
-        <div ng-messages="create.name.$error" ng-show="create.name.$dirty">
-          <div ng-message="required">Merci de saisir un nom</div>
-          <div ng-message="md-maxlength">Le nom est trop long!</div>
-        </div>
+    <md-input-container flex>
+      <md-icon class="material-icons lab-icon">email</md-icon>
+      <label>Email</label>
+      <input name="email" type="email" ng-model="user.email" required/>
+      <div ng-messages="create.email.$error" ng-show="create.email.$dirty">
+        <div ng-message="required">Merci de saisir une adresse mail</div>
+        <div ng-message="email">Le champ saisie n'est pas une email !</div>
+      </div>
     </md-input-container> 
  </div>
   
