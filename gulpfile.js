@@ -21,7 +21,7 @@ var environment = './source',
     sassFiles = [
         'source/sass/**/*.scss',
         'source/css/**/*.*css',
-        'source/components/**/*.scss',
+        'source/components/**/*.*css',
         'source/shared/**/*.scss',
         'source/modules/**/*.scss',
         bowerFolder + '/angular-material/angular-material.min.css'
