@@ -13,15 +13,22 @@ Les actions:
     $scope.currentNavItem ='list';
     
     $scope.mainEventCreate = function(){
-      $scope.tabCreateShow = true;
+      $scope.show_state= 'create';
       $scope.currentNavItem ='create';
       $state.go('create',undefined,{reload:true});
     }
     
-    $scope.$watch('isCreate',function($scope){
-      
     
+    
+    $scope.$on('EVENT_MAIN_NOTIFICATION',function(event,data){
+      
+      $scope.show_state = data.state;
+      $scope.currentNavItem =data.state;
+      $state.go(data.state,{idUser:data.id},{reload:true});
+      
     })
+    
+  
     
 	}]);
 })(CrudMongoose);

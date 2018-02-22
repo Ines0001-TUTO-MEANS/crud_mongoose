@@ -15,9 +15,8 @@
     ListUser();
     
     $scope.detail = function(user){
+      $scope.$emit('EVENT_MAIN_NOTIFICATION',{state:'detail',id:user._id})
       
-      $state.go('detail',{idUser:user._id},{reload:true});
-      $rootScope.currentNavItem ='detail';
       
     }
      
