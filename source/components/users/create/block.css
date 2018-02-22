@@ -1,0 +1,10 @@
+div[class^="flex"]{
+      border: 1px dotted gray;
+      background-color: #FFE0B2; /* Orange 100 */
+      text-align: center;
+    }
+
+div.layout-row,
+div.layout-column{
+      background-color: #90CAF9; /* Blue 200 */
+}
