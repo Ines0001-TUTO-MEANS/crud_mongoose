@@ -1,4 +1,4 @@
-.debug div[class^="flex"]{
+.debug div[class^="flex"],.debug md-input-container[class^="flex"]{
       border: 1px dotted gray;
       background-color: #FFE0B2; /* Orange 100 */
       text-align: center;
