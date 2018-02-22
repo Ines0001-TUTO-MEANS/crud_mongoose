@@ -1,13 +1,28 @@
-<content>
+<content class="md-inline-form" layout-padding >
+<form novalidate name="create">
+    
+  <md-input-container md-no-float>
+      <md-icon class="material-icons lab-icon">person</md-icon>
+      <label>Name</label>
+      <input name="name" ng-model="user.name" required md-maxlength="10"/>
+      <div ng-messages="simple.name.$error" ng-show="simple.name.$dirty">
+        <div ng-message="required">Merci de saisir un nom</div>
+        <div ng-message="md-maxlength">Le nom est trop long!</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container>
+      <label>Email</label>
+      <input name="email" type="email" ng-model="user.email" required/>
+      <div ng-messages="simple.email.$error" ng-show="simple.email.$dirty">
+        <div ng-message="required">Merci de saisir une adresse mail</div>
+        <div ng-message="email">Le champ saisie n'est pas une email !</div>
+      </div>
+    </md-input-container>
+
   
-<md-input-container md-no-float>
-  <md-icon class="material-icons lab-icon">person</md-icon>
-  <input name="name" ng-model="user.name" required md-maxlength="10" placeholder="Indiquez votre nom"/>
-  <div ng-messages="simple.name.$error" ng-show="simple.name.$dirty">
-    <div ng-message="required">Merci de saisir un nom</div>
-    <div ng-message="md-maxlength">Le nom est trop long!</div>
-  </div>
-</md-input-container>
+</form> 
+
 
 
   
