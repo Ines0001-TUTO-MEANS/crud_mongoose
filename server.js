@@ -28,18 +28,19 @@ var User = mongoose.model('User', schema_person.plugin(router));
 var Task = mongoose.model('Task', schema_task.plugin(router));
 
 // Using query builder
- /*
+ 
   User.find().
-  where('name').regex(/jam/).
+  //where('name').regex(/jam/).
   sort('name').
   select('name email').
+  limit(2).
   exec(function (err, person) {
     if (err) return handleError(err);
     // Prints "Space Ghost is a talk show host."
     console.log('person:', person);
   });
 
-*/
+
 app
   .get('/users', User.router('find'))
   .post('/users', User.router('create'))
