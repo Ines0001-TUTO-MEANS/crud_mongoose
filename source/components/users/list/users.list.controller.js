@@ -40,7 +40,7 @@
        })
      */
     function ListUser(){
-      User_factory.query(function(data){
+      User_factory.query({limit:'name'},function(data){
             $scope.users = data;
 
       },function(err){
