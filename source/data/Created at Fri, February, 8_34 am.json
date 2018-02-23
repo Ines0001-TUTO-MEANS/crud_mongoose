@@ -1,0 +1,72 @@
+[
+  {
+    "email": "donovan@affluex.us",
+    "company": "AFFLUEX",
+    "password": "ad",
+    "age": 45,
+    "name": "Donovan"
+  },
+  {
+    "email": "noble@zillar.io",
+    "company": "ZILLAR",
+    "password": "nostrud",
+    "age": 39,
+    "name": "Noble"
+  },
+  {
+    "email": "carey@cemention.info",
+    "company": "CEMENTION",
+    "password": "quis",
+    "age": 17,
+    "name": "Carey"
+  },
+  {
+    "email": "rose@isoternia.me",
+    "company": "ISOTERNIA",
+    "password": "nisi",
+    "age": 21,
+    "name": "Rose"
+  },
+  {
+    "email": "harriett@buzzmaker.biz",
+    "company": "BUZZMAKER",
+    "password": "officia",
+    "age": 23,
+    "name": "Harriett"
+  },
+  {
+    "email": "small@dragbot.ca",
+    "company": "DRAGBOT",
+    "password": "ullamco",
+    "age": 2,
+    "name": "Small"
+  },
+  {
+    "email": "ortiz@syntac.com",
+    "company": "SYNTAC",
+    "password": "qui",
+    "age": 53,
+    "name": "Ortiz"
+  },
+  {
+    "email": "vazquez@aquasure.biz",
+    "company": "AQUASURE",
+    "password": "et",
+    "age": 48,
+    "name": "Vazquez"
+  },
+  {
+    "email": "reeves@gleamink.org",
+    "company": "GLEAMINK",
+    "password": "laborum",
+    "age": 87,
+    "name": "Reeves"
+  },
+  {
+    "email": "sharp@earthplex.tv",
+    "company": "EARTHPLEX",
+    "password": "aute",
+    "age": 86,
+    "name": "Sharp"
+  }
+]
