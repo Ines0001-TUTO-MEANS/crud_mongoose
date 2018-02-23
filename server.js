@@ -27,6 +27,20 @@ var schema_person = require('./app/models/Person'),
 var User = mongoose.model('User', schema_person.plugin(router));
 var Task = mongoose.model('Task', schema_task.plugin(router));
 
+// Using query builder
+User.
+  find().
+  //where('name').equals('Ghost').
+  sort('name').
+  select('name email').
+  where('')
+  exec(function (err, person) {
+    if (err) return handleError(err);
+    // Prints "Space Ghost is a talk show host."
+    console.log('person:', person);
+  });
+
+
 app
   .get('/users', User.router('find'))
   .post('/users', User.router('create'))

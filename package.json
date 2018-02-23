@@ -7,7 +7,7 @@
   "description": "What am I about?",
   "main": "",
   "scripts": {
-    "start": "node server.js"
+    "start": ""
   },
   "dependencies": {
     "body-parser": "^1.18.2",
