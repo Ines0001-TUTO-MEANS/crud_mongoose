@@ -28,7 +28,7 @@ var User = mongoose.model('User', schema_person.plugin(router));
 var Task = mongoose.model('Task', schema_task.plugin(router));
 
 // Using query builder
- 
+ /*
   User.find().
   where('name').regex(/jam/).
   sort('name').
@@ -39,7 +39,7 @@ var Task = mongoose.model('Task', schema_task.plugin(router));
     console.log('person:', person);
   });
 
-
+*/
 app
   .get('/users', User.router('find'))
   .post('/users', User.router('create'))
