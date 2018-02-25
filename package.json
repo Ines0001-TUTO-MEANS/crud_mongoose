@@ -13,10 +13,11 @@
     "body-parser": "^1.18.2",
     "bower": "^1.8.2",
     "express": "^4.16.2",
+    "express-restify-mongoose": "^4.3.0",
     "gulp": "^3.9.1",
     "gulp-inject": "^4.3.0",
-    "mongoose": "^5.0.2",
-    "mongoose-express-router": "^2.2.1"
+    "method-override": "^2.3.10",
+    "mongoose": "^5.0.2"
   },
   "engines": {
     "node": "8.x"

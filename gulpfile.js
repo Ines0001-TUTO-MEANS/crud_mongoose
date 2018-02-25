@@ -21,7 +21,7 @@ var environment = './source',
     sassFiles = [
         'source/sass/**/*.scss',
         'source/css/**/*.*css',
-        'source/components/**/*.*css',
+        'source/components/**/*.scss',
         'source/shared/**/*.scss',
         'source/modules/**/*.scss',
         bowerFolder + '/angular-material/angular-material.min.css'
@@ -44,20 +44,16 @@ gulp.task('default', ['index']);
 gulp.task('hello',function(){ console.log('hello gulp..')});
 gulp.task('watch',watchTask);
 gulp.task('refresh',refreshTask);
-gulp.task('browser', function(){
-  // Start a Browsersync static file server
-       browserSync.init({
-            proxy: "https://crud-mongoose.glitch.me/"
-        }); 
-
-                           
-  
-  
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
 });
 
 /*
 Command refresh for synchronous result in glitch environnement.
-
 */
 
 function refreshTask(){
@@ -68,7 +64,6 @@ function refreshTask(){
 /*
 Traitement de surveillance à appliquer
 sur l'ensemble de l'arborescence
-
 */
 
 function watchTask(){
@@ -101,13 +96,10 @@ function htmlTask () {
 
 
 /*
-
-
 function htmlTask () {
     return gulp.src('./src/index.html')
         .pipe(inject(gulp.src(jsFiles, {read: false}), {relative: true}))
         .pipe(gulp.dest('./src'));
 };
-
 */
 

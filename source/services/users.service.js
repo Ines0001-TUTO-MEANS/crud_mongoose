@@ -8,7 +8,7 @@
                                  'query':   {method:'GET', isArray:true},
                                  'delete':   {method:'DELETE'}
                                 };
-      return $resource('/users/:id',
+      return $resource('/api/v1/users/:id',
                        // paramètre résolue automatiquement sur $save(), $update(), $delete()
                        {id: '@_id',metafields:'true'},
                        action_parameters);
