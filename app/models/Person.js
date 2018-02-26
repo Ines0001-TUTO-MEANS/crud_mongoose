@@ -27,5 +27,5 @@ module.exports =  mongoose.Schema({
     validate: mailValidator
   },
   password: String,
-  tasks : [{ type: Schema.Types.ObjectId, ref: 'Task' }]
+  tasks : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tasks' }]
 });

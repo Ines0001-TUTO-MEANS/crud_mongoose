@@ -25,6 +25,7 @@ var schema_person = require('./app/models/Person'),
 
 // Using query builder
 restify.serve(router, mongoose.model('Users', schema_person ))
+restify.serve(router, mongoose.model('Tasks', schema_task ))
   
 app.use(router)
 
