@@ -18,4 +18,5 @@ module.exports =  mongoose.Schema({
     }],
     default: ['pending']
   },
+  user : { type: Schema.Types.ObjectId, ref: 'Users' }
 });
