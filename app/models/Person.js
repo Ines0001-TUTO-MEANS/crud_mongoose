@@ -2,10 +2,10 @@
 var mongoose = require('mongoose')
 var validate = require('mongoose-validator')
 
-var ageValidator = [
+var mailValidator = [
   validate({
-    validator: 'isInt',
-    message: 'Age must be an integer value',
+    validator: 'isEmail',
+    message: 'email property is not valid Email',
   }),
   
 ]
@@ -19,9 +19,12 @@ module.exports =  mongoose.Schema({
   age: {
     type: Number,
     required :'age is mandatory',
-    validate: ageValidator
+    min:[18, 'age limit 18']
   },
   company: String,
-  email: String,
+  email: {
+    type: String,
+    validate: mailValidator
+  },
   password: String
 });
