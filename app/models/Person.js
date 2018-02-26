@@ -2,17 +2,17 @@
 var mongoose = require('mongoose')
 var validate = require('mongoose-validator')
 
-var nameValidator = [
+var ageValidator = [
   validate({
-    validator: 'isLength',
-    arguments: [18, 99],
-    message: 'Name should be between {ARGS[0]} and {ARGS[1]} characters',
+    validator: 'isInt',
+    message: 'Age must be an integer value',
   }),
   validate({
-    validator: 'isAlphanumeric',
-    passIfEmpty: true,
-    message: 'Name should contain alpha-numeric characters only',
-  }),
+    validator: function(val) {
+      return val > 17
+    },
+    message: 'Age must be superior at 18.',
+  })
 ]
 
 
@@ -24,8 +24,7 @@ module.exports =  mongoose.Schema({
   age: {
     type: Number,
     required :'age is mandatory',
-    min: [18, 'too young'],
-    max: 99
+    validate: ageValidator
   },
   company: String,
   email: String,
