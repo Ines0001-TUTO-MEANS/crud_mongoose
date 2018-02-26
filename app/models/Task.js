@@ -17,5 +17,5 @@ module.exports =  mongoose.Schema({
       enum: ['pending', 'ongoing', 'completed']
     }],
     default: ['pending']
-  }
+  },
 });
