@@ -7,7 +7,9 @@ module.exports =  mongoose.Schema({
   },
   age: {
     type: Number,
-    required :'age is mandatory'
+    required :'age is mandatory',
+    min: [18, 'too young'],
+    max: 99
   },
   company: String,
   email: String,
