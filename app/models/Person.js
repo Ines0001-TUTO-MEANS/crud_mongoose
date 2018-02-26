@@ -7,12 +7,7 @@ var ageValidator = [
     validator: 'isInt',
     message: 'Age must be an integer value',
   }),
-  validate({
-    validator: function(val) {
-      return val > 17
-    },
-    message: 'Age must be superior at 18.',
-  })
+  
 ]
 
 
