@@ -29,9 +29,10 @@ var schema_person = require('./app/models/Person'),
     schema_task = require('./app/models/Task');
 
 // Using query builder
+
 restify.serve(router, mongoose.model('Users', schema_person ))
 restify.serve(router, mongoose.model('Tasks', schema_task ))
-  
+
 app.use(router)
 
 app.get("/", function (request, response) {
@@ -39,18 +40,7 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + '/index.html');
 });
 
-var apiRoutes = express.Router(); 
 
-// route to authenticate a user (POST http://localhost:8080/api/authenticate)
-...
-
-// route middleware to verify a token
-apiRoutes.use(function(req, res, next) {
-  return res.status(403).send({ 
-        success: false, 
-        message: 'No token provided.' 
-    });
-}
 
 // listen for requests :)
 var listener = app.listen(port, function () {
