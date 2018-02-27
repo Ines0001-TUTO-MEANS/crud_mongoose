@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const restify = require('express-restify-mongoose');
+const morgan      = require('morgan');
 const app = express();
 const router = express.Router();
 const port = process.env.PORT || 3000;
@@ -12,6 +13,10 @@ const port = process.env.PORT || 3000;
 /// configuration ===============================================================
 app.use(bodyParser.json());
 app.use(methodOverride());
+
+// use morgan to log requests to the console
+app.use(morgan('dev'));
+
 // mongoose instance connection url connection
 mongoose.connect('mongodb://admin:ines1970@ds239117.mlab.com:39117/nodejs-test'); 
 
