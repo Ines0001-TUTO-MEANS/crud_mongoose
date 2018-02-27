@@ -6,11 +6,6 @@ var mailValidator = [
   validate({
     validator: 'isEmail',
     message: 'email property is not valid Email',
-  })],
-    adminValidator =[
-  validate({
-    validator:'isBoolean',
-    message:'admin property not boolean value'
   })]
 
 
@@ -32,7 +27,8 @@ module.exports =  mongoose.Schema({
   password: String,
   admin: {
     type: Boolean,
-    validate: adminValidator
+    //message:'property is not a boolean value',
+    default: false
   },
   tasks : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tasks' }]
 });
