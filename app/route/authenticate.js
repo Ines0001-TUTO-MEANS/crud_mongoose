@@ -1,4 +1,19 @@
+//================================== routes for API AUTHENTICATE ====================================
 
+var express = require('express');
+
+module.exports = (function() {
+    'use strict';
+    var api = express.Router();
+
+    api.get('/somget', function(req, res) {
+        res.send('some json');
+    });
+
+    return api;
+})();
+
+/*
 // route to authenticate a user (POST http://localhost:8080/api/authenticate)
 apiRoutes.post('/authenticate', function(req, res) {
 
@@ -40,3 +55,5 @@ apiRoutes.post('/authenticate', function(req, res) {
 
   });
 });
+
+*/
