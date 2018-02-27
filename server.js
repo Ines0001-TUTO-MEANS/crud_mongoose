@@ -6,6 +6,11 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const restify = require('express-restify-mongoose');
 const morgan      = require('morgan');
+
+// module api routing
+const authenticate = require('./app/routes/authenticate');
+
+const router = express.Router();
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -33,6 +38,9 @@ restify.serve(router, mongoose.model('Users', schema_person ))
 restify.serve(router, mongoose.model('Tasks', schema_task ))
 
 app.use(router)
+
+// Using routing API
+app.use(authenticate)
 
 app.get("/", function (request, response) {
   

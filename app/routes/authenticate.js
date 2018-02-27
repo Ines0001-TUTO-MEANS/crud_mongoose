@@ -6,8 +6,8 @@ module.exports = (function() {
     'use strict';
     var api = express.Router();
 
-    api.get('/somget', function(req, res) {
-        res.send('some json');
+    api.get('/authenticate', function(req, res) {
+        res.json({ message: 'Welcome to authenticate API !' });
     });
 
     return api;
