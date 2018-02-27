@@ -39,6 +39,19 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + '/index.html');
 });
 
+var apiRoutes = express.Router(); 
+
+// route to authenticate a user (POST http://localhost:8080/api/authenticate)
+...
+
+// route middleware to verify a token
+apiRoutes.use(function(req, res, next) {
+  return res.status(403).send({ 
+        success: false, 
+        message: 'No token provided.' 
+    });
+}
+
 // listen for requests :)
 var listener = app.listen(port, function () {
   console.log('Your app is listening on port ' + listener.address().port);
