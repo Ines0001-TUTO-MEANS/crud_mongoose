@@ -27,7 +27,7 @@ module.exports =  mongoose.Schema({
   password: String,
   admin: {
     type: Boolean,
-    //message:'property is not a boolean value',
+    message:'property is not a boolean value',
     default: false
   },
   tasks : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tasks' }]
