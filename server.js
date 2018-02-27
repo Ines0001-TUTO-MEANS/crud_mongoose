@@ -41,9 +41,5 @@ app.get("/", function (request, response) {
 
 // listen for requests :)
 var listener = app.listen(port, function () {
-  console.log('url:' + listener.url());
   console.log('Your app is listening on port ' + listener.address().port);
 });
-
-
-//'Hello! The API is at http://localhost:' + port + '/api'
