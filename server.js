@@ -7,7 +7,6 @@ const mongoose = require('mongoose');
 const restify = require('express-restify-mongoose');
 const morgan      = require('morgan');
 const app = express();
-const router = express.Router();
 const port = process.env.PORT || 3000;
 
 /// configuration ===============================================================
