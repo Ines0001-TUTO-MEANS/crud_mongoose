@@ -40,7 +40,7 @@ restify.serve(router, mongoose.model('Tasks', schema_task ))
 app.use(router)
 
 // Using routing API
-app.use(authenticate)
+//app.use(authenticate)
 
 app.get("/", function (request, response) {
   

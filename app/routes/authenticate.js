@@ -1,13 +1,20 @@
 //================================== routes for API AUTHENTICATE ====================================
 
 var express = require('express');
+var schema_person = require('./app/models/Person'),
 
 module.exports = (function() {
     'use strict';
     var api = express.Router();
+    var User = mongoose.model('Users', schema_person );
 
     api.post('/authenticate', function(req, res) {
       // find the user
+      api.get('',function(req,res){})
+      
+      
+      
+      
       User.findOne({
         name: req.body.name
       }, function(err, user) {
