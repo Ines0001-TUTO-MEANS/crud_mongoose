@@ -10,7 +10,7 @@ module.exports = (function() {
 
     api.post('/authenticate', function(req, res) {
       // find the user
-      api.get('/api/V1/users?query={"name":"Emmaunuel001"}',function(req,res){
+      $http.get('/api/V1/users?query={"name":"Emmaunuel001"}',function(req,res){
         res.json(
       
       })
