@@ -8,7 +8,7 @@ const restify = require('express-restify-mongoose');
 const morgan      = require('morgan');
 
 // module api routing
-const authenticate = require('./app/routes/authenticate');
+//const authenticate = require('./app/routes/authenticate');
 
 const router = express.Router();
 const app = express();

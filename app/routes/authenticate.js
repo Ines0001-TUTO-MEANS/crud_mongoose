@@ -10,7 +10,10 @@ module.exports = (function() {
 
     api.post('/authenticate', function(req, res) {
       // find the user
-      api.get('',function(req,res){})
+      api.get('/api/V1/users?query={"name":"Emmaunuel001"}',function(req,res){
+        res.json(
+      
+      })
       
       
       
