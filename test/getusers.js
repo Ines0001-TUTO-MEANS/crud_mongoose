@@ -1,19 +1,16 @@
 const request = require('request')
 
-request.get({
-  url: '/api/v1/Model',
+const options = {
+  url: '/api/v1/users',
   qs: {
-    query: JSON.stringify({
-      $or: [{
-        name: '~Another'
-      }, {
-        $and: [{
-          name: '~Product'
-        }, {
-          price: '<=10'
-        }]
-      }],
-      price: 20
+    select: JSON.stringify({
+      name:1
     })
   }
-})
+};
+
+
+request.get(options, function (e, r, user) {
+  console.log('error:', e);    
+  console.log('users', user)
+    })
