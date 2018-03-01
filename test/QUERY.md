@@ -5,7 +5,7 @@ npm package [express-restify-mongoose](https://florianholzapfel.github.io/expres
 
 With Postman
 -----------
-Query:
+**Query:**
 ```
 GET /api/V1/users?select={"name":1}
 ```
@@ -23,7 +23,7 @@ result:
 {"_id":"5a92e6531da14db2f7f069cc","name":"Carey"},
 {"_id":"5a92e6531da14db2f7f069cd","name":"Sharp"}]
 ```
-Query:
+**Query:**
 ```
 GET /api/V1/users?query={"name":{"$regex":"(?i)(re)"}}&select={"name":1}
 ```
@@ -33,7 +33,7 @@ Result:
 {"_id":"5a92e6531da14db2f7f069cc","name":"Carey"}]
 ```
 
-Query:
+**Query:**
 ```
 GET /api/V1/users?query={"admin": { "$ne": null }}&select={"name":1,"admin":1}
 ```
