@@ -26,8 +26,21 @@ router.get('/about', function(req, res) {
 });
 
 // apply the routes to our application
-app.use('/', router);
 
+router.use(function timeLog(req,res,next){
+  console.log('Time:', Date.now());
+  next();
+})
+
+router.get('/birds',function(req,res){
+  res.send('Birds home Page');
+})
+
+router.get('/birds/about',function(req,res){
+  res.send('Birds about Page');
+})
+
+app.use('/', router);
 
 
 
