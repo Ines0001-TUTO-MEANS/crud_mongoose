@@ -26,7 +26,7 @@ app.use(morgan('dev'));
 mongoose.connect('mongodb://admin:ines1970@ds239117.mlab.com:39117/nodejs-test'); 
 
 // Chargement de index.html automatiquement
-app.use(express.static('source'));
+//app.use(express.static('source'));
 
 // Testing module mongoose-express-router'
 
@@ -46,12 +46,12 @@ app.use(router)
 //Test with Birds router
 
 app.use('/birds',birds)
-
+/*
 app.get("/", function (request, response) {
   
   response.sendFile(__dirname + '/index.html');
 });
-
+*/
 
 
 // listen for requests :)
