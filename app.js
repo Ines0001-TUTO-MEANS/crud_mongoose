@@ -15,12 +15,12 @@ const port = process.env.PORT || 3000;
 
 
 //Test with Birds router
-
+/*
 router.use(function timeLog(req,res,next){
   console.log('Time:', Date.now());
   next();
 })
-
+*/
 router.get('/birds',function(req,res){
   res.send('Birds home Page');
 })
