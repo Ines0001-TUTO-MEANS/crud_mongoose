@@ -1,7 +1,7 @@
 const request = require('request')
 
 const options = {
-  url: '/api/v1/users',
+  url: 'localhost:3000/api/v1/users',
   qs: {
     select: JSON.stringify({
       name:1
