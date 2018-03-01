@@ -5,10 +5,25 @@ var express = require('express'),
 
 var schema = require('../models/Person')
 var options = {
+  prereq: function(req) {
+      if (!req.isAuthenticated()) {
+        return false;
+      }
+
+      if (req.method.toLowerCase() === 'post') {
+        req.body.user = req.user._id.toHexString();
+      }
+
+      return true;
+    },
   access: function(req) {
-      
-        return 'protected';
-  }
+    if (req.isAuthenticated() && req.method.toLowerCase() === 'post') {
+      return 'protected';
+    } else {
+      return 'public';
+    }
+  },
+  protected: ['name', 'age', 'email', 'password','admin']
       
 }
 // Using query builder
