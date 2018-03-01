@@ -10,8 +10,6 @@ const morgan      = require('morgan');
 // module api routing
 //const authenticate = require('./app/routes/authenticate');
 
-
-const router = express.Router();
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -28,18 +26,10 @@ mongoose.connect('mongodb://admin:ines1970@ds239117.mlab.com:39117/nodejs-test')
 // Chargement de index.html automatiquement
 app.use(express.static('source'));
 
-// Testing module mongoose-express-router'
-
-var schema_person = require('./app/models/Person'),
-    schema_task = require('./app/models/Task');
-
-// Using query builder
-
-restify.serve(router, mongoose.model('Users', schema_person ))
-restify.serve(router, mongoose.model('Tasks', schema_task ))
-
-app.use(router)
+// Routing
+app.use('/', require('./app/routes/users'))
 app.use('/cars', require('./app/routes/cars'))
+
 // Using routing API
 //app.use(authenticate)
 
