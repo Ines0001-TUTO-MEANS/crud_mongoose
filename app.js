@@ -1,6 +1,7 @@
 // server.js
 // where your node app starts
 const express = require('express');
+var birds = require('./app/routes/birds')
 const app = express();
 // module api routing
 
@@ -14,34 +15,18 @@ const port = process.env.PORT || 3000;
 
 
 
-//Test with Birds router
-/*
-router.use(function timeLog(req,res,next){
-  console.log('Time:', Date.now());
-  next();
-})
-*/
-/*
-router.get('/birds',function(req,res){
-  res.send('Birds home Page');
-  
-})
-
-router.get('/birds/about',function(req,res){
-  res.send('Birds about Page');
-  
-})
-*/
-
-app.get("/birds/about", function (request, response) {
-  
-  response.send("About Page");
+// home page route (http://localhost:8080)
+router.get('/', function(req, res) {
+    res.send('im the home page!');  
 });
 
-app.get("/home", function (request, response) {
-  
-  response.send("Home Page");
+// about page route (http://localhost:8080/about)
+router.get('/about', function(req, res) {
+    res.send('im the about page!'); 
 });
+
+// apply the routes to our application
+app.use('/', router);
 
 
 
