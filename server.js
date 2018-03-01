@@ -27,6 +27,7 @@ app.use(express.static('source'));
 
 // Routing
 app.use('/', require('./app/routes/users'))
+app.use('/', require('./app/routes/tasks'))
 app.use('/cars', require('./app/routes/cars'))
 //app.use(authenticate)
 
