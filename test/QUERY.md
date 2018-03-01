@@ -1,6 +1,6 @@
 TEST RESTFULY
 ==============
-npm package [express-restify-mongoose](https://florianholzapfel.github.io/express-restify-mongoose/ target="_blank").
+npm package [express-restify-mongoose](https://florianholzapfel.github.io/express-restify-mongoose/).
 
 
 With Postman
