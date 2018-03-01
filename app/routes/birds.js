@@ -7,11 +7,11 @@ router.use(function timeLog(req,res,next){
 })
 
 router.get('/birds',function(req,res){
-  res.send('Birds home Page')
+  res.send('Birds home Page');
 })
 
 router.get('/birds/about',function(req,res){
-  res.send('Birds about Page')
+  res.send('Birds about Page');
 })
 
 module.exports = router;

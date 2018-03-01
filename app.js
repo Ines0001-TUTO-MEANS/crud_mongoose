@@ -1,13 +1,13 @@
 // server.js
 // where your node app starts
 const express = require('express');
-
-// module api routing
-//const authenticate = require('./app/routes/authenticate');
-var birds = require('./app/routes/birds')
-
-
 const app = express();
+// module api routing
+
+var router = express.Router();
+
+
+
 const port = process.env.PORT || 3000;
 
 /// configuration ===============================================================
@@ -16,7 +16,19 @@ const port = process.env.PORT || 3000;
 
 //Test with Birds router
 
-//app.use('/birds',birds)
+router.use(function timeLog(req,res,next){
+  console.log('Time:', Date.now());
+  next();
+})
+
+router.get('/birds',function(req,res){
+  res.send('Birds home Page');
+})
+
+router.get('/birds/about',function(req,res){
+  res.send('Birds about Page');
+})
+
 
 
 
