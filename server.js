@@ -9,6 +9,7 @@ const morgan      = require('morgan');
 
 // module api routing
 //const authenticate = require('./app/routes/authenticate');
+var birds = require('./app/routes/birds')
 
 const router = express.Router();
 const app = express();
@@ -33,14 +34,18 @@ var schema_person = require('./app/models/Person'),
     schema_task = require('./app/models/Task');
 
 // Using query builder
-
+/*
 restify.serve(router, mongoose.model('Users', schema_person ))
 restify.serve(router, mongoose.model('Tasks', schema_task ))
 
 app.use(router)
-
+*/
 // Using routing API
 //app.use(authenticate)
+
+//Test with Birds router
+
+app.use('/birds',birds)
 
 app.get("/", function (request, response) {
   
