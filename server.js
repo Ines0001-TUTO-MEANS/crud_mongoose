@@ -4,7 +4,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
-const restify = require('express-restify-mongoose');
 const morgan      = require('morgan');
 
 // module api routing
@@ -29,8 +28,6 @@ app.use(express.static('source'));
 // Routing
 app.use('/', require('./app/routes/users'))
 app.use('/cars', require('./app/routes/cars'))
-
-// Using routing API
 //app.use(authenticate)
 
 
