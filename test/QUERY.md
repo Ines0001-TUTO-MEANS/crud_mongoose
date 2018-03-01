@@ -32,3 +32,12 @@ Result:
 [{"_id":"5a92e6531da14db2f7f069cb","name":"Reeves"},
 {"_id":"5a92e6531da14db2f7f069cc","name":"Carey"}]
 ```
+
+Query:
+```
+GET /api/V1/users?query={"admin": { "$ne": null }}&select={"name":1,"admin":1}
+```
+Result:
+```
+[{"_id":"5a95651fb001d51ff7031765","name":"Ines0002","admin":false},{"_id":"5a956a71b001d51ff7031766","name":"Emmaunuel001","admin":true},{"_id":"5a956de52ec7dd37edfbd914","name":"Emmaunuel002","admin":false}]
+```
