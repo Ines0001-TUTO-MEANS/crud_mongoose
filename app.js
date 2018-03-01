@@ -21,13 +21,27 @@ router.use(function timeLog(req,res,next){
   next();
 })
 */
+/*
 router.get('/birds',function(req,res){
   res.send('Birds home Page');
+  
 })
 
 router.get('/birds/about',function(req,res){
   res.send('Birds about Page');
+  
 })
+*/
+
+app.get("/birds/about", function (request, response) {
+  
+  response.send("About Page");
+});
+
+app.get("/home", function (request, response) {
+  
+  response.send("Home Page");
+});
 
 
 
