@@ -9,7 +9,29 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 
 1. Authenticate a Node.js API with JSON Web Tokens [about scotch.io/tutorials](https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens).
 2. Item2
+### authentification with JWT
+```
+// =======================
+var express     = require('express');
+var app         = express();
+var bodyParser  = require('body-parser');
+...
 
+var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
+
+// =======================
+// configuration =========
+// =======================
+app.set('superSecret', config.secret); // secret variable
+
+// use body parser so we can get info from POST and/or URL parameters
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+...
+
+
+
+```
 
 ## Mon Projet
 
