@@ -10,6 +10,9 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 1. Authenticate a Node.js API with JSON Web Tokens [about scotch.io/tutorials](https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens).
 2. Item2
 ### authentification with JWT
+
+Etape de vérification du user et si celui-ci a les droits (admin, habilitation,...)
+Envoie d'un token via JWT
 ```
 // =======================
 var express     = require('express');
@@ -45,6 +48,43 @@ apiRoutes.post('/authenticate', function(req, res) {
         token: token
       });
 })  
+```
+Dans les entêtes de requêtes utilisées ont vérifie si le token est bien présent
+et si oui est il valide
+```
+// route middleware to verify a token
+apiRoutes.use(function(req, res, next) {
+
+  // check header or url parameters or post parameters for token
+  var token = req.body.token || req.query.token || req.headers['x-access-token'];
+
+  // decode token
+  if (token) {
+
+    // verifies secret and checks exp
+    jwt.verify(token, app.get('superSecret'), function(err, decoded) {      
+      if (err) {
+        return res.json({ success: false, message: 'Failed to authenticate token.' });    
+      } else {
+        // if everything is good, save to request for use in other routes
+        req.decoded = decoded;    
+        next();
+      }
+    });
+
+  } else {
+
+    // if there is no token
+    // return an error
+    return res.status(403).send({ 
+        success: false, 
+        message: 'No token provided.' 
+    });
+
+  }
+});
+
+
 ```
 
 ## Mon Projet
