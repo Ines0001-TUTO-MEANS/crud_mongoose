@@ -7,7 +7,7 @@ var schema = require('../models/Person')
 var options = {
   
   access: function(req) {
-    return 'public';
+    return 'protected';
   },
   protected: ['name', 'age', 'email', 'password','admin']
       
