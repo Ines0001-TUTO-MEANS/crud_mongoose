@@ -8,7 +8,7 @@ router.post('/authenticate', function(req, res) {
   res.send({
           success: true,
           message: 'Enjoy your token!',
-          token: 'xxxxx'
+          body: req.body
         })
 })
 
