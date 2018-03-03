@@ -2,12 +2,12 @@
   "//1": "describes your app and its dependencies",
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
-  "name": "my-glitch-app",
+  "name": "Crud Mongoose client",
   "version": "0.0.1",
-  "description": "What am I about?",
+  "description": "Tutorial Client/Server CRUD Mongoose + securing JWT pour interface RESTfully",
   "main": "",
   "scripts": {
-    "start": ""
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -16,6 +16,7 @@
     "express-restify-mongoose": "^4.3.0",
     "gulp": "^3.9.1",
     "gulp-inject": "^4.3.1",
+    "jsonwebtoken": "^8.2.0",
     "method-override": "^2.3.10",
     "mongoose": "^5.0.7",
     "mongoose-validator": "^2.0.2",

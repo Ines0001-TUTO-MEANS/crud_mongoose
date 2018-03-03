@@ -12,28 +12,23 @@ var mailValidator = [
 module.exports =  mongoose.Schema({  
   name: {
     type: String,
-    access: 'protected',
     required: 'name is mandatory'
   },
   age: {
     type: Number,
-    access: 'protected',
     required :'age is mandatory',
     min:[18, 'age limit 18']
   },
   company: String,
   email: {
     type: String,
-    access: 'protected',
     validate: mailValidator
   },
   password: {
-    type: String,
-    access: 'protected'
+    type: String
   },
   admin: {
     type: Boolean,
-    access: 'protected',
     message:'property is not a boolean value',
     default: false
   },
