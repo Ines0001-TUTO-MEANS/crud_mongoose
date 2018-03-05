@@ -9,21 +9,22 @@
                   templateUrl: 'components/register/user.register.html',
                   controller: 'RegisterController'
             }}})
-          .state('users', {
+          .state('error', {
             views:{
               'main':{
-                  url: '/user',
-                  templateUrl: 'components/users/nav/nav.html'
+                  url: '/error',
+                  templateUrl: 'components/error/page/error.page.html',
+                  controller: "ErrorPageController"
                   
             }}})
 
       
       
-        //$urlRouterProvider.otherwise('/register')
+        $urlRouterProvider.otherwise('/register')
     }]);
   
     app.run(['$state',function($state){
-        $state.go('register',undefined,{reload:true})
+        //$state.go('register',undefined,{reload:true})
     
     }]);
 })(CrudMongoose);
