@@ -1,27 +1,26 @@
 (function(app) {
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-        $stateProvider.state('list', {
-          views:{
-            'users':{
-                url: '/users/list',
+        $stateProvider
+        .state('users', {
+                url: '/users',
+                templateUrl: 'components/users/index.html'
+            })
+        .state('users.list', {
+                url: '/list',
                 templateUrl: 'components/users/list/users.list.html',
                 controller: 'UsersListController'
-            }}})
-        .state('detail', {
-          views:{
-            'users':{
-                url: '/user/detail/:idUser',
+            })
+        .state('users.detail', {
+                url: '/detail/:idUser',
                 templateUrl: 'components/users/detail/user.detail.html',
                 controller: 'UserDetailController'
-            }}})
-        .state('create', {
-          views:{
-            'users':{
-                 url: '/user/create',
+            })
+        .state('users.create', {
+                url: '/create',
                 templateUrl: 'components/users/create/user.create.html',
                 controller: 'UserCreateController'
-            }}})
+            })
       
       
         //$urlRouterProvider.otherwise('/users/list')
