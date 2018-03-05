@@ -2,7 +2,7 @@
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
         $stateProvider.state('error', {
-            url: '/error/:id',
+            url: '/error/:status',
             templateUrl: 'components/error/page.html',
             controller: 'ErrorPageController'
         })

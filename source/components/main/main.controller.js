@@ -15,7 +15,7 @@ Les actions:
     $scope.mainEventCreate = function(){
       $scope.show_state= 'create';
       $scope.currentNavItem ='create';
-      $state.go('create',undefined,{reload:true});
+      $state.go('users.create',undefined,{reload:true});
     }
     
     
