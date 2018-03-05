@@ -2,31 +2,33 @@
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
         $stateProvider.state('list', {
-            url: '/users/list',
-            templateUrl: 'components/users/list/users.list.html',
-            controller: 'UsersListController'
-        })
+          views:{
+            'users':{
+                url: '/users/list',
+                templateUrl: 'components/users/list/users.list.html',
+                controller: 'UsersListController'
+            }}})
         .state('detail', {
-            url: '/user/detail/:idUser',
-            templateUrl: 'components/users/detail/user.detail.html',
-            controller: 'UserDetailController'
-        })
+          views:{
+            'users':{
+                url: '/user/detail/:idUser',
+                templateUrl: 'components/users/detail/user.detail.html',
+                controller: 'UserDetailController'
+            }}})
         .state('create', {
-            url: '/user/create',
-            templateUrl: 'components/users/create/user.create.html',
-            controller: 'UserCreateController'
-        })
-      .state('register', {
-            url: '/user/register',
-            templateUrl: 'components/users/register/user.register.html',
-            controller: ''
-        })
+          views:{
+            'users':{
+                 url: '/user/create',
+                templateUrl: 'components/users/create/user.create.html',
+                controller: 'UserCreateController'
+            }}})
       
-        $urlRouterProvider.otherwise('/users/register')
+      
+        $urlRouterProvider.otherwise('/users/list')
     }]);
   
     app.run(['$state',function($state){
-        $state.go('register',undefined,{reload:true})
+        //$state.go('register',undefined,{reload:true})
     
     }]);
 })(CrudMongoose);
