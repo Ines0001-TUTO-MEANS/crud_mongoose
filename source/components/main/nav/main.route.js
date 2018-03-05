@@ -2,17 +2,19 @@
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
         $stateProvider
-          .state('register', {views:{'main':{
+          .state('register', {
             url: '/register',
-            templateUrl: 'components/register/user.register.html',
-            controller: 'RegisterController'  
-          }}})
-          .state('error', {views:{'main':{
+            templateUrl: 'components/register/user.register.html'
+              
+          })
+          .state('register.error', {
             url: '/error',
             templateUrl: 'components/error/page/error.page.html',
-            controller: "ErrorPageController"
+            controller: function($scope) {
+              $scope.error = {status:'error'};
+            }
                   
-          }}})
+          })
 
       
       
