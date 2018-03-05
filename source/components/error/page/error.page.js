@@ -7,8 +7,8 @@ Les actions:
 
 */
 (function(app) {
-	app.controller('ErrorPageController', ['$scope','$state',function($scope,$state) {
-    $scope.error = false;
+	app.controller('ErrorPageController', ['$scope','$state','$stateParams',function($scope,$state,$stateParams) {
+    $scope.error = $stateParams.number;
     $scope.currentNavItem ='list';
     
     $scope.mainEventCreate = function(){
