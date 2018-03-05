@@ -16,12 +16,17 @@
             templateUrl: 'components/users/create/user.create.html',
             controller: 'UserCreateController'
         })
+      .state('register', {
+            url: '/user/register',
+            templateUrl: 'components/users/register/user.register.html',
+            controller: ''
+        })
       
-        $urlRouterProvider.otherwise('/users/list')
+        $urlRouterProvider.otherwise('/users/register')
     }]);
   
     app.run(['$state',function($state){
-        //$state.go('list',undefined,{reload:true})
+        $state.go('register',undefined,{reload:true})
     
     }]);
 })(CrudMongoose);
