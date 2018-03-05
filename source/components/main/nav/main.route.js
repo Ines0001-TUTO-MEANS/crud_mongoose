@@ -11,7 +11,7 @@
         
       
       
-        $urlRouterProvider.otherwise('/register')
+        //$urlRouterProvider.otherwise('/register')
     }]);
   
     app.run(['$state',function($state){

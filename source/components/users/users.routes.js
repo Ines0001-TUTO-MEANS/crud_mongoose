@@ -24,7 +24,7 @@
             }}})
       
       
-        $urlRouterProvider.otherwise('/users/list')
+        //$urlRouterProvider.otherwise('/users/list')
     }]);
   
     app.run(['$state',function($state){
