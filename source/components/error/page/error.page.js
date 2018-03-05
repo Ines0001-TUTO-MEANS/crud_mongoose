@@ -8,15 +8,9 @@ Les actions:
 */
 (function(app) {
 	app.controller('ErrorPageController', ['$scope','$state','$stateParams',function($scope,$state,$stateParams) {
-    $scope.error = $stateParams.number;
-    $scope.currentNavItem ='list';
+    $scope.error = $stateParams.error;
     
-    $scope.mainEventCreate = function(){
-      $scope.show_state= 'create';
-      $scope.currentNavItem ='create';
-      $state.go('create',undefined,{reload:true});
-    }
-    
+       
     
 	}]);
 })(CrudMongoose);

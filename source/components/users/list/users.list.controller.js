@@ -44,7 +44,8 @@
             $scope.users = data;
 
       },function(err){
-          $scope.users = err || 'Request failed';
+          $scope.users = [];
+          $state.go(data.error,err,{reload:true});
       })
     
     }
