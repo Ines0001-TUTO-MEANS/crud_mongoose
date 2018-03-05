@@ -2,15 +2,45 @@
 
 var express = require('express')
   , router = express.Router()
+  ,	mongoose = require('mongoose')
+  , jwt    = require('jsonwebtoken') // used to create, sign, and verify tokens
+
+  ,	schema = require('../models/Person')
+
 
 // post authenticate
 router.post('/authenticate', function(req, res) {
-  res.send({
-          success: true,
-          message: 'Enjoy your token!',
-          body: req.body
-        })
+  
+
+	var User = mongoose.model('Users', schema )
+
+	User.findOne({name:req.body.name},function(err,user){
+		if (err) throw err;
+
+	    if (!user) {
+	      	res.json({ success: false, message: 'Authentication failed. User not found.' });
+	    } else if (user) {
+	    	// check if password matches
+			if (user.password != req.body.password | !user.password) {
+				res.json({ success: false, message: 'Authentication failed. Wrong password.' });
+			} else {
+				const payload = {
+			      admin: user.admin,
+			      date: Date.now()
+			    };
+		        var token = jwt.sign(payload, 'superSecret', {
+		          expiresIn: 60 // expires in 60 seconds
+		        });
+
+				res.json({ success: true, message: 'Good your token JWT.',token:token });	
+			}
+
+	    }
+
+
+	})
 })
+
 
 
 

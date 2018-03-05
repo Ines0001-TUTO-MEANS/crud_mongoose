@@ -12,6 +12,9 @@ const morgan      = require('morgan');
 const app = express();
 const port = process.env.PORT || 3000;
 
+///set variable
+app.set('superSecret', "My secret"); // secret variable
+
 /// configuration ===============================================================
 app.use(bodyParser.json());
 app.use(methodOverride());
@@ -26,9 +29,10 @@ mongoose.connect('mongodb://admin:ines1970@ds239117.mlab.com:39117/nodejs-test')
 app.use(express.static('source'));
 
 // Routing
+app.use('/api', require('./app/routes/authenticate')) // must before api/ routing
 app.use('/', require('./app/routes/users'))
 app.use('/', require('./app/routes/tasks'))
-app.use('/api', require('./app/routes/authenticate'))
+
 //app.use(authenticate)
 
 
