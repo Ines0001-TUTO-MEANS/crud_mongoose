@@ -29,7 +29,7 @@ router.post('/authenticate', function(req, res) {
 			      date: Date.now()
 			    };
 		        var token = jwt.sign(payload, 'superSecret', {
-		          expiresIn: 60 // expires in 60 seconds
+		          expiresIn: 60*5 // expires in 5 minutes
 		        });
 
 				res.json({ success: true, message: 'Good your token JWT.',token:token });	
