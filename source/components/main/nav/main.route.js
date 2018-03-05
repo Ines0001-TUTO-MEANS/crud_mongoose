@@ -7,12 +7,12 @@
             templateUrl: 'components/register/user.register.html',
             controller: 'RegisterController'  
           }}})
-          .state('error', {
+          .state('error', {views:{'main':{
             url: '/error',
             templateUrl: 'components/error/page/error.page.html',
             controller: "ErrorPageController"
                   
-          })
+          }}})
 
       
       
