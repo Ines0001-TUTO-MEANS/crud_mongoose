@@ -8,7 +8,7 @@ Les actions:
 */
 (function(app) {
 	app.controller('ErrorPageController', ['$scope','$state','$stateParams',function($scope,$state,$stateParams) {
-    $scope.error = $stateParams.error;
+    $scope.error = {"success":false}//$stateParams.error;
     
        
     
