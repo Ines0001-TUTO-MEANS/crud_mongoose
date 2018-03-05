@@ -3,7 +3,7 @@
 
         $stateProvider.state('register', {
           views:{
-            'register':{
+            'main':{
                 url: '/register',
                 templateUrl: 'components/register/user.register.html',
                 controller: 'RegisterController'
@@ -15,7 +15,7 @@
     }]);
   
     app.run(['$state',function($state){
-        //$state.go('register',undefined,{reload:true})
+        $state.go('register',undefined,{reload:true})
     
     }]);
 })(CrudMongoose);

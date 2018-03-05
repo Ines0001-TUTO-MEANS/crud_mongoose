@@ -33,9 +33,9 @@
       <md-icon md-svg-src="img/icons/add_white_24px.svg"></md-icon>
     </md-button>
     <!--div class="text-center"><md-icon md-svg-src="/public/images/angular-logo.svg" aria-label="Angular"></md-icon></div-->
-     <md-content class="md-padding" layout-align="center" layout="column">
-        
-  </md-content>
+    <md-content class="md-padding" layout-align="center" layout="column">
+      <div ui-view="main" layout="column"></div> 
+    </md-content>
     <!-- bower:js -->
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.min.js"></script>
@@ -50,8 +50,10 @@
     <script src="/app.config.js"></script>
     <script src="/components/error/error.routes.js"></script>
     <script src="/components/main/main.controller.js"></script>
+    <script src="/components/register/user.register.controller.js"></script>
     <script src="/components/users/users.routes.js"></script>
     <script src="/components/error/page/error.page.js"></script>
+    <script src="/components/main/nav/main.route.js"></script>
     <script src="/components/users/create/user.create.controller.js"></script>
     <script src="/components/users/detail/user.detail.controller.js"></script>
     <script src="/components/users/list/users.list.controller.js"></script>
