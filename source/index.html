@@ -34,13 +34,7 @@
     </md-button>
     <!--div class="text-center"><md-icon md-svg-src="/public/images/angular-logo.svg" aria-label="Angular"></md-icon></div-->
      <md-content class="md-padding" layout-align="center" layout="column">
-        <md-nav-bar md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
-            <md-nav-item md-nav-sref="list"  name="list" value="list" >List Users</md-nav-item>
-            <md-nav-item md-nav-sref="detail" name="detail" value="detail" ng-show="show_state=='detail'">Detail User</md-nav-item>
-            <md-nav-item md-nav-sref="create" name="create" value="create" ng-show="show_state=='create'">Create User</md-nav-item>
-            
-        </md-nav-bar>
-        <div ui-view="main" layout="column"></div>  
+        
   </md-content>
     <!-- bower:js -->
     <script src="/bower_components/angular/angular.min.js"></script>
