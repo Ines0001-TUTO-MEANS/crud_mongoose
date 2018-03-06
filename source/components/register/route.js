@@ -12,7 +12,7 @@
           })
           .state('login', {
             url: '/login',
-            templateUrl: 'components/testPage/page.html',
+            templateUrl: 'components/register/register.login.html',
             controller: function($scope) {
               $scope.message = {Page:'login'};
             }
