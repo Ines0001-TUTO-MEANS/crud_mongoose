@@ -1,5 +1,5 @@
-<div layout="row">
-  <div flex="40">
+<div layout="row" layout-align="center">
+  <div flex="50">
     <md-card>
       <md-toolbar>
         <div class="md-toolbar-tools">
@@ -10,20 +10,31 @@
       </md-toolbar>
       
       <md-card-content>
-        <form ng-submit="">
-          <md-input-container class="md-block">
-            <label>E-mail</label>
-            <input type="email" ng-model="user.name" required>
-          </md-input-container>
+        <md-tabs md-dynamic-height md-border-bottom>
+          <md-tab label="login">
+            <form ng-submit="Login()">
+              <md-input-container class="md-block">
+                <label>E-mail</label>
+                <input type="email" ng-model="user.name" required>
+              </md-input-container>
+
+              <md-input-container class="md-block">
+                <label>Passowrd</label>
+                <input type="password" ng-model="user.password" required>
+              </md-input-container>
+
+              <md-button class="md-raised md-primary" type="submit">Login</md-button>
+
+            </form>
           
-          <md-input-container class="md-block">
-            <label>Passowrd</label>
-            <input type="password" ng-model="user.password" required>
-          </md-input-container>
+          </md-tab>
+          <md-tab label="register">
           
-          <md-button class="md-raised md-primary" type="submit">Login</md-button>
-          
-        </form>
+          </md-tab>
+        
+        </md-tabs>
+        
+        
       
       </md-card-content>
     
