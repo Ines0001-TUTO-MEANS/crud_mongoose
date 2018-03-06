@@ -3,18 +3,19 @@
     <md-card>
       <md-toolbar class="md-warn" >
         <div class="md-toolbar-tools">
-        <h2>Error {{status}}</h2>
+        <h2>Oops Error !</h2>
         </div>
       </md-toolbar> 
       
       <md-card-content>
-        //content
-      
+        <h4>{{status}}</h4>
+        <md-divider></md-divider>
+        //comment
       </md-card-content>
       
-      <md-card-actions layout="row" layout-align="end center">
-        Retour <a href="_target">Home</a>
-      
+      <md-card-actions layout="row">
+        <a ui-sref="home" class="md-primary">Home</a>
+        <a ui-sref="about" class="md-primary">About</a>
       </md-card-actions>
       
     </md-card>
