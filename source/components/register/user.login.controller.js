@@ -5,7 +5,8 @@
     
     $scope.login = function(user){
       console.log(user)
-      User_factory.authenticate(function(data){
+      var user_login = new User_factory(user)
+      user_login.$authenticate(function(data){
             console.log(data);
 
       },function(err){
