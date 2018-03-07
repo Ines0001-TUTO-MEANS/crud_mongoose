@@ -5,6 +5,12 @@
     
     $scope.login = function(user){
       console.log(user)
+      User_factory.authenticate(function(data){
+            console.log(data);
+
+      },function(err){
+          console.log(err)
+      })
     
     }
     

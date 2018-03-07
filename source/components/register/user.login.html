@@ -19,7 +19,7 @@
             <form name="simple" novalidate >
               <md-input-container class="md-block">
                 <label>E-mail</label>
-                <input type="email" ng-model="user.name" required>
+                <input type="email" ng-model="user.email" required>
               </md-input-container>
 
               <md-input-container class="md-block">
@@ -27,7 +27,7 @@
                 <input type="password" ng-model="user.password" required>
               </md-input-container>
 
-              <md-button class="md-raised md-primary"  ng-click="Login(user)">Login</md-button>
+              <md-button class="md-raised md-primary"  ng-click="login(user)">Login</md-button>
 
             </form>
           
