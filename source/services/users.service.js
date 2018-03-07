@@ -6,7 +6,8 @@
                                  // the server return all the todos after you create a record
                                  'save':   {method:'POST', isArray:true},
                                  'query':   {method:'GET', isArray:true},
-                                 'delete':   {method:'DELETE'}
+                                 'delete':   {method:'DELETE'},
+                                 'authenticate': {method:'POST',url:'/'},
                                 };
       return $resource('/api/v1/users/:id',
                        // paramètre résolue automatiquement sur $save(), $update(), $delete()
