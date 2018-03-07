@@ -14,6 +14,7 @@ router.post('/authenticate', function(req, res) {
 
 	var User = mongoose.model('Users', schema )
 
+
 	User.findOne({email:req.body.email},function(err,user){
 		if (err) throw err;
 
@@ -29,6 +30,7 @@ router.post('/authenticate', function(req, res) {
 			      date: Date.now()
 			    };
 		        var token = jwt.sign(payload, 'superSecret', {
+
 		          expiresIn: 60*5 // expires in 5 minutes
 		        });
 
