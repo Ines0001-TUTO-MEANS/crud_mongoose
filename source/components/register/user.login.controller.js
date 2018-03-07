@@ -4,7 +4,7 @@
     $scope.imagePath = '/img/icons/nodejs.png';
     
     $scope.login = function(){
-      
+      console.log(user)
     
     }
     
