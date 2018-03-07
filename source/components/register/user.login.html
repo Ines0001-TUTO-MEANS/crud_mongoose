@@ -16,7 +16,7 @@
         <md-tabs md-dynamic-height md-border-bottom>
           <!-- Login Form ---->
           <md-tab label="login">
-            <form ng-submit="Login(user)">
+            <form name="simple" novalidate >
               <md-input-container class="md-block">
                 <label>E-mail</label>
                 <input type="email" ng-model="user.name" required>
@@ -27,7 +27,7 @@
                 <input type="password" ng-model="user.password" required>
               </md-input-container>
 
-              <md-button class="md-raised md-primary" type="submit">Login</md-button>
+              <md-button class="md-raised md-primary" type="submit" ng-click="Login(user)">Login</md-button>
 
             </form>
           
