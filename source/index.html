@@ -11,7 +11,6 @@
           content="initial-scale=1, maximum-scale=1, user-scalable=no" />
   
     <!-- css:css -->
-    <link rel="stylesheet" href="/components/users/create/block.css">
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.min.css">
     <!-- endinject -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -34,15 +33,16 @@
       <md-icon md-svg-src="img/icons/add_white_24px.svg"></md-icon>
     </md-button>
     <!--div class="text-center"><md-icon md-svg-src="/public/images/angular-logo.svg" aria-label="Angular"></md-icon></div-->
-     <md-content class="md-padding" layout-align="center" layout="column">
-        <md-nav-bar md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
-            <md-nav-item md-nav-sref="list"  name="list" value="list" >List Users</md-nav-item>
-            <md-nav-item md-nav-sref="detail" name="detail" value="detail" ng-show="show_state=='detail'">Detail User</md-nav-item>
-            <md-nav-item md-nav-sref="create" name="create" value="create" ng-show="show_state=='create'">Create User</md-nav-item>
-            
-        </md-nav-bar>
-        <div ui-view layout="column"></div>  
-  </md-content>
+    
+  
+  
+    <md-content class="md-padding" layout-align="center" layout="column">
+      <div ui-view layout="column"></div> 
+    </md-content>
+    
+  
+  
+  
     <!-- bower:js -->
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.min.js"></script>
@@ -55,8 +55,12 @@
     
     <!-- js:js -->
     <script src="/app.config.js"></script>
+    <script src="/components/error/page.js"></script>
+    <script src="/components/error/route.js"></script>
     <script src="/components/main/main.controller.js"></script>
-    <script src="/components/users/users.routes.js"></script>
+    <script src="/components/register/route.js"></script>
+    <script src="/components/register/user.register.controller.js"></script>
+    <script src="/components/users/route.js"></script>
     <script src="/components/users/create/user.create.controller.js"></script>
     <script src="/components/users/detail/user.detail.controller.js"></script>
     <script src="/components/users/list/users.list.controller.js"></script>

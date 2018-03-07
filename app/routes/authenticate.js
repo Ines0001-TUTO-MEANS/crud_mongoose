@@ -14,7 +14,8 @@ router.post('/authenticate', function(req, res) {
 
 	var User = mongoose.model('Users', schema )
 
-	User.findOne({name:req.body.name},function(err,user){
+
+	User.findOne({email:req.body.email},function(err,user){
 		if (err) throw err;
 
 	    if (!user) {
@@ -29,7 +30,8 @@ router.post('/authenticate', function(req, res) {
 			      date: Date.now()
 			    };
 		        var token = jwt.sign(payload, 'superSecret', {
-		          expiresIn: 60 // expires in 60 seconds
+
+		          expiresIn: 60*5 // expires in 5 minutes
 		        });
 
 				res.json({ success: true, message: 'Good your token JWT.',token:token });	
