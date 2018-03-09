@@ -7,7 +7,7 @@
                                  'save':   {method:'POST', isArray:true},
                                  'query':   {method:'GET', isArray:true},
                                  'delete':   {method:'DELETE'},
-                                 'authenticate': {method:'POST',url:'api/authenticate'},
+                                 'authenticate': {method:'POST',url:'/authenticate'},
                                 };
       return $resource('/api/v1/users/:id',
                        // paramètre résolue automatiquement sur $save(), $update(), $delete()
