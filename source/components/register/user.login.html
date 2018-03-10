@@ -16,11 +16,11 @@
         <md-tabs md-dynamic-height md-border-bottom>
           <!-- Login Form ---->
           <md-tab label="login">
-            <form name="login" novalidate >
+            <form name="form.login" novalidate >
               <md-input-container class="md-block">
                 <label>E-mail</label>
-                <input type="email" ng-model="user.email" required>
-                <div ng-messages="login.email.$error" ng-show="login.email.$dirty">
+                <input type="email" name="email" ng-model="user.email" required>
+                <div ng-messages="form.login.email.$error" ng-show="form.login.email.$dirty">
                   <div ng-message="required">Merci de saisir une adresse mail</div>
                   <div ng-message="email">Le champ saisie n'est pas au format attendu</div>
                 </div>
@@ -28,14 +28,14 @@
 
               <md-input-container class="md-block">
                 <label>Password</label>
-                <input type="password" ng-model="user.password" required>
-                <div ng-messages="login.password.$error" ng-show="login.password.$dirty">
+                <input type="password" name="password" ng-model="user.password" required>
+                <div ng-messages="form.login.password.$error" ng-show="form.login.password.$dirty">
                   <div ng-message="required">Merci de saisir une adresse mail</div>
                   
                 </div>
               </md-input-container>
 
-              <md-button class="md-raised md-primary"  ng-click="login(user)" >Login</md-button>
+              <md-button class="md-raised md-primary" ng-disabled="form.login.$invalid" ng-click="login(user)" >Login</md-button>
 
             </form>
           
