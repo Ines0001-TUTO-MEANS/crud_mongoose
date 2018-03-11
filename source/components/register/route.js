@@ -20,7 +20,7 @@
 
       
       
-        $urlRouterProvider.otherwise('/register')
+        $urlRouterProvider.otherwise('/login')
     }]);
   
     app.run(['$state',function($state){
