@@ -31,7 +31,7 @@ var environment = './source',
       bowerFolder + '/angular-aria/angular-aria.min.js',
       bowerFolder + '/angular-animate/angular-animate.min.js',
       bowerFolder + '/angular-messages/angular-messages.min.js',
-      
+      bowerFolder + '/angular-cookies/angular-cookies.min.js',
       bowerFolder + '/angular-ui-router/release/angular-ui-router.min.js',
       bowerFolder + '/angular-resource/angular-resource.min.js',
       bowerFolder + '/angular-material/angular-material.min.js'];
