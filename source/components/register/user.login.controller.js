@@ -3,7 +3,7 @@
     $scope.user={};
     $scope.imagePath = '/img/icons/nodejs.png';
     
-    $scope.login = function(user){
+    $scope.login = function(form){
       console.log(user)
       var user_login = new User_factory(user)
       user_login.$authenticate(function(data){
