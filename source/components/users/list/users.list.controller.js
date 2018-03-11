@@ -45,7 +45,7 @@
 
       },function(err){
           $scope.users = [];
-          console.log('$cookies:',$cookies)
+          console.log('$cookies All:',$cookies.getAll())
           $state.go('error',{status:err.status,message:err.data.message},{reload:true});
       })
     
