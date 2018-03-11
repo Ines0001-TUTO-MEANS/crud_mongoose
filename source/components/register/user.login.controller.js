@@ -10,7 +10,7 @@
       
       user_login.$authenticate(function(data){
         if(data.success){      
-             
+          $state.go('users.list',undefined,{reload:true})   
         }
         form.password.$error.wrongpassword = true;
         $scope.errorMessage = data.message;

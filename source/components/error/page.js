@@ -9,6 +9,8 @@ Les actions:
 (function(app) {
 	app.controller('ErrorPageController', ['$scope','$state','$stateParams',function($scope,$state,$stateParams) {
     $scope.status = $stateParams.status;
+    $scope.message = $stateParams.message;
+    
     
        
     

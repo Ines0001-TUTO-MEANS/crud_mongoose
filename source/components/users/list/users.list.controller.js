@@ -46,7 +46,7 @@
       },function(err){
           $scope.users = [];
           console.error('UsersListController:',err)
-          $state.go('error',{status:err.status},{reload:true});
+          $state.go('error',{status:err.status,message:err.message},{reload:true});
       })
     
     }
