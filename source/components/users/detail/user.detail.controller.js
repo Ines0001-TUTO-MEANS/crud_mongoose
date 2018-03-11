@@ -15,6 +15,7 @@
       
       $scope.user = data; 
     },function(err){
+        console.log('UserDetailController:error:',err)
         $scope.user = err || 'Request failed';
     })
     
