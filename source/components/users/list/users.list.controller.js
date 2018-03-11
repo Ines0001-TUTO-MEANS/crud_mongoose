@@ -15,7 +15,7 @@
     ListUser();
     
     $scope.detail = function(user){
-      $scope.$emit('EVENT_MAIN_NOTIFICATION',{state:'detail',id:user._id})
+      $scope.$emit('EVENT_MAIN_NOTIFICATION',{state:'users.detail',id:user._id})
       
       
     }
