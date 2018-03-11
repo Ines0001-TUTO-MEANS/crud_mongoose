@@ -10,7 +10,7 @@
           $scope.user = response.data || 'Request failed';
         });
     */
-    
+    console.log('UserDetailController')
     User_factory.get({id:$stateParams.idUser},function(data){
       
       $scope.user = data; 
