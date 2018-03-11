@@ -4,7 +4,7 @@ var CrudMongoose = angular.module('CrudMongoose', ['ngMaterial', 'ngAnimate', 'n
                               return {
                                'request': function(config) {
 
-                                    config.headers['x-access-token'] = $cookies.token;
+                                    config.headers['x-access-token'] = $cookies.get('token');
                                     return config;
                                 }
                               };
