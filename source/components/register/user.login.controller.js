@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('LoginUserController', ['$scope', '$state','User_factory','$mdDialog',function($scope,$state,User_factory,$mdDialog) {
+	app.controller('LoginUserController', ['$scope', '$cookies','$state','User_factory','$mdDialog',function($scope,$cookies,$state,User_factory,$mdDialog) {
     $scope.user={};
     $scope.errorMessage = '';
     $scope.imagePath = '/img/icons/nodejs.png';
@@ -10,6 +10,7 @@
       
       user_login.$authenticate(function(data){
         if(data.success){      
+          $cookies.put('token',data.token)
           $state.go('users.list',undefined,{reload:true})   
         }
         form.password.$error.wrongpassword = true;

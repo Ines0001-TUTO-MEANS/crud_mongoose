@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('UsersListController', ['$scope','$rootScope','$state','User_factory','$mdDialog',function($scope,$rootScope,$state,User_factory,$mdDialog) {
+	app.controller('UsersListController', ['$scope','$rootScope','$cookies','$state','User_factory','$mdDialog',function($scope,$rootScope,$cookies,$state,User_factory,$mdDialog) {
     $scope.users={};
     
     /*   
@@ -45,7 +45,7 @@
 
       },function(err){
           $scope.users = [];
-          console.error('UsersListController:',err)
+          console.log('$cookies:',$cookies)
           $state.go('error',{status:err.status,message:err.data.message},{reload:true});
       })
     
