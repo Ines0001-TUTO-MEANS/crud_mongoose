@@ -21,7 +21,7 @@ Les actions:
     
     
     $scope.$on('EVENT_MAIN_NOTIFICATION',function(event,data){
-      
+      console.log('MainController:EVENT_MAIN_NOTIFICATION',data)
       $scope.show_state = data.state;
       $scope.currentNavItem =data.state;
       $state.go(data.state,{idUser:data.id},{reload:true});
