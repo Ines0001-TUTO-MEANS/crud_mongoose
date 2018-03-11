@@ -10,11 +10,11 @@ Les actions:
 (function(app) {
 	app.controller('MainController', ['$scope','$state',function($scope,$state) {
     $scope.tabCreateShow = false;
-    $scope.currentNavItem ='list';
+    $scope.currentNavItem ='users.list';
     
     $scope.mainEventCreate = function(){
-      $scope.show_state= 'create';
-      $scope.currentNavItem ='create';
+      $scope.show_state= 'users.create';
+      $scope.currentNavItem ='users.create';
       $state.go('users.create',undefined,{reload:true});
     }
     
