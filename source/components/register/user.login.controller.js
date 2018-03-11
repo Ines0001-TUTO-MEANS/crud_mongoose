@@ -5,15 +5,18 @@
     $scope.imagePath = '/img/icons/nodejs.png';
     
     $scope.login = function(form){
-      console.log(form.user)
-      var user_login = new User_factory(form.user)
+      
+      var user_login = new User_factory($scope.user)
+      
       user_login.$authenticate(function(data){
-            console.log('front:LoginUserController',data);
-            form.password.$error.wrongpassword = true;
-            $scope.errorMessage = data.message;
-            form.$invalid = true;
-            $scope.user.password = '';
-            
+        if(data.success){      
+             
+        }
+        form.password.$error.wrongpassword = true;
+        $scope.errorMessage = data.message;
+        form.$invalid = true;
+        $scope.user.password = '';
+           
 
       },function(err){
           $state.go('error',{status:err.status},{reload:true})

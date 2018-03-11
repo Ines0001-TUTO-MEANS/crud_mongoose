@@ -30,8 +30,8 @@
                 <label>Password</label>
                 <input type="password" name="password" ng-model="user.password" required>
                 <div ng-messages="form.login.password.$error" ng-show="form.login.password.$dirty">
+                  <div ng-message="wrongpassword">{{errorMessage}}</div>
                   <div ng-message="required">Merci de saisir une adresse mail</div>
-                  <div ng-message="wrongpassword">Merci de saisir une adresse mail</div>
                 </div>
               </md-input-container>
 
