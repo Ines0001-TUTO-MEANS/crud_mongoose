@@ -1,8 +1,8 @@
 <div>
-  <div ng-show="!isLogin">
+  <div ng-show="!rootCrud.connecting">
     <a ui-sref="login"><h3> <b>Sign in </b> or <b>Sign up</b> </h3></a> 
   </div>
-  <div ng-show="isLogin">
+  <div ng-show="rootCrud.connecting">
      <a ui-sref="logout"><h3> <b>Log out</b></h3></a> 
   </div>
 </div>
