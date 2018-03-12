@@ -7,6 +7,9 @@
                 views:{
                   'content':{
                      templateUrl: 'components/users/index.html' 
+                  },
+                  'toolbar':{
+                      templateUrl: 'components/toolbar/logout.html'
                   }
                 }
                 

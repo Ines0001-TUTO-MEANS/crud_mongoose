@@ -31,7 +31,7 @@ mongoose.connect('mongodb://admin:ines1970@ds239117.mlab.com:39117/nodejs-test')
 app.use(express.static('source'));
 
 // favicon
-app.use(favicon(__dirname + '/img/favicon.ico'));
+app.use(favicon(__dirname + '/source/img/icons/nodejs_125x125.png'));
 
 // Routing
 app.use('/api', require('./app/routes/authenticate')) // must before api/ routing
