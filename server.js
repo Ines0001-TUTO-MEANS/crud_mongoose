@@ -4,7 +4,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
-const morgan      = require('morgan');
+const morgan  = require('morgan');
+var favicon = require('serve-favicon');
+
 
 // module api routing
 //const authenticate = require('./app/routes/authenticate');
@@ -27,6 +29,9 @@ mongoose.connect('mongodb://admin:ines1970@ds239117.mlab.com:39117/nodejs-test')
 
 // Chargement de index.html automatiquement
 app.use(express.static('source'));
+
+// favicon
+app.use(favicon(__dirname + '/img/favicon.ico'));
 
 // Routing
 app.use('/api', require('./app/routes/authenticate')) // must before api/ routing

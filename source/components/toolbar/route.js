@@ -2,7 +2,7 @@
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
         $stateProvider
-        .state('users', {
+        .state('login', {
                 url: '/users',
                 views:{
                   'content':{
@@ -30,9 +30,3 @@
       
         //$urlRouterProvider.otherwise('/users/list')
     }]);
-  
-    app.run(['$state',function($state){
-        //$state.go('register',undefined,{reload:true})
-    
-    }]);
-})(CrudMongoose);

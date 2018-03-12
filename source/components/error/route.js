@@ -3,8 +3,12 @@
 
         $stateProvider.state('error', {
             url: '/error/:status/:message',
-            templateUrl: 'components/error/page.html',
-            controller: 'ErrorPageController'
+            views:{
+              'content':{
+                templateUrl: 'components/error/page.html',
+                controller: 'ErrorPageController'
+              }
+            }
         })
        
         

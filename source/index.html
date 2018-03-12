@@ -23,11 +23,9 @@
       <div class="md-toolbar-tools">
         
         <h2  md-truncate fle>Crudd Mongoose </h2>
-        
         <span flex></span>
-        <a ui-sref="login"><h3> <b>Sign in </b> or <b>Sign up</b> </h3></a>
-        
-        
+        <span ui-view="toolbar" layout="row"></span> 
+      
       </div>
     </md-toolbar>  
     
@@ -39,7 +37,7 @@
   
   
     <md-content class="md-padding" layout-align="center" layout="column">
-      <div ui-view layout="column"></div> 
+      <div ui-view="content" layout="column"></div> 
     </md-content>
     
   

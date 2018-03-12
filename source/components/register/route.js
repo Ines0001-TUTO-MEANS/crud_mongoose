@@ -2,24 +2,45 @@
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
         $stateProvider
-          .state('register', {
+          .state('register',{
             url: '/register',
-            templateUrl: 'components/testPage/page.html',
-            controller: function($scope) {
-                $scope.message = {Page:'register'};
-            }
-              
-          })
-          .state('login', {
-            url: '/login',
-            templateUrl: 'components/register/user.login.html',
-            controller: 'LoginUserController'
-            
+            views:{
+              'content':{
+                  templateUrl: 'components/testPage/page.html',
+                  controller: function($scope) {
+                                $scope.message = {Page:'register'};
+                              }
+                },
+              'toolbar':{
+                  templateUrl: 'components/toolbar/login.html'
+              }
+              }})
+          .state('login',{
+            url: '/login',  
+            views:{
+              'content': {
+                  templateUrl: 'components/register/user.login.html',
+                  controller: 'LoginUserController'
+                },
+              'toolbar':{
+                  templateUrl: 'components/toolbar/logout.html'
+              }
+            }})
+          .state('logout',{
+            url: '/logout',  
+            views:{
+              'content': {
+                  templateUrl: 'components/testPage/page.html',
+                  controller: function($scope) {
+                                $scope.message = {Page:'logout'};
+                              }
                   
-          })
+                },
+              'toolbar':{
+                  templateUrl: 'components/toolbar/login.html'
+              }
+            }})
 
-      
-      
         //$urlRouterProvider.otherwise('/login')
     }]);
   
