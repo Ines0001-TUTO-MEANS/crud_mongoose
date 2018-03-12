@@ -6,6 +6,9 @@
             views:{
               'content':{
                 templateUrl: 'components/home/page.html'
+              },
+              'toolbar':{
+                  templateUrl: 'components/toolbar/login.html'
               }
             }
         })
