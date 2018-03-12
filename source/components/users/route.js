@@ -4,7 +4,12 @@
         $stateProvider
         .state('users', {
                 url: '/users',
-                templateUrl: 'components/users/index.html'
+                views:{
+                  'content':{
+                     templateUrl: 'components/users/index.html' 
+                  }
+                }
+                
             })
         .state('users.list', {
                 url: '/list',

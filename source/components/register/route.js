@@ -3,23 +3,23 @@
 
         $stateProvider
           .state('register',{
+            url: '/register',
             views:{
               'content':{
-                  url: '/register',
                   templateUrl: 'components/testPage/page.html',
                   controller: function($scope) {
                       $scope.message = {Page:'register'};
                               }
-              }
-            }})
+                }
+              }})
           .state('login',{
+            url: '/login',  
             views:{
               'content': {
-                  url: '/login',
                   templateUrl: 'components/register/user.login.html',
                   controller: 'LoginUserController'
-                    }
-          }})
+                }
+            }})
 
         //$urlRouterProvider.otherwise('/login')
     }]);
