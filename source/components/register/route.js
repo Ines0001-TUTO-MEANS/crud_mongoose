@@ -20,7 +20,7 @@
 
       
       
-        $urlRouterProvider.otherwise('/login')
+        //$urlRouterProvider.otherwise('/login')
     }]);
   
     app.run(['$state',function($state){

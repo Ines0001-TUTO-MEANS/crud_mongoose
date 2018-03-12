@@ -16,7 +16,7 @@
         <md-tabs md-dynamic-height md-border-bottom>
           <!-- Login Form ---->
           <md-tab label="login">
-            <form name="form.login" novalidate >
+            <form name="form.login" ng-submit="login(form.login)" novalidate >
               <md-input-container class="md-block">
                 <label>E-mail</label>
                 <input type="email" name="email" ng-model="user.email" required>
@@ -35,7 +35,7 @@
                 </div>
               </md-input-container>
 
-              <md-button class="md-raised md-primary" ng-disabled="form.login.$invalid" ng-click="login(form.login)" >Login</md-button>
+              <md-button class="md-raised md-primary" type="submit" ng-disabled="form.login.$invalid" >Login</md-button>
 
             </form>
           
