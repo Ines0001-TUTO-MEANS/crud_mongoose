@@ -1,11 +1,11 @@
 (function(app) {
-	app.controller('ToolbarController', ['$rootScope','$scope', function($rootScope,$scope) {
+	app.controller('ToolbarController', ['$scope','RegisterService', function($scope,RegisterService) {
     console.log('ToolbarController')
     
     $scope.logout = function(){
-      console.log('ToolbarController: logout')
-      $rootScope.CrudMongooseGlobal.connecting = false
-      $rootScope.CrudMongooseGlobal.user = {}
+      
+      RegisterService.setLogout();
+      
     }
     
 	}]);

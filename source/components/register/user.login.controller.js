@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('LoginUserController', ['$rootScope','$scope', '$cookies','$state','User_factory','RegisterService','$mdDialog',function($rootScope,$scope,$cookies,$state,User_factory,RegisterService,$mdDialog) {
+	app.controller('LoginUserController', ['$scope', '$cookies','$state','User_factory','RegisterService','$mdDialog',function($scope,$cookies,$state,User_factory,RegisterService,$mdDialog) {
     $scope.user={};
     $scope.errorMessage = '';
     $scope.imagePath = '/img/icons/nodejs.png';
@@ -10,22 +10,19 @@
       
       user_login.$authenticate(function(data){
         if(data.success){      
-          /* Add token in cookies client
-            Use by config.headers['x-access-token'] in request $http
-            instanciate to app.config.js
-          */
-          $cookies.put('token',data.token)
-          // use $rootScope.CrudMongoose object to save login state
           
-          RegisterService.setLogin( $scope.user )
+          // use RegisterService to centralize login state
+          RegisterService.setLogin( $scope.user,data.token)
+          
+          // Switch consult users.list link
           $state.go('users.list',undefined,{reload:true})
           
-        }
-        form.password.$error.wrongpassword = true;
-        $scope.errorMessage = data.message;
-        form.$invalid = true;
-        $scope.user.password = '';
-           
+        }else{
+          form.password.$error.wrongpassword = true;
+          $scope.errorMessage = data.message;
+          form.$invalid = true;
+          $scope.user.password = '';
+        } 
 
       },function(err){
           $state.go('error',{status:err.status},{reload:true})
