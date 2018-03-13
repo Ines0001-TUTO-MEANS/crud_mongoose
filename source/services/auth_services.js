@@ -15,6 +15,9 @@
             */
             $cookies.put('token',data.token)
             auth.user = user
+            
+          }else{
+            
           }
         }
         
