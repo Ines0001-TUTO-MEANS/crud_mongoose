@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('LoginUserController', ['$rootScope','$scope', '$cookies','$state','User_factory','$mdDialog',function($rootScope,$scope,$cookies,$state,User_factory,$mdDialog) {
+	app.controller('LoginUserController', ['$rootScope','$scope', '$cookies','$state','User_factory','RegisterService','$mdDialog',function($rootScope,$scope,$cookies,$state,User_factory,RegisterService,$mdDialog) {
     $scope.user={};
     $scope.errorMessage = '';
     $scope.imagePath = '/img/icons/nodejs.png';
@@ -17,10 +17,9 @@
           $cookies.put('token',data.token)
           // use $rootScope.CrudMongoose object to save login state
           
-          $rootScope.CrudMongooseGlobal.connecting = true
-          $rootScope.CrudMongooseGlobal.user = $scope.user
+          RegisterService.setLogin( $scope.user )
           $state.go('users.list',undefined,{reload:true})
-          console.log('LoginUserController:',$rootScope.CrudMongooseGlobal)
+          
         }
         form.password.$error.wrongpassword = true;
         $scope.errorMessage = data.message;
