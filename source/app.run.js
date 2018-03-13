@@ -1,8 +1,8 @@
 (function(app) {
 	app.run(['$rootScope',function($rootScope){
-    $rootScope.CrudMongoose={};
-    $rootScope.CrudMongoose.connecting=false;
-    $rootScope.CrudMongoose.user={};
+    $rootScope.CrudMongooseGlobal={};
+    $rootScope.CrudMongooseGlobal.connecting=false;
+    $rootScope.CrudMongooseGlobal.user={};
   
   }])
 })(CrudMongoose);
