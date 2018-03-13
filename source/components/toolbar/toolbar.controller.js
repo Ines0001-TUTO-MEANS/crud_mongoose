@@ -1,20 +1,17 @@
 (function(app) {
-	app.controller('ToolbarController', ['$scope','$state','AuthService','$mdDialog', function($scope,$state,AuthService,$mdDialog) {
+	app.controller('ToolbarController', ['$scope','$state','AuthServices','$rootScope', function($scope,$state,AuthServices,$rootScope) {
     console.log('ToolbarController')
     
     $scope.logout = function(){
-      var user_email = AuthService.getUser();
-      var confirm = $mdDialog.confirm()
-          .title( user_email +', Do you really want to disconnect ?')
-          .ariaLabel('Disconneting')
-          .ok('Yes')
-          .cancel('No');
-
-      $mdDialog.show(confirm).then(function() {
-          AuthService.setUnauthorized();
+      
+      AuthServices.logout().then(function(){
+          $rootScope.CrudMongooseGlobal.connecting = false;
           $state.go('home',undefined,{reload:true})
-          
-        });
+      },function(){
+      
+      })
+
+      
       
       
     }

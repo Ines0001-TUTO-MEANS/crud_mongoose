@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('LoginUserController', ['$q','$scope', '$cookies','$state','AuthServices',function($q,$scope,$cookies,$state,AuthServices) {
+	app.controller('LoginUserController', ['$q','$scope', '$cookies','$state','AuthServices','$rootScope',function($q,$scope,$cookies,$state,AuthServices,$rootScope) {
     $scope.user={};
     $scope.errorMessage = '';
     $scope.imagePath = '/img/icons/nodejs.png';
@@ -10,7 +10,7 @@
       
       // Call authenticate service
       AuthServices.login($scope.user).then(function(data){
-          
+          $rootScope.CrudMongooseGlobal.connecting = true;
           // Switch consult users.list link
           $state.go('users.list',undefined,{reload:true})
       

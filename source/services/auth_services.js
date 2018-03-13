@@ -1,6 +1,6 @@
 (function(app) {
 	
-  app.factory('AuthServices', ['$q','$resource','$cookies', function($q,$resource,$cookies) {
+  app.factory('AuthServices', ['$q','$resource','$cookies','$mdDialog', function($q,$resource,$cookies,$mdDialog) {
     var auth ={};
 
     var User = $resource('api/authenticate',undefined,{'authenticate': {method:'POST'}});
@@ -34,7 +34,7 @@
                                 .cancel('No');
 
         return $mdDialog.show(confirm)
-                 .then(function() {
+                 .finally(function() {
                     $cookies.remove('token')
                     auth.user = {} 
                   });         
