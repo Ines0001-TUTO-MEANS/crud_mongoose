@@ -16,9 +16,9 @@
           */
           $cookies.put('token',data.token)
           // use $rootScope.CrudMongoose object to save login state
-          $rootScope.CrudMongoose.connecting = true
-          $rootScope.CrudMongoose.user = $scope.user
           
+          $rootScope.CrudMongooseGlobal.connecting = true
+          $rootScope.CrudMongooseGlobal.user = $scope.user
           $state.go('users.list',undefined,{reload:true})
           //console.log('LoginUserController:',$rootScope.CrudMongoose)
         }
