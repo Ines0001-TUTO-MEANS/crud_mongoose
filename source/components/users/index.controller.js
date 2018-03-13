@@ -11,9 +11,7 @@ Les actions:
 	app.controller('MainController', ['$scope','$state',function($scope,$state) {
     $scope.tabCreateShow = false;
     $scope.currentNavItem ='users.list';
-    $scope.CrudMongoose={};
-    $scope.CrudMongoose.connecting=false;
-    $scope.CrudMongoose.user={};
+    
     
     $scope.mainEventCreate = function(){
       $scope.show_state= 'users.create';
