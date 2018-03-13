@@ -2,10 +2,10 @@
 	app.factory('AuthServices', ['$q', function($q) {
       var auth ={};
     
-      this.auth.login=function(user,password){
+      auth.login=function(user,password){
         var deferred = $q.defer();
-        
-        deferred.resolve('authentification success');
+        auth.user = user;
+        deferred.resolve({success:true,data:auth.user});
       
         return deferred.promise;
       }
