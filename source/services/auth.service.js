@@ -1,5 +1,5 @@
 (function(app) {
-	app.service('RegisterService', ['$rootScope','$cookies','$mdDialog', function($rootScope,$cookies,$mdDialog) {
+	app.service('AuthService', ['$rootScope','$cookies','$mdDialog', function($rootScope,$cookies,$mdDialog) {
       var registerService =   $rootScope.CrudMongooseGlobal;
       
       this.getUser = function(){
@@ -7,7 +7,7 @@
       
       }
     
-      this.setLogin = function(user,token){
+      this.setAuthorized = function(user,token){
         console.log('RegisterService:login',user,token)
         if(user && token){
           /* Add token in cookies client
@@ -23,7 +23,7 @@
         else throw 'Error RegisterService(setLogin): no user or no token!'
       }
       
-      this.setLogout = function(){
+      this.setUnauthorized = function(){
         console.log('RegisterService:logout')
         if( registerService.user && $cookies.get('token')){
           /* Add token in cookies client

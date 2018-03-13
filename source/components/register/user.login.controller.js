@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('LoginUserController', ['$scope', '$cookies','$state','User_factory','RegisterService','$mdDialog',function($scope,$cookies,$state,User_factory,RegisterService,$mdDialog) {
+	app.controller('LoginUserController', ['$scope', '$cookies','$state','User_factory','AuthService','$mdDialog',function($scope,$cookies,$state,User_factory,AuthService,$mdDialog) {
     $scope.user={};
     $scope.errorMessage = '';
     $scope.imagePath = '/img/icons/nodejs.png';
@@ -12,7 +12,7 @@
         if(data.success){      
           
           // use RegisterService to centralize login state
-          RegisterService.setLogin( $scope.user,data.token)
+          AuthService.setAuthorized( $scope.user,data.token)
           
           // Switch consult users.list link
           $state.go('users.list',undefined,{reload:true})

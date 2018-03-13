@@ -1,9 +1,9 @@
 (function(app) {
-	app.controller('ToolbarController', ['$scope','$state','RegisterService','$mdDialog', function($scope,$state,RegisterService,$mdDialog) {
+	app.controller('ToolbarController', ['$scope','$state','AuthService','$mdDialog', function($scope,$state,AuthService,$mdDialog) {
     console.log('ToolbarController')
     
     $scope.logout = function(){
-      var user_email = RegisterService.getUser();
+      var user_email = AuthService.getUser();
       var confirm = $mdDialog.confirm()
           .title( user_email +', Do you really want to disconnect ?')
           .ariaLabel('Disconneting')
@@ -11,7 +11,7 @@
           .cancel('No');
 
       $mdDialog.show(confirm).then(function() {
-          RegisterService.setLogout();
+          AuthService.setUnauthorized();
           $state.go('home',undefined,{reload:true})
           
         });
