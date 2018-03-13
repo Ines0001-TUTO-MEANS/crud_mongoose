@@ -15,15 +15,11 @@
             */
             $cookies.put('token',data.token)
             auth.user = user
-            
+            deferred.resolve(data.message)
           }else{
-            
+            deferred.reject(data.message)
           }
-        }
         
-        auth.user = user;
-        deferred.resolve({success:true,data:auth.user});
-      
         return deferred.promise;
       }
     
