@@ -20,9 +20,8 @@
             deferred.reject(data.message)
           }
         
-       
-      }
-      return deferred.promise;
+        })
+        return deferred.promise;
       }
       return auth;
 

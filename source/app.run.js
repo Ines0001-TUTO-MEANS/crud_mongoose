@@ -3,10 +3,12 @@
     $rootScope.CrudMongooseGlobal={};
     $rootScope.CrudMongooseGlobal.connecting=false;
     $rootScope.CrudMongooseGlobal.user={};
-    AuthServices.login('yutuyt','iuioui').then(function(data){
-      console.log('CrudMongoose(run):promise:',data) 
-    },function(err){
     
+    
+    AuthServices.login({email:'emmanuel001@gmail.com',password:'ines'}).then(function(data){
+      console.log('CrudMongoose(run):resolve:',data) 
+    },function(err){
+      console.log('CrudMongoose(run):reject:',data) 
     
     })
   
