@@ -1,17 +1,42 @@
 (function(app) {
-	app.controller('LoginUserController', ['$scope', '$cookies','$state','AuthServices','User_factory','$mdDialog',function($scope,$cookies,$state,AuthServices,User_factory,$mdDialog) {
+	app.controller('LoginUserController', ['$q','$scope', '$cookies','$state','AuthServices','User_factory','$mdDialog',function($q,$scope,$cookies,$state,AuthServices,User_factory,$mdDialog) {
     $scope.user={};
     $scope.errorMessage = '';
     $scope.imagePath = '/img/icons/nodejs.png';
     
-    $scope.login = function(form){
-      
-      AuthServices.login($scope.user).then(function(data){
-                    console.log('CrudMongoose(run):resolve:',data) 
-                  },function(err){
-                    console.log('CrudMongoose(run):reject:',data) 
+    var auth = {};
     
+   function login(user){
+      var deferred = $q.defer();
+
+      var userMongoDB = new User_factory(user)
+
+      userMongoDB.$authenticate(function(data){
+        if(data.success){      
+          /* Add token in cookies client
+          Use by config.headers['x-access-token'] in request $http
+          instanciate to app.config.js
+          */
+          $cookies.put('token',data.token)
+          auth.user = user
+          deferred.resolve(data.message)
+        }else{
+          deferred.reject(data.message)
+        }
+
       })
+      return deferred.promise;
+    }
+    
+    $scope.login = function(form){
+      login($scope.user).then(function(data){
+        console.log('ok:',data)
+      },function(err){
+        console.log('err:',err)
+      })
+      
+      
+      
       /*
       var user_login = new User_factory($scope.user)
       

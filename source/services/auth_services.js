@@ -1,5 +1,6 @@
 (function(app) {
-	app.factory('AuthServices', ['$q','User_factory','$cookies', function($q,$cookies,User_factory) {
+	
+  app.factory('AuthServices', ['$q','User_factory','$cookies', function($q,$cookies,User_factory) {
       var auth ={};
     
       auth.login=function(user){
