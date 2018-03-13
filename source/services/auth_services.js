@@ -5,7 +5,7 @@
       auth.login=function(user){
         var deferred = $q.defer();
         
-        var userMongoDB = new User_factory(user)
+        var userMongoDB = new User_factory({email:"sddsd@kjkh",password:"ines"})
       
         userMongoDB.$authenticate(function(data){
           if(data.success){      

@@ -4,17 +4,15 @@
     $scope.errorMessage = '';
     $scope.imagePath = '/img/icons/nodejs.png';
     
-    
-    AuthServices.login({email:'emmanuel001@gmail.com',password:'ines'}).then(function(data){
-      console.log('CrudMongoose(run):resolve:',data) 
-    },function(err){
-      console.log('CrudMongoose(run):reject:',data) 
-    
-    })
-    
-    
     $scope.login = function(form){
       
+      AuthServices.login($scope.user).then(function(data){
+                    console.log('CrudMongoose(run):resolve:',data) 
+                  },function(err){
+                    console.log('CrudMongoose(run):reject:',data) 
+    
+      })
+      /*
       var user_login = new User_factory($scope.user)
       
       user_login.$authenticate(function(data){
@@ -37,6 +35,7 @@
           $state.go('error',{status:err.status},{reload:true})
           console.log(err)
       })
+      */
     
     }
     
