@@ -1,8 +1,17 @@
 (function(app) {
-	app.controller('LoginUserController', ['$scope', '$cookies','$state','User_factory','AuthService','$mdDialog',function($scope,$cookies,$state,User_factory,AuthService,$mdDialog) {
+	app.controller('LoginUserController', ['$scope', '$cookies','$state','User_factory','AuthServices','$mdDialog',function($scope,$cookies,$state,User_factory,AuthServices,$mdDialog) {
     $scope.user={};
     $scope.errorMessage = '';
     $scope.imagePath = '/img/icons/nodejs.png';
+    
+    
+    AuthServices.login({email:'emmanuel001@gmail.com',password:'ines'}).then(function(data){
+      console.log('CrudMongoose(run):resolve:',data) 
+    },function(err){
+      console.log('CrudMongoose(run):reject:',data) 
+    
+    })
+    
     
     $scope.login = function(form){
       
