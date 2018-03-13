@@ -1,8 +1,8 @@
 (function(app) {
 	app.run(['$rootScope',function($rootScope){
-    $rootScope.rootCrud={};
-    $rootScope.rootCrud.connecting=false;
-    $rootScope.rootCrud.user={};
+    $rootScope.CrudMongoose={};
+    $rootScope.CrudMongoose.connecting=false;
+    $rootScope.CrudMongoose.user={};
         
   
   }])

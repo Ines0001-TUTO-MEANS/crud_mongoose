@@ -10,7 +10,14 @@
       
       user_login.$authenticate(function(data){
         if(data.success){      
+          /* Add token in cookies client
+            Use by config.headers['x-access-token'] in request $http
+            instanciate to app.config.js
+          */
           $cookies.put('token',data.token)
+          // use $rootScope.CrudMongoose object to save login state
+          $rootScope.CrudMongoose.connecting = true
+          $rootScope.CrudMongoose.user = $scope.user
           $state.go('users.list',undefined,{reload:true})   
         }
         form.password.$error.wrongpassword = true;
