@@ -8,9 +8,13 @@
     
     $scope.login = function(form){
       AuthServices.login($scope.user).then(function(data){
-        console.log('ok:',data)
+          // Switch consult users.list link
+          $state.go('users.list',undefined,{reload:true})
       },function(err){
-        console.log('err:',err)
+          form.password.$error.wrongpassword = true;
+          $scope.errorMessage = err;
+          form.$invalid = true;
+          $scope.user.password = '';
       })
       
       

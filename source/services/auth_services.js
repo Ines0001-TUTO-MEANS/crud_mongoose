@@ -1,15 +1,15 @@
 (function(app) {
 	
-  app.factory('AuthServices', ['$q','$resource','$cookies', function($q,$cookies,$resource) {
+  app.factory('AuthServices', ['$q','$resource','$cookies', function($q,$resource,$cookies) {
       var auth ={};
     
-      var User = $resource('api/authenticate',{'authenticate': {method:'POST'}});
+      var User = $resource('api/authenticate',undefined,{'authenticate': {method:'POST'}});
     
       auth.login=function(user){
         var deferred = $q.defer();
         
         User.authenticate(user,function(data){
-          if(data.success){      
+          if(data.success && data.token){      
             /* Add token in cookies client
             Use by config.headers['x-access-token'] in request $http
             instanciate to app.config.js
