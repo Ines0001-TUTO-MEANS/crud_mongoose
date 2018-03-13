@@ -27,9 +27,22 @@
     
     auth.logout = function(){
       if( auth.user && $cookies.get('token')){
-         $cookies.remove('token')
-         auth.user = {}
+        var confirm = $mdDialog.confirm()
+                                .title( 'Do you really want to disconnect ?')
+                                .ariaLabel('Disconneting')
+                                .ok('Yes')
+                                .cancel('No');
+
+        return $mdDialog.show(confirm)
+                 .then(function() {
+                    $cookies.remove('token')
+                    auth.user = {} 
+                  });         
         
+        
+            
+      }else{
+        $q.reject('logout operation with no authentification') 
       }
     
     
