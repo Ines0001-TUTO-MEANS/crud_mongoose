@@ -20,7 +20,7 @@
           $rootScope.CrudMongooseGlobal.connecting = true
           $rootScope.CrudMongooseGlobal.user = $scope.user
           $state.go('users.list',undefined,{reload:true})
-          //console.log('LoginUserController:',$rootScope.CrudMongoose)
+          console.log('LoginUserController:',$rootScope.CrudMongooseGlobal)
         }
         form.password.$error.wrongpassword = true;
         $scope.errorMessage = data.message;
