@@ -7,7 +7,7 @@
     $scope.logout = function(){
       AuthServices.logout().then(function(resolve){
           console.log('ToolbarController:',resolve)
-          $state.go('home',undefined,{reload:true})
+          $state.go('login',undefined,{reload:true})
       },function(reject){
           console.log('ToolbarController:',reject)
       })

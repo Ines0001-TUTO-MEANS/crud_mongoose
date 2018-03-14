@@ -5,6 +5,12 @@
     
     var User = $resource('api/authenticate',undefined,{'authenticate': {method:'POST'}});
 
+    
+    auth.isAuthenticated = function(){
+      
+    
+    }
+    
     auth.login = function(user){
       var deferred = $q.defer();
 
@@ -39,21 +45,28 @@
                  .then(function(){
                     /* Confirm to logout session
                        Remove cookies user and token
-                       init
+                       init auth.user = undefined
                     */
                     $cookies.remove('token') 
                     $cookies.remove('user')
                     auth.user = undefined
+                    
+                    /* return promise resolve for
+                       response chaining call
+                    */
                     return $q.resolve({success:true,message:'logout confirm'})
                   
                   },function() {
+                    /* return promise reject for
+                       response chaining call
+                    */
                     return $q.reject({success:false,message:'logout abort'})
                   });         
         
         
             
       }else{
-        $q.reject('logout operation with no authentification') 
+        $q.reject({success:false,message:'operation logout without auth.user and no cookies token'}) 
       }
     
     
