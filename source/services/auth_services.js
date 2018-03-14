@@ -7,7 +7,7 @@
 
     
     auth.isAuthenticated = function(){
-      
+      return !(typeof auth.user === 'undefined')
     
     }
     
@@ -44,7 +44,7 @@
         return $mdDialog.show(confirm)
                  .then(function(){
                     /* Confirm to logout session
-                       Remove cookies user and token
+                       Remove cookies user and token and
                        init auth.user = undefined
                     */
                     $cookies.remove('token') 
@@ -59,6 +59,7 @@
                   },function() {
                     /* return promise reject for
                        response chaining call
+                       no changing
                     */
                     return $q.reject({success:false,message:'logout abort'})
                   });         

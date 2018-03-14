@@ -15,7 +15,7 @@
     
     
     $scope.$watch(function(){
-      return AuthServices.user },
+                    return AuthServices.user },
                   function(newAuthorized,oldAuthorized){
       
       $scope.authorized =  !(typeof newAuthorized === 'undefined')
