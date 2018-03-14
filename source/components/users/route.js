@@ -14,16 +14,19 @@
             })
         .state('users.list', {
                 url: '/list',
+                protected: true,
                 templateUrl: 'components/users/list/users.list.html',
                 controller: 'UsersListController'
             })
         .state('users.detail', {
                 url: '/detail/:idUser',
+                protected: true,
                 templateUrl: 'components/users/detail/user.detail.html',
                 controller: 'UserDetailController'
             })
         .state('users.create', {
                 url: '/create',
+                protected: true,
                 templateUrl: 'components/users/create/user.create.html',
                 controller: 'UserCreateController'
             })
