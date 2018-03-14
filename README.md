@@ -10,6 +10,9 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 
 [ui-router Multiple name View](https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views)
 
+[ui-router Redirecting a transition](https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views)
+
+
 
 1. Authenticate a Node.js API with JSON Web Tokens [about scotch.io/tutorials](https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens).
 2. Item2

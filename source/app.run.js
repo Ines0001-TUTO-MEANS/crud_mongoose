@@ -4,12 +4,13 @@
     // Init user session with cookies value
     AuthServices.user = $cookies.get('user')
     
-    $transitions.onSuccess({}, function(transition) {
-      console.log(
-          "Successful Transition from " + transition.from().name +
-          " to " + transition.to().name
-      );
-    });
+    /*
+    Redirecting a transition 
+    A transition hook can redirect a transition to a different state and/or parameter values by returning a new TargetState. A TargetState can be created using the StateService.
+
+    This hook redirects an unauthenticated user to a login state.
+    
+    */
     
     $transitions.onBefore({}, function(transition) {
       // check if the state should be protected
