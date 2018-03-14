@@ -35,10 +35,11 @@
 
         return $mdDialog.show(confirm)
                  .then(function(){
-                    return $q.resolve({success:true,message:'logout confirm'})  
-                  },function() {
                     $cookies.remove('token')
                     auth.user = undefined
+                    return $q.resolve({success:true,message:'logout confirm'})
+                  
+                  },function() {
                     return $q.reject({success:false,message:'logout abort'})
                   });         
         
