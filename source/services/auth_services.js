@@ -15,6 +15,8 @@
           instanciate to app.config.js
           */
           $cookies.put('token',data.token)
+          $cookies.put('user',user.email)
+      
           auth.user = user
           deferred.resolve(data.message)
         }else{
@@ -35,7 +37,12 @@
 
         return $mdDialog.show(confirm)
                  .then(function(){
-                    $cookies.remove('token')
+                    /* Confirm to logout session
+                       Remove cookies user and token
+                       init
+                    */
+                    $cookies.remove('token') 
+                    $cookies.remove('user')
                     auth.user = undefined
                     return $q.resolve({success:true,message:'logout confirm'})
                   

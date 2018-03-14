@@ -1,5 +1,8 @@
 (function(app) {
-	app.run(['$rootScope','$transitions','AuthServices',function($rootScope,$transitions,AuthServices){
+	app.run(['$rootScope','$transitions','AuthServices','$cookies',function($rootScope,$transitions,AuthServices,$cookies){
+    
+    // Init user session with cookies value
+    AuthServices.user = $cookies.get('user')
     
     $transitions.onSuccess({}, function(transition) {
       console.log(

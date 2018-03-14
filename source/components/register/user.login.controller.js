@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('LoginUserController', ['$q','$scope', '$cookies','$state','AuthServices','$rootScope',function($q,$scope,$cookies,$state,AuthServices,$rootScope) {
+	app.controller('LoginUserController', ['$q','$scope', '$state','AuthServices','$rootScope',function($q,$scope,$state,AuthServices,$rootScope) {
     $scope.user={};
     $scope.errorMessage = '';
     $scope.imagePath = '/img/icons/nodejs.png';
