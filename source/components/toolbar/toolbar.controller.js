@@ -19,7 +19,7 @@
                   function(newAuthorized,oldAuthorized){
       
       $scope.authorized =  !(typeof newAuthorized === 'undefined')
-      console.log('ToolbarController:$watch:'+$scope.authorized )
+      console.log('ToolbarController:$watch:authorized:'+$scope.authorized )
     })
     
 	}]);
