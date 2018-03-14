@@ -13,9 +13,10 @@
     
     $transitions.onBefore({}, function(transition) {
       // check if the state should be protected
-      if( transition.to().login && 
-        console.log(
-          "onBefore Transition", transition)
+      if (transition.to().protected && !AuthServices.isAuthenticated()) {
+        // redirect to the 'login' state
+        return transition.router.stateService.target('login');
+      }
       
       
     })
