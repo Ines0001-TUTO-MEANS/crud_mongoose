@@ -12,11 +12,22 @@
     
     */
     
-    $transitions.onBefore({}, function(transition) {
+    $transitions.onBefore({ to: 'users.**' }, function(transition) {
       // check if the state should be protected
-      if (transition.to().protected && !AuthServices.isAuthenticated()) {
+      if (!AuthServices.isAuthenticated()) {
         // redirect to the 'login' state
         return transition.router.stateService.target('login');
+      }
+      
+      
+    })
+    
+    $transitions.onBefore({ to: 'login' }, function(transition) {
+       const stateService = transition.router.stateService;
+      // check if the state should be protected
+      if (AuthServices.isAuthenticated()) {
+        // redirect to the 'login' state
+        return stateService.target(stateService.from());
       }
       
       
