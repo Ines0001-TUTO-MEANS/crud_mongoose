@@ -1,5 +1,5 @@
 (function(app) {
-    app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    app.config(['$stateProvider', '$urlRouterProvider','$q', function($stateProvider, $urlRouterProvider,$q) {
 
         $stateProvider
           .state('register',{
@@ -15,9 +15,9 @@
           .state('login',{
             url: '/login',
             resolve:{
-              fonctionA:  function(){
-                  console.log('state:resolve.......')
-                  return false;
+              fonctionA:  function($q){
+                  console.log('resolve:reject.......')
+                  return $q.reject({unAuthorized:true});
                },
             },
             views:{
