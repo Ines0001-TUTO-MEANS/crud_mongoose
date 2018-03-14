@@ -17,7 +17,7 @@
       return AuthServices.user },
                   function(newAuthorized,oldAuthorized){
       console.log('ToolbarController:$watch:'+oldAuthorized+'->'+newAuthorized)
-      $scope.authorized = newAuthorized
+      $scope.authorized =  !(typeof newAuthorized === 'undefined')
     })
     
 	}]);

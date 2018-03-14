@@ -2,7 +2,7 @@
 	
   app.factory('AuthServices', ['$q','$resource','$cookies','$mdDialog', function($q,$resource,$cookies,$mdDialog) {
     var auth ={};
-
+    
     var User = $resource('api/authenticate',undefined,{'authenticate': {method:'POST'}});
 
     auth.login = function(user){
