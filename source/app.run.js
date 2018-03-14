@@ -14,7 +14,7 @@
     $transitions.onBefore({}, function(transition) {
       // check if the state should be protected
       console.log(
-          "onBefore Transition to ", transition.to().protected)
+          "onBefore Transition to ", transition.to())
       
       
     })
