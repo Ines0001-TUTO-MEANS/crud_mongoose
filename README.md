@@ -6,11 +6,11 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 
 ## Source d'information
 
-[Material Login/Register](https://www.supinfo.com/articles/single/184-decouverte-angular-material)
+[Material Login/Register form](https://www.supinfo.com/articles/single/184-decouverte-angular-material)
 
 [ui-router Multiple name View](https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views)
 
-[ui-router Redirecting a transition](https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views)
+[ui-router Redirecting a transition](https://ui-router.github.io/guide/transitionhooks)
 
 
 
