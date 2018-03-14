@@ -19,7 +19,6 @@
         return transition.router.stateService.target('login');
       }
       
-      
     })
     
     $transitions.onBefore({ to: 'login' }, function(transition) {
@@ -27,7 +26,7 @@
       // check if the state should be protected
       if (AuthServices.isAuthenticated()) {
         // redirect to the 'login' state
-        return stateService.target(transition.from().name);
+        return stateService.target('home');
       }
       
       
