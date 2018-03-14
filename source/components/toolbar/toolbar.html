@@ -1,8 +1,8 @@
 <div>
-  <div ng-show="!CrudMongooseGlobal.connecting">
+  <div ng-show="!authorized">
     <a ui-sref="login"><h3> <b>Sign in </b> or <b>Sign up</b> </h3></a> 
   </div>
-  <div ng-show="CrudMongooseGlobal.connecting">
+  <div ng-show="authorized">
      <a href="" target="_blank" ng-click="logout()"><h3> <b>Log out</b></h3></a> 
   </div>
 </div>

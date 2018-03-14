@@ -14,12 +14,6 @@
               }})
           .state('login',{
             url: '/login',
-            resolve:{
-              fonctionA:  function($q){
-                  console.log('resolve:reject.......')
-                  return $q.reject({unAuthorized:true});
-               },
-            },
             views:{
               'content': {
                   templateUrl: 'components/register/user.login.html',
