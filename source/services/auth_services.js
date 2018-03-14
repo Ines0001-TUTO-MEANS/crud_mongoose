@@ -36,7 +36,7 @@
         return $mdDialog.show(confirm)
                  .finally(function() {
                     $cookies.remove('token')
-                    auth.user = {} 
+                    auth.user = undefined 
                   });         
         
         

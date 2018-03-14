@@ -5,7 +5,6 @@
     $scope.authorized = false;
     
     $scope.logout = function(){
-      
       AuthServices.logout().then(function(){
           $state.go('home',undefined,{reload:true})
       },function(){
@@ -13,14 +12,13 @@
       })
     }
     
-    /*
+    
     $scope.$watch(function(){
       return AuthServices.user },
                   function(newAuthorized,oldAuthorized){
-      console.log('ToolbarController:$watch')
+      console.log('ToolbarController:$watch:'+oldAuthorized+'->'+newAuthorized)
       $scope.authorized = newAuthorized
     })
-    */
     
 	}]);
 })(CrudMongoose);
