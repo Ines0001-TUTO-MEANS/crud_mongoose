@@ -1,5 +1,5 @@
 (function(app) {
-    app.config(['$stateProvider', '$urlRouterProvider','$q', function($stateProvider, $urlRouterProvider,$q) {
+    app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
         $stateProvider
           .state('register',{

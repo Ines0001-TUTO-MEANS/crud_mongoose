@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('ToolbarController', ['$scope','$state','AuthServices','$rootScope', function($scope,$state,AuthServices,$rootScope) {
+	app.controller('ToolbarController', ['$scope','$state','AuthServices',function($scope,$state,AuthServices) {
     console.log('ToolbarController')
     
     $scope.authorized = false;
