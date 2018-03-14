@@ -5,16 +5,18 @@
     $scope.logout = function(){
       
       AuthServices.logout().then(function(){
-          $rootScope.CrudMongooseGlobal.connecting = false;
           $state.go('home',undefined,{reload:true})
       },function(){
       
       })
-
-      
-      
-      
     }
+    
+    $scope.$watch(function(){
+      return AuthServices.user},
+                  function(){
+      console.log('ToolbarController:$watch')
+      
+    })
     
 	}]);
 })(CrudMongoose);
