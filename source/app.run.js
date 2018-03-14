@@ -13,8 +13,12 @@
     
     $transitions.onBefore({}, function(transition) {
       // check if the state should be protected
-      console.log(
-          "onBefore Transition to ", transition.to())
+      if (transition.to().fonctionA)
+        console.log(
+          "onBefore Transition to with resolve", transition.to())
+      else
+        console.log(
+          "onBefore Transition to without resolve", transition.to())
       
       
     })

@@ -13,7 +13,13 @@
                 }
               }})
           .state('login',{
-            url: '/login',  
+            url: '/login',
+            resolve:{
+              fonctionA:  function(){
+                  console.log('state:resolve.......')
+                  return false;
+               },
+            },
             views:{
               'content': {
                   templateUrl: 'components/register/user.login.html',
