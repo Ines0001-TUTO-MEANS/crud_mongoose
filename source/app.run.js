@@ -27,7 +27,7 @@
       // check if the state should be protected
       if (AuthServices.isAuthenticated()) {
         // redirect to the 'login' state
-        return stateService.target(stateService.from());
+        return stateService.target(transition.from().name);
       }
       
       
