@@ -13,7 +13,7 @@
     
     $transitions.onBefore({}, function(transition) {
       // check if the state should be protected
-      
+      if( transition.to().login && 
         console.log(
           "onBefore Transition", transition)
       
