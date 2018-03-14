@@ -34,9 +34,12 @@
                                 .cancel('No');
 
         return $mdDialog.show(confirm)
-                 .finally(function() {
+                 .then(function(){
+                    return $q.resolve({success:true,message:'logout confirm'})  
+                  },function() {
                     $cookies.remove('token')
-                    auth.user = undefined 
+                    auth.user = undefined
+                    return $q.reject({success:false,message:'logout abort'})
                   });         
         
         

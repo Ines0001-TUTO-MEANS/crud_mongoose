@@ -5,10 +5,11 @@
     $scope.authorized = false;
     
     $scope.logout = function(){
-      AuthServices.logout().then(function(){
+      AuthServices.logout().then(function(resolve){
+          console.log('ToolbarController:',resolve)
           $state.go('home',undefined,{reload:true})
-      },function(){
-      
+      },function(reject){
+          console.log('ToolbarController:',reject)
       })
     }
     
