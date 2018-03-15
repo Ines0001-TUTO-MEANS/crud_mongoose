@@ -7,7 +7,7 @@
   "description": "Tutorial Client/Server CRUD Mongoose + securing JWT pour interface RESTfully",
   "main": "",
   "scripts": {
-    "start": "node server.js"
+    "start": ""
   },
   "dependencies": {
     "bcrypt": "^1.0.3",
