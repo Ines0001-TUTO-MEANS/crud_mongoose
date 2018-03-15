@@ -1,6 +1,12 @@
 
 'use strict';
 
+/*
+  Obsolete interface
+  use express-restify-mongoose package
+
+*/
+
 var mongoose = require('mongoose');
 
 
