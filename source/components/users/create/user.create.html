@@ -1,6 +1,6 @@
 <content class="" layout="column" layout-padding>
 
-<form name="create" class="md-inline-form">
+<form name="create" class="md-inline-form" novalidate>
   <div layout="row" layout-xs="column">
     <md-input-container flex>
       <md-icon class="material-icons lab-icon">person</md-icon>
@@ -64,7 +64,7 @@
 
   
   
-<md-button class="md-primary md-raised" ng-click="saveCreateForm(user)">Save</md-button>
+<md-button class="md-primary md-raised" ng-click="saveCreateForm(user)" ng-disabled="form.create.$invalid">Save</md-button>
         
   
 </content>

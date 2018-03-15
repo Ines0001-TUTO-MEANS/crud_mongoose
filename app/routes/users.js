@@ -13,8 +13,8 @@ var options = {
   },
   protected: ['name', 'age', 'email', 'password','admin'],
   
-  preRead: function(req, res, next){
-      console.log('preRead:',req.params);
+  preCreate: function(req, res, next){
+      console.log('preCreate:',req.body);
       next();
    
   }
