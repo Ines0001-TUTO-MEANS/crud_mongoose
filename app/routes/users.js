@@ -14,9 +14,9 @@ var options = {
   protected: ['name', 'age', 'email', 'password','admin'],
   
   preRead: function(req, res, next){
-    performAsyncLogic(function(err){
-      next(err)
-    })
+      console.log('preRead:',req.method);
+      next();
+   
   }
       
 }
