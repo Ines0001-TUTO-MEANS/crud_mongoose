@@ -14,7 +14,7 @@ var options = {
   protected: ['name', 'age', 'email', 'password','admin'],
   
   preRead: function(req, res, next){
-      console.log('preRead:',req.method);
+      console.log('preRead:',req.params);
       next();
    
   }
