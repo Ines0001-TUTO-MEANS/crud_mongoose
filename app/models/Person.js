@@ -16,16 +16,17 @@ module.exports =  mongoose.Schema({
   },
   age: {
     type: Number,
-    required :'age is mandatory',
     min:[18, 'age limit 18']
   },
   company: String,
   email: {
     type: String,
+    required :'email is mandatory',
     validate: mailValidator
   },
   password: {
-    type: String
+    type: String,
+    required :'password is mandatory',
   },
   admin: {
     type: Boolean,

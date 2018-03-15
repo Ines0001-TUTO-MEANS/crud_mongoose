@@ -4,7 +4,7 @@
                                   'get':    {method:'GET'},
                                  // the $resource service expects a response that receives an array AND NOT an object
                                  // the server return all the todos after you create a record
-                                 'save':   {method:'POST', isArray:true},
+                                 'save':   {method:'POST'},
                                  'query':   {method:'GET', isArray:true},
                                  'delete':   {method:'DELETE'},
                                  'authenticate': {method:'POST',url:'api/authenticate'},
