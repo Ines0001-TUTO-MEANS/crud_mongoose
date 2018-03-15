@@ -11,7 +11,13 @@ var options = {
   access: function(req) {
     return 'protected';
   },
-  protected: ['name', 'age', 'email', 'password','admin']
+  protected: ['name', 'age', 'email', 'password','admin'],
+  
+  preRead: function(req, res, next){
+    performAsyncLogic(function(err){
+    next(err)
+  })
+}
       
 }
 // Using query builder
