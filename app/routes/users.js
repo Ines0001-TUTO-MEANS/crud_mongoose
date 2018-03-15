@@ -17,12 +17,6 @@ var options = {
     performAsyncLogic(function(err){
       next(err)
     })
-  },
-  
-  preMiddleware: function (req, res, next) {
-    performAsyncLogic(function (err) {
-      next(err)
-    } // <= Need parenthesis here
   }
       
 }
