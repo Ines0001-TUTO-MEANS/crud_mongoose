@@ -19,6 +19,15 @@
         <div ng-message="required">Merci de saisir une adresse mail</div>
         <div ng-message="email">Le champ saisie n'est pas une email !</div>
       </div>
+    </md-input-container>
+    <md-input-container flex>
+      <md-icon class="material-icons lab-icon">vpn_key</md-icon>
+      <label>Password</label>
+      <input name="password" type="password" ng-model="user.password" required/>
+      <div ng-messages="create.password.$error" ng-show="create.password.$dirty">
+        <div ng-message="required">Merci de saisir une adresse mail</div>
+        
+      </div>
     </md-input-container> 
  </div>
   
