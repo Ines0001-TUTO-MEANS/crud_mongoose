@@ -15,9 +15,15 @@ var options = {
   
   preRead: function(req, res, next){
     performAsyncLogic(function(err){
-    next(err)
-  })
-}
+      next(err)
+    })
+  },
+  
+  preMiddleware: function (req, res, next) {
+    performAsyncLogic(function (err) {
+      next(err)
+    } // <= Need parenthesis here
+  }
       
 }
 // Using query builder
