@@ -1,5 +1,5 @@
 
-const SALT_WORK_FACTOR = 10;
+const SALT_WORK_FACTOR = 13;
 
 var express = require('express')
     ,router = express.Router()
