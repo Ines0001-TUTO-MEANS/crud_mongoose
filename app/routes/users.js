@@ -1,9 +1,12 @@
-const 
+
+const SALT_WORK_FACTOR = 10;
+
 var express = require('express')
     ,router = express.Router()
     ,mongoose = require('mongoose')
     ,restify = require('express-restify-mongoose')
-    , jwt    = require('jsonwebtoken') // used to create, sign, and verify tokens
+    ,jwt    = require('jsonwebtoken') // used to create, sign, and verify tokens
+    ,bcrypt = require('bcrypt') // to hash password
 
 
 var schema = require('../models/Person')
@@ -18,19 +21,24 @@ var options = {
 }
 // Definition functions Section
 function preSavePerson(next){
+  
   var user = this;
-      if (!user.isModified('password')) return next();
+  console.log('preSavePerson:',user)
+  if (!user.isModified('password')){
+    console.log('user.isModified')
+    return next();
+  }
 
-      bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt){
+  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt){
+      if(err) return next(err);
+
+      bcrypt.hash(user.password, salt, function(err, hash){
           if(err) return next(err);
 
-          bcrypt.hash(user.password, salt, function(err, hash){
-              if(err) return next(err);
-
-              user.password = hash;
-              next();
-          });
-      });  
+          user.password = hash;
+          next();
+      });
+  });  
 }
 
 // Definition functions End Section
