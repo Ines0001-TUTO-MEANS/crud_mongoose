@@ -13,15 +13,15 @@ var options = {
   },
   protected: ['name', 'age', 'email', 'password','admin'],
   
-  preCreate: function(req, res, next){
-      console.log('preCreate',req.body)
-      
-      next();
-   
-  }
+  preCreate: preCreateOptions
       
 }
-// Using query builder
+// Definition functions Section
+function preCreateOptions(req, res, next){
+    console.log('preCreate',req.body)
+    
+    next();
+}
 
 // route middleware to verify a token
 router.use(function(req, res, next) {
