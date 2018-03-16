@@ -29,9 +29,7 @@ function preSavePerson(next){
 
 // Utilisation du Middlewares de Mongoose
 // Operation de hashing sur la création de user
-schema.pre("save",function(next){
-  console.log('Avant la validation du document');
-  
+schema.pre("save",preSavePerson); 
   /*
   
   mySchema.pre('save', function(next){
@@ -53,8 +51,7 @@ schema.pre("save",function(next){
   
   
   */
-  next();
-});
+  
 
 
 // route middleware to verify a token
