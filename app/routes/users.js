@@ -18,8 +18,9 @@ var options = {
 }
 // Definition functions Section
 function preCreateOptions(req, res, next){
-    console.log('preCreate',req.body)
     
+    var timeOut = setTimeout(function(){console.log('preCreate',req.body)}, 5000, 'funky');
+    clearTimeout(timeOut);
     next();
 }
 
