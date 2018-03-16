@@ -15,7 +15,6 @@ var options = {
   
   preCreate: function(req, res, next){
       
-      console.log('preCreate:',req.body);
       
       next();
    
