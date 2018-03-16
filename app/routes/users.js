@@ -16,15 +16,20 @@ var options = {
       
 }
 // Definition functions Section
-function preSavePerson(req, res, next){
-    
-    var timeOut = setTimeout(function(){console.log('preCreate',req.body)}, 5000, 'funky');
-    //clearTimeout(timeOut);
+function preSavePerson(next){
+    if(this.password){
+      console.log('Avant la validation du document')
+      
+    }
+   
     next();
 }
 
 // Definition functions End Section
 
+// Utilisation du Middlewares de Mongoose
+// Operation de hashing sur la création de user
+schema.pre("save",preSavePerson);
 
 
 // route middleware to verify a token
