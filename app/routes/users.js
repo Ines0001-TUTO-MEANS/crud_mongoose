@@ -11,28 +11,21 @@ var options = {
   access: function(req) {
     return 'protected';
   },
-  protected: ['name', 'age', 'email', 'password','admin'],
+  protected: ['name', 'age', 'email', 'password','admin']
   
-  preCreate: preCreateOptions,
-  preRead: preReadOptions
       
 }
 // Definition functions Section
-function preCreateOptions(req, res, next){
-    
-    if( req.method=='POST' && req.body.email)
-    {
-        
-    }
-    next();
-}
-
-function preReadOptions(req, res, next){
+function preSavePerson(req, res, next){
     
     var timeOut = setTimeout(function(){console.log('preCreate',req.body)}, 5000, 'funky');
     //clearTimeout(timeOut);
     next();
 }
+
+// Definition functions End Section
+
+
 
 // route middleware to verify a token
 router.use(function(req, res, next) {
