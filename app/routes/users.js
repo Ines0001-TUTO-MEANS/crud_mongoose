@@ -1,3 +1,4 @@
+const 
 var express = require('express')
     ,router = express.Router()
     ,mongoose = require('mongoose')
@@ -17,12 +18,19 @@ var options = {
 }
 // Definition functions Section
 function preSavePerson(next){
-    if(this.password){
-      console.log('Avant la validation du document')
-      
-    }
-   
-    next();
+  var user = this;
+      if (!user.isModified('password')) return next();
+
+      bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt){
+          if(err) return next(err);
+
+          bcrypt.hash(user.password, salt, function(err, hash){
+              if(err) return next(err);
+
+              user.password = hash;
+              next();
+          });
+      });  
 }
 
 // Definition functions End Section
