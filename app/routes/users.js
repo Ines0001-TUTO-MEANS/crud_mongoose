@@ -31,6 +31,28 @@ function preSavePerson(next){
 // Operation de hashing sur la création de user
 schema.pre("save",function(next){
   console.log('Avant la validation du document');
+  
+  /*
+  
+  mySchema.pre('save', function(next){
+      var user = this;
+      if (!user.isModified('password')) return next();
+
+      bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt){
+          if(err) return next(err);
+
+          bcrypt.hash(user.password, salt, function(err, hash){
+              if(err) return next(err);
+
+              user.password = hash;
+              next();
+          });
+      });
+  });
+  
+  
+  
+  */
   next();
 });
 
