@@ -14,7 +14,7 @@ var options = {
   protected: ['name', 'age', 'email', 'password','admin'],
   
   preCreate: function(req, res, next){
-      
+      console.log('preCreate',req.body)
       
       next();
    
