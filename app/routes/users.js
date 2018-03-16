@@ -13,14 +13,24 @@ var options = {
   },
   protected: ['name', 'age', 'email', 'password','admin'],
   
-  preCreate: preCreateOptions
+  preCreate: preCreateOptions,
+  preRead: preReadOptions
       
 }
 // Definition functions Section
 function preCreateOptions(req, res, next){
     
+    if( req.method=='POST' && req.body.email)
+    {
+        
+    }
+    next();
+}
+
+function preReadOptions(req, res, next){
+    
     var timeOut = setTimeout(function(){console.log('preCreate',req.body)}, 5000, 'funky');
-    clearTimeout(timeOut);
+    //clearTimeout(timeOut);
     next();
 }
 
