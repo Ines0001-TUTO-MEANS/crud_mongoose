@@ -29,7 +29,7 @@ function preSavePerson(next){
 
 // Utilisation du Middlewares de Mongoose
 // Operation de hashing sur la création de user
-schema.pre("save",preSavePerson); 
+//schema.pre("save",preSavePerson); 
   /*
   
   mySchema.pre('save', function(next){
@@ -92,7 +92,7 @@ router.use(function(req, res, next) {
 });
 
 
-restify.serve(router, mongoose.model('Users', schema ), options)
+restify.serve(router, mongoose.model('Users', schema.pre("save",preSavePerson) ), options)
 
 
 
