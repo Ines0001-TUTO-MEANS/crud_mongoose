@@ -38,6 +38,11 @@ function preSavePerson(next){
   
 }
 
+function preUpdatePerson(next){
+  console.log('preUpdatePerson')
+  next();
+}
+
 // Definition functions End Section
 
 // Utilisation du Middlewares de Mongoose
@@ -105,7 +110,7 @@ router.use(function(req, res, next) {
 });
 
 
-restify.serve(router, mongoose.model('Users', schema.pre("save",preSavePerson) ), options)
+restify.serve(router, mongoose.model('Users', schema.pre("save",preSavePerson).pre("update",preUpdatePerson) ), options)
 
 
 
