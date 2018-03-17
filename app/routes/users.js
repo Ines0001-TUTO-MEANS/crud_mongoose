@@ -12,6 +12,7 @@ var express = require('express')
 var schema = require('../models/Person')
 var options = {
   findOneAndUpdate: false,
+  preUpdate:preUpdatePerson,
   access: function(req) {
     return 'protected';
   },
@@ -39,6 +40,7 @@ function preSavePerson(next){
 }
 
 function preUpdatePerson(req,res,next){
+  console.log('preUpdatePerson')
   if (req.erm.document.user !== req.user._id) {
     return res.sendStatus(401)
   }
@@ -115,7 +117,7 @@ router.use(function(req, res, next) {
 });
 
 
-restify.serve(router, mongoose.model('Users', schema.pre("update",preUpdatePerson) ), options)
+restify.serve(router, mongoose.model('Users', schema ), options)
 
 
 
