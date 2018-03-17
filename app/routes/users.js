@@ -28,17 +28,14 @@ function preSavePerson(next){
     console.log('user.isModified')
     return next();
   }
-
-  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt){
-      if(err) return next(err);
-
-      bcrypt.hash(user.password, salt, function(err, hash){
-          if(err) return next(err);
-
-          user.password = hash;
+  
+  bcrypt.hash(user.password, SALT_WORK_FACTOR, function(err, hash) {
+    if(err) return next(err);
+    user.password = hash;
           next();
-      });
-  });  
+    
+  });
+  
 }
 
 // Definition functions End Section
