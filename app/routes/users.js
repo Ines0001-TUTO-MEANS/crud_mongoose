@@ -110,7 +110,7 @@ router.use(function(req, res, next) {
 });
 
 
-restify.serve(router, mongoose.model('Users', schema.pre("save",preSavePerson).pre("update",preUpdatePerson) ), options)
+restify.serve(router, mongoose.model('Users', schema.pre("update",preUpdatePerson) ), options)
 
 
 
