@@ -11,7 +11,7 @@ var express = require('express')
 
 var schema = require('../models/Person')
 var options = {
-  
+  findOneAndUpdate: false,
   access: function(req) {
     return 'protected';
   },
@@ -38,9 +38,14 @@ function preSavePerson(next){
   
 }
 
-function preUpdatePerson(next){
-  console.log('preUpdatePerson')
-  next();
+function preUpdatePerson(req,res,next){
+  if (req.erm.document.user !== req.user._id) {
+    return res.sendStatus(401)
+  }
+
+  req.erm.document.set('lastRequestAt', new Date())
+
+  next()
 }
 
 // Definition functions End Section
