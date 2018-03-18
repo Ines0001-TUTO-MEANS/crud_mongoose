@@ -24,9 +24,8 @@ var options = {
 function preSavePerson(next){
   var user = this;
   console.log('preSavePerson',this)
-  if (!user.isModified('password')){
+  if (user.isModified('password')){
     console.log('user.isModified')
-    return next();
   }
   
   bcrypt.hash(user.password, SALT_WORK_FACTOR, function(err, hash) {
