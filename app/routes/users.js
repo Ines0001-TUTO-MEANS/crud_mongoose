@@ -23,7 +23,7 @@ var options = {
 // Definition functions Section
 function preSavePerson(next){
   var user = this;
-
+  console.log('preSavePerson',this)
   if (!user.isModified('password')){
     console.log('user.isModified')
     return next();

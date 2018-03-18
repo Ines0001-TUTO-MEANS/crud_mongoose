@@ -1,5 +1,5 @@
 //================================== routes for API AUTHENTICATE ====================================
-const AUTHENTICATE_TOKEN_LAPS = 60*10 // expires in 10 minutes
+const AUTHENTICATE_TOKEN_LAPS = 60*60 // expires in 10 minutes
 var express = require('express')
   , router = express.Router()
   ,	mongoose = require('mongoose')
