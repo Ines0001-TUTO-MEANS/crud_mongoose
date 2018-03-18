@@ -25,6 +25,8 @@ app.use(methodOverride());
 // use morgan to log requests to the console
 app.use(morgan('dev'));
 
+// active mongoose debug
+mongoose.set('debug', true);
 // mongoose instance connection url connection
 mongoose.connect('mongodb://admin:ines1970@ds239117.mlab.com:39117/nodejs-test'); 
 
