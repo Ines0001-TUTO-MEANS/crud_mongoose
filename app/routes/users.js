@@ -23,10 +23,11 @@ var options = {
 // Definition functions Section
 function preSavePerson(next){
   var user = this;
-  console.log('preSavePerson',this)
-  if (!user.isModified('password')){
-    console.log('password not modified')
-    next()
+  
+  user._lastsave = new Date();
+   // only hash the password if it has been modified (or is new)
+  if (!user.isModified('password') || !user.password || user.password.length === 0) {
+      return next();
   }
   
   bcrypt.hash(user.password, SALT_WORK_FACTOR, function(err, hash) {
@@ -36,38 +37,6 @@ function preSavePerson(next){
     
   });
 }
-
-
-
-
-// Definition functions End Section
-
-// Utilisation du Middlewares de Mongoose
-// Operation de hashing sur la création de user
-//schema.pre("save",preSavePerson); 
-  /*
-  
-  mySchema.pre('save', function(next){
-      var user = this;
-      if (!user.isModified('password')) return next();
-
-      bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt){
-          if(err) return next(err);
-
-          bcrypt.hash(user.password, salt, function(err, hash){
-              if(err) return next(err);
-
-              user.password = hash;
-              next();
-          });
-      });
-  });
-  
-  
-  
-  */
-  
-
 
 // route middleware to verify a token
 router.use(function(req, res, next) {
