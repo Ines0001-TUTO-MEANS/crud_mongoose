@@ -35,4 +35,8 @@ module.exports =  mongoose.Schema({
     default: false
   },
   tasks : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tasks' }]
+},{
+  // If set timestamps, mongoose assigns createdAt and updatedAt fields to your schema,
+  timestamps:true
+
 });
