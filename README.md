@@ -3,6 +3,9 @@
 
 Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des fiche de type `Task`
 
+## Utilitaires
+
+[packages utiles](https://delicious-insights.com/fr/articles/libs-node-js/)
 
 ## Source d'information
 
