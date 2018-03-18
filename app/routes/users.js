@@ -40,7 +40,7 @@ function preSavePerson(next){
 }
 
 function preUpdatePerson(req,res,next){
-  console.log('preUpdatePerson')
+  console.log('preUpdatePerson', req.erm.document)
   if (req.erm.document.user !== req.user._id) {
     return res.sendStatus(401)
   }
