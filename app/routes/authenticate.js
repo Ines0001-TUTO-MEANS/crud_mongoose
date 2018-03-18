@@ -17,7 +17,7 @@ router.post('/authenticate', function(request, response) {
 		if (err) throw err;
 
     if (!user) {
-        res.json({ success: false, message: 'Authentication failed. User not found.' });
+        response.json({ success: false, message: 'Authentication failed. User not found.' });
     } else {
       // check if password matches
       // Load hash from your password DB.
