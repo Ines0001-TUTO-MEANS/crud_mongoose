@@ -12,7 +12,7 @@ var express = require('express')
 var schema = require('../models/Person')
 var options = {
   findOneAndUpdate: false,
-  preUpdate:preUpdatePerson,
+  //preUpdate:preUpdatePerson,
   access: function(req) {
     return 'protected';
   },
@@ -22,9 +22,8 @@ var options = {
 }
 // Definition functions Section
 function preSavePerson(next){
-  
   var user = this;
-  console.log('preSavePerson:',user)
+
   if (!user.isModified('password')){
     console.log('user.isModified')
     return next();
@@ -36,8 +35,29 @@ function preSavePerson(next){
           next();
     
   });
-  
 }
+
+function preUpdate(next){
+  console.log('preUpdate',this)
+
+  next()
+}
+
+function preFindOneAndUpdate(next){
+  console.log('preFindOneAndUpdate',this)
+
+  next()
+
+}
+
+
+/*
+  Utilisation du Middlewares de Mongoose
+  Operation de hashing sur la création de user */
+
+schema.pre('update',preUpdate);
+schema.pre('findOneAndUpdate',preUpdate);
+schema.pre("save",preSavePerson); 
 
 function preUpdatePerson(req,res,next){
   console.log('preUpdatePerson', req.erm.document)
