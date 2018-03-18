@@ -24,7 +24,6 @@ var options = {
 function preSavePerson(next){
   var user = this;
   
-  user.updated_at = new Date.now();
    // only hash the password if it has been modified (or is new)
   if (!user.isModified('password') || !user.password || user.password.length === 0) {
       return next();
