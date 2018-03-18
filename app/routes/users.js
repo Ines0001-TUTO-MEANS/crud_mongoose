@@ -57,7 +57,7 @@ function preFindOneAndUpdate(next){
 
 schema.pre('update',preUpdate);
 schema.pre('findOneAndUpdate',preUpdate);
-//schema.pre("save",preSavePerson); 
+schema.pre("save",preSavePerson); 
 
 function preUpdatePerson(req,res,next){
   console.log('preUpdatePerson', req.erm.document)
