@@ -10,6 +10,7 @@ var mailValidator = [
 
 
 module.exports =  mongoose.Schema({  
+  updated_at: { type: Date },
   name: {
     type: String,
     required: 'name is mandatory'

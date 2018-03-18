@@ -24,7 +24,7 @@ var options = {
 function preSavePerson(next){
   var user = this;
   
-  user._lastsave = new Date();
+  user.updated_at = new Date.now();
    // only hash the password if it has been modified (or is new)
   if (!user.isModified('password') || !user.password || user.password.length === 0) {
       return next();
@@ -37,7 +37,6 @@ function preSavePerson(next){
     
   });
 }
-
 // route middleware to verify a token
 router.use(function(req, res, next) {
 
