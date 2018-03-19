@@ -41,8 +41,19 @@ function preSavePerson(next){
   });
 }
 
-
-
+/*  Document middleware
+    pre remove action to allow to test admin user if request delete user
+    schema.pre("remove",function(next){...})
+*/
+function preRemovePerson(next){
+  var user = this;
+  
+   // only admin user authorized to remove user
+  if (!user.admin ) {
+      return next();
+  }
+  
+}
 // route middleware to verify a token
 
 router.use(function(req, res, next) {
@@ -81,7 +92,7 @@ router.use(function(req, res, next) {
   }
 });
 
-restify.serve(router, mongoose.model('Users', schema.pre("save",preSavePerson) ), options)
+restify.serve(router, mongoose.model('Users', schema.pre("save",preSavePerson).pre("remove"),preRemovePerson), options)
 
 
 
