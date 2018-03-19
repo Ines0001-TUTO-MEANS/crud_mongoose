@@ -26,10 +26,8 @@ var options = {
 
 function onErrorRestify(err, req, res, next){
   const statusCode = req.erm.statusCode // 400 or 404
-  console.log('onError:',err.message);
-  res.status(400).json({
-    message: err.message
-  })
+  console.log('onError:',JSON.stringify(err));
+  res.status(400).json(err)
   
 }
 
