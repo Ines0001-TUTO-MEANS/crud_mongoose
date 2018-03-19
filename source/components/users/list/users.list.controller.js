@@ -53,6 +53,7 @@
     function EraseUser(id){
      User_factory.delete({id:id},
                           function(data){
+                             console.log('User_factory.delete,data:',data|json);
                              // success
                              ListUser();
                             //$state.reload();
