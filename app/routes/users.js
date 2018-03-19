@@ -64,7 +64,7 @@ function preRemovePerson(next){
   }
   else{
       var err = new Error('not authorized to delete user');
-      console.log('preRemovePerson, error:',err.message)
+      
       next(err); 
   }
    
