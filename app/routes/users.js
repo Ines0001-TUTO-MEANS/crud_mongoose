@@ -26,8 +26,8 @@ var options = {
 
 function onErrorRestify(err, req, res, next){
   const statusCode = req.erm.statusCode // 400 or 404
-  console.log('onError:',JSON.stringify(err));
-  res.status(400).json(err)
+  
+  res.status(400).json({success:false,message:err.message})
   
 }
 
@@ -63,7 +63,8 @@ function preRemovePerson(next){
       return next();
   }
   else{
-      var err = new Error({success:false,message:'not authorized to delete user'});
+      var err = new Error('not authorized to delete user');
+      console.log('preRemovePerson, error:',err.message)
       next(err); 
   }
    
