@@ -48,8 +48,7 @@ function preSavePerson(next){
 */
 function preRemovePerson(next){
   var user = this;
-  console.log("preRemovePerson:",user)
-   // not authorized to delete admin user
+  // not authorized to delete admin user
   if (!user.admin ) {
       return next();
   }
