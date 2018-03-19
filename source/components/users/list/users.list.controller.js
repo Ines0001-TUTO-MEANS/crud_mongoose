@@ -58,7 +58,7 @@
                             //$state.reload();
                           },function(err){
                              // error
-                             console.log(err);
+                             console.log('User_factory.delete,_id:'+id+':error:'+err|json);
       })
     }
    
