@@ -47,8 +47,8 @@ function preSavePerson(next){
 */
 function preRemovePerson(next){
   var user = this;
-  
-   // only admin user authorized to remove user
+  console.log("preRemovePerson:",user)
+   // not authorized to delete admin user
   if (!user.admin ) {
       return next();
   }
@@ -92,7 +92,7 @@ router.use(function(req, res, next) {
   }
 });
 
-restify.serve(router, mongoose.model('Users', schema.pre("save",preSavePerson).pre("remove"),preRemovePerson), options)
+restify.serve(router, mongoose.model('Users', schema.pre("save",preSavePerson).pre("remove",preRemovePerson)), options)
 
 
 
