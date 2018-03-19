@@ -17,11 +17,23 @@ var options = {
   access: function(req) {
     return 'protected';
   },
+  onError: onErrorRestify,
   protected: ['name', 'age', 'email', 'password','admin']
   
       
 }
 // Definition functions Section
+
+function onErrorRestify(err, req, res, next){
+  const statusCode = req.erm.statusCode // 400 or 404
+
+  res.status(statusCode).json({
+    message: err.message
+  })
+  
+}
+
+
 /*  Document middleware
     pre save action to allow to apply hash password if told
     schema.pre("save",function(next){...})
