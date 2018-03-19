@@ -54,6 +54,10 @@ function preRemovePerson(next){
   }
   
 }
+
+schema.pre("save",preSavePerson);
+schema.pre("remove",preRemovePerson);
+
 // route middleware to verify a token
 
 router.use(function(req, res, next) {
@@ -92,7 +96,7 @@ router.use(function(req, res, next) {
   }
 });
 
-restify.serve(router, mongoose.model('Users', schema.pre("save",preSavePerson).pre("remove",preRemovePerson)), options)
+restify.serve(router, mongoose.model('Users', schema ), options)
 
 
 
