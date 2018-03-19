@@ -51,16 +51,16 @@
     }
     
     function EraseUser(id){
-     User_factory.delete({id:id},
-                          function(data){
-                             console.log('User_factory.delete,data:',data|json);
-                             // success
-                             ListUser();
-                            //$state.reload();
-                          },function(err){
-                             // error
-                             console.log('User_factory.delete,_id:'+id+':error:'+err|json);
-      })
+     User_factory.delete(
+          {id:id},
+          function(data){
+             // success
+             ListUser();
+            //$state.reload();
+          },function(err){
+             // error
+             $state.go('error',{status:err.status,message:err.data.message},{reload:true});
+          })
     }
    
     
