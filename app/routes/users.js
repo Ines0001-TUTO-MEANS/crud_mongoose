@@ -21,6 +21,10 @@ var options = {
       
 }
 // Definition functions Section
+/*  Document middleware
+    pre save action to allow to apply hash password if told
+    schema.pre("save",function(next){...})
+*/
 function preSavePerson(next){
   var user = this;
   
@@ -36,6 +40,9 @@ function preSavePerson(next){
     
   });
 }
+
+
+
 // route middleware to verify a token
 
 router.use(function(req, res, next) {
