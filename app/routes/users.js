@@ -12,6 +12,7 @@ var express = require('express')
 var schema = require('../models/Person')
 var options = {
   findOneAndUpdate: false,
+  findOneAndRemove: false,
   //preUpdate:preUpdatePerson,
   access: function(req) {
     return 'protected';
@@ -52,7 +53,11 @@ function preRemovePerson(next){
   if (!user.admin ) {
       return next();
   }
-  
+  else{
+      var err = new Error({success:false,message:'not authorized to delete user'});
+      next(err); 
+  }
+   
 }
 
 schema.pre("save",preSavePerson);
