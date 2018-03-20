@@ -25,12 +25,20 @@ router.post('/authenticate', function(request, response) {
         if (err) throw err;
         if (res) {
           var payload = {user: user.email};
-          var token = jwt.sign(payload, 
-                               'superSecret', 
-                               {  expiresIn: AUTHENTICATE_TOKEN_LAPS
-                                });
+          var d = new Date();
+          var expires = new Date();
+          expires.setMinutes(d.getMinutes()+1);
+          var token = jwt.sign({
+                  iss: user.email,
+                  exp: expires
+          },'superSecret');
 
-          response.json({ success: true, message: 'Good your token JWT:',token:token });
+          response.json({ success: true, message: 'Good your token JWT:',{
+                                        token : token,
+                                        expires: expires,
+                                        user: user.email
+                                        }
+          });
           
         }else{
           response.json({ success: false, message: 'Authentication failed. Wrong password.' });
