@@ -33,11 +33,11 @@ router.post('/authenticate', function(request, response) {
                   exp: expires
           },'superSecret');
 
-          response.json({ success: true, message: 'Good your token JWT:',{
-                                        token : token,
-                                        expires: expires,
-                                        user: user.email
-                                        }
+          response.json({ success: true, 
+                          message: 'Good your token JWT:',
+                          token : token,
+                          expires: expires,
+                          user: user.email }
           });
           
         }else{

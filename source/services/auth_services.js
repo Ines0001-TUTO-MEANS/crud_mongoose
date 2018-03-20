@@ -15,13 +15,14 @@
       var deferred = $q.defer();
 
       User.authenticate(user,function(data){
-        if(data.success && data.token){      
+        if(data.success && data.token && data.user){      
           /* Add token in cookies client
           Use by config.headers['x-access-token'] in request $http
           instanciate to app.config.js
           */
-          $cookies.put('token',data.token)
-          $cookies.put('user',user.email)
+          console.log('User.authenticate',data);
+          $cookies.put('token',data.token,{expires : data.expires ,secure:true})
+          $cookies.put('user',data.user)
       
           auth.user = user
           deferred.resolve(data.message)
