@@ -25,9 +25,9 @@ router.post('/authenticate', function(request, response) {
         if (err) throw err;
         if (res) {
           var payload = {user: user.email};
-          var d = new Date();
-          var expires = new Date();
-          expires.setMinutes(d.getMinutes()+1);
+          
+          var expires = Math.floor(Date.now() / 1000) + (60 * 60);
+          
           var token = jwt.sign({
                   iss: user.email,
                   exp: expires
@@ -38,7 +38,7 @@ router.post('/authenticate', function(request, response) {
                           token : token,
                           expires: expires,
                           user: user.email }
-          });
+          );
           
         }else{
           response.json({ success: false, message: 'Authentication failed. Wrong password.' });

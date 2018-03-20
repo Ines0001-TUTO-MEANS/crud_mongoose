@@ -21,7 +21,7 @@
           instanciate to app.config.js
           */
           console.log('User.authenticate',data);
-          $cookies.put('token',data.token,{expires : data.expires ,secure:true})
+          $cookies.put('token',data.token) //,{expires : data.expires ,secure:true})
           $cookies.put('user',data.user)
       
           auth.user = user
