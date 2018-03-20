@@ -18,7 +18,7 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 
 
 1. Authenticate a Node.js API with JSON Web Tokens [about scotch.io/tutorials](https://scotch.io/tutorials/authenticate-a-node-js-api-with-json-web-tokens).
-2. Item2
+2. très bonne source d'information sur le mécanisme de passage du token by [Angular Security - Authentication With JSON Web Tokens (JWT): The Complete Guide](https://blog.angular-university.io/angular-jwt-authentication/)
 ### authentification with JWT
 
 Etape de vérification du user et si celui-ci a les droits (admin, habilitation,...)
