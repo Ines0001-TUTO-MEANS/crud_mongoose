@@ -2,6 +2,7 @@
 	app.controller('LoginUserController', ['$q','$scope', '$state','AuthServices',function($q,$scope,$state,AuthServices,LoginToastController) {
     $scope.user={};
     $scope.errorMessage = '';
+    $scope.activated = false;
     $scope.imagePath = '/img/icons/nodejs.png';
     
     $scope.login = function(form){
