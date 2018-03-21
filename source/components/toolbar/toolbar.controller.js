@@ -25,10 +25,10 @@
       console.log('ToolbarController:$watch:authorized:'+$scope.authorized )
     })
     
-    function ShowLoginToast(){
+    $scope.ShowLoginToast = function(){
       $scope.toastVisible =true;
       var toast ={
-            controller : LoginToastController,
+            controller : ToastController,
             templateUrl: 'toast.login.html',
             position: "top right",
             hideDelay: 1000
