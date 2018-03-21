@@ -22,10 +22,10 @@
       if($scope.authorized){
           $scope.toastVisible =true;
           var toast ={
-                controller : ToolbarController,
-                templateUrl: 'toast.login.html',
+                controller : 'ToastController',
+                templateUrl: 'components/toolbar/toast.login.html',
                 position: "top right",
-                hideDelay: 1000
+                hideDelay: 5000
               };
 
           $mdToast.show(toast).then(function(response){
