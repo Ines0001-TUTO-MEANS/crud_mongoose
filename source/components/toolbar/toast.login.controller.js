@@ -1,9 +1,10 @@
 (function(app) {
-	app.controller('LoginToastController', ['$scope', '$mdToast',function($scope,$mdToast) {
+	app.controller('LoginToastController', ['$scope', 'AuthServices','$mdToast',function($scope,AuthServices,$mdToast) {
   $scope.toastVisible =false;
   $scope.dismissAction="";
+  $scope.authorized = false;
                                                                          
-  $scope.ShowLoginToast = function(){
+  function ShowLoginToast(){
     $scope.toastVisible =true;
     var toast ={
       controller : LoginToastController,
@@ -19,6 +20,17 @@
     })
     
   }
+  
+  $scope.$watch(function(){
+                    return AuthServices.user },
+                  function(newAuthorized,oldAuthorized){
+      
+      $scope.authorized =  !(typeof newAuthorized === 'undefined')
+      console.log('ToolbarController:$watch:authorized:'+$scope.authorized )
+      if($scope.authorized){
+          ShowLoginToast()
+      }
+    })
                                                                          
     
 	}]);
