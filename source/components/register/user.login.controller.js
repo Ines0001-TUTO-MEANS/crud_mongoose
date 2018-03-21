@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('LoginUserController', ['$q','$scope', '$state','AuthServices','LoginToastController',function($q,$scope,$state,AuthServices,$rootScope) {
+	app.controller('LoginUserController', ['$q','$scope', '$state','AuthServices',function($q,$scope,$state,AuthServices,LoginToastController) {
     $scope.user={};
     $scope.errorMessage = '';
     $scope.imagePath = '/img/icons/nodejs.png';
@@ -10,7 +10,7 @@
       AuthServices.login($scope.user).then(function(data){
           // Switch consult users.list link
           $state.go('users.list',undefined,{reload:true})
-          LoginToastController
+          LoginToastController.
       
       },function(err){
           form.password.$error.wrongpassword = true;
