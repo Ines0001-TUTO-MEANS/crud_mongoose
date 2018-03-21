@@ -69,6 +69,7 @@
         
             
       }else{
+        auth.user = undefined;
         return $q.reject({success:false,message:'operation logout without auth.user and no cookies token'}) 
       }
     
