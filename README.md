@@ -10,12 +10,12 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 ## Source d'information
 
 **Design front**
-[Material Login/Register form](https://www.supinfo.com/articles/single/184-decouverte-angular-material)
+1. [Material Login/Register form](https://www.supinfo.com/articles/single/184-decouverte-angular-material)
 
 **Routing**
-[ui-router Multiple name View](https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views)
+1. [ui-router Multiple name View](https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views)
 
-[ui-router Redirecting a transition](https://ui-router.github.io/guide/transitionhooks)
+1. [ui-router Redirecting a transition](https://ui-router.github.io/guide/transitionhooks)
 
 
 **Authentification via token:**
@@ -23,7 +23,14 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 2. très bonne source d'information sur le mécanisme de passage du token by [Angular Security - Authentication With JSON Web Tokens (JWT): The Complete Guide](https://blog.angular-university.io/angular-jwt-authentication/)
 3. AUtre source en français [AUTHENTIFICATION D’API VIA JWT ET LES COOKIES](http://website.simplx.fr/blog/2016/09/27/authentification-api-via-jwt-et-cookies/)
 
-Etape de vérification du user et si celui-ci a les droits (admin, habilitation,...)
+**Bower**
+1. [MOMENT.JS - MANIPULER LES DATES JAVASCRIPT SIMPLEMENT](https://momentjs.com/)
+```
+var expires = moment().add('days', 7).valueOf();
+```
+
+**JWT**
+1. Etape de vérification du user et si celui-ci a les droits (admin, habilitation,...)
 Envoie d'un token via JWT
 ```
 // =======================

@@ -24,6 +24,7 @@
     "angular-messages": "^1.6.9",
     "angular-resource": "^1.6.9",
     "angular-ui-router": "^1.0.15",
-    "angular-cookies": "^1.6.9"
+    "angular-cookies": "^1.6.9",
+    "moment": "^2.21.0"
   }
 }

@@ -34,7 +34,9 @@ var environment = './source',
       bowerFolder + '/angular-cookies/angular-cookies.min.js',
       bowerFolder + '/angular-ui-router/release/angular-ui-router.min.js',
       bowerFolder + '/angular-resource/angular-resource.min.js',
-      bowerFolder + '/angular-material/angular-material.min.js'];
+      bowerFolder + '/angular-material/angular-material.min.js',
+      bowerFolder + '/angular-material/angular-material.min.js'
+    ];
   
 
 
