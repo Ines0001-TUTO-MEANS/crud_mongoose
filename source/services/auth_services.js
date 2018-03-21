@@ -20,6 +20,7 @@
           Use by config.headers['x-access-token'] in request $http
           instanciate to app.config.js
           */
+          var expires = moment().add('days', 7).valueOf();
           console.log('User.authenticate',data);
           $cookies.put('token',data.token) //,{expires : data.expires ,secure:true})
           $cookies.put('user',data.user)
