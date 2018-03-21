@@ -21,8 +21,10 @@
           instanciate to app.config.js
           */
           var expires = moment().add(1,'minutes');
-          
-          $cookies.put('token',data.token,{expires : expires ,secure:true})
+          var d = new Date();
+          var n = expires.toUTCString();
+          console.log('AuthServices : n',n)
+          //$cookies.put('token',data.token,{expires : expires ,secure:true})
           $cookies.put('user',data.user)
       
           auth.user = user
