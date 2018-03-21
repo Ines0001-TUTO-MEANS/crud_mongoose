@@ -20,9 +20,9 @@
           Use by config.headers['x-access-token'] in request $http
           instanciate to app.config.js
           */
-          var expires = moment().add(1,'minutes').format("dddd, MMMM Do YYYY, h:mm:ss a");
-          console.log('AuthServices : expires: ',expires);
-          $cookies.put('token',data.token) //,{expires : data.expires ,secure:true})
+          var expires = moment().add(1,'minutes');
+          
+          $cookies.put('token',data.token,{expires : expires ,secure:true})
           $cookies.put('user',data.user)
       
           auth.user = user
