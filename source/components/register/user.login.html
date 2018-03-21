@@ -34,6 +34,10 @@
                   <div ng-message="required">Merci de saisir une adresse mail</div>
                 </div>
               </md-input-container>
+              
+              <div layout="row" layout-sm="column" layout-align="space-around">
+                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+              </div>
 
               <md-button class="md-raised md-primary" type="submit" ng-disabled="form.login.$invalid" >Login</md-button>
 
