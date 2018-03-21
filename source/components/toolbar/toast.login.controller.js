@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('LoginToastController', ['$scope', '$mdToast',function($scope,$mdToast {
+	app.controller('LoginToastController', ['$scope', '$mdToast',function($scope,$mdToast) {
   $scope.toastVisible =false;
   $scope.dismissAction="";
                                                                          
@@ -13,9 +13,10 @@
       
     };
     
-    $mdToast.show(toast){
-      
-    }
+    $mdToast.show(toast).then(function(response){
+      console.log('LoginToastController: timeout delay')
+      $scope.toastVisible = false;
+    })
     
   }
                                                                          
