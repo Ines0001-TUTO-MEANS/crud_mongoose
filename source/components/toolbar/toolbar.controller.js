@@ -20,26 +20,23 @@
       
       $scope.authorized =  !(typeof newAuthorized === 'undefined')
       if($scope.authorized){
-          ShowLoginToast()
+          $scope.toastVisible =true;
+          var toast ={
+                controller : ToolbarController,
+                templateUrl: 'toast.login.html',
+                position: "top right",
+                hideDelay: 1000
+              };
+
+          $mdToast.show(toast).then(function(response){
+            console.log('LoginToastController: timeout delay')
+            $scope.toastVisible = false;
+          })
       }
       console.log('ToolbarController:$watch:authorized:'+$scope.authorized )
     })
     
-    $scope.ShowLoginToast = function(){
-      $scope.toastVisible =true;
-      var toast ={
-            controller : ToastController,
-            templateUrl: 'toast.login.html',
-            position: "top right",
-            hideDelay: 1000
-          };
-
-      $mdToast.show(toast).then(function(response){
-        console.log('LoginToastController: timeout delay')
-        $scope.toastVisible = false;
-      })
-    
-    }
+   
     
 	}]);
 })(CrudMongoose);
