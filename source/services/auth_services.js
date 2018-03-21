@@ -23,7 +23,7 @@
           var expires = moment().add(1,'minutes').toDate();
           
           $cookies.put('token',data.token,{expires : expires ,secure:true})
-          $cookies.put('user',data.user)
+          $cookies.put('user',data.user,{expires : expires ,secure:true})
       
           auth.user = user
           deferred.resolve(data.message)
