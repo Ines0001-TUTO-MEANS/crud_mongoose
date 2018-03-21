@@ -10,7 +10,7 @@
       AuthServices.login($scope.user).then(function(data){
           // Switch consult users.list link
           $state.go('users.list',undefined,{reload:true})
-          LoginToastController.
+          
       
       },function(err){
           form.password.$error.wrongpassword = true;

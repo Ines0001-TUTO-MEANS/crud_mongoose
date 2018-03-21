@@ -10,7 +10,7 @@
       controller : LoginToastController,
       templateUrl: 'toast.login.html',
       position: "top right",
-      hideDelay: 1000;
+      hideDelay: 1000
       
     };
     
@@ -26,7 +26,7 @@
                   function(newAuthorized,oldAuthorized){
       
       $scope.authorized =  !(typeof newAuthorized === 'undefined')
-      console.log('ToolbarController:$watch:authorized:'+$scope.authorized )
+      console.log('LoginToastController:$watch:authorized:'+$scope.authorized )
       if($scope.authorized){
           ShowLoginToast()
       }

@@ -13,7 +13,7 @@
       })
     }
     
-    
+    /*
     $scope.$watch(function(){
                     return AuthServices.user },
                   function(newAuthorized,oldAuthorized){
@@ -21,6 +21,7 @@
       $scope.authorized =  !(typeof newAuthorized === 'undefined')
       console.log('ToolbarController:$watch:authorized:'+$scope.authorized )
     })
+    */
     
 	}]);
 })(CrudMongoose);
