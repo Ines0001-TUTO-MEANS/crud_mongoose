@@ -20,11 +20,9 @@
           Use by config.headers['x-access-token'] in request $http
           instanciate to app.config.js
           */
-          var expires = moment().add(1,'minutes');
-          var d = new Date();
-          var n = expires.toUTCString();
-          console.log('AuthServices : n',n)
-          //$cookies.put('token',data.token,{expires : expires ,secure:true})
+          var expires = moment().add(1,'minutes').toDate();
+          
+          $cookies.put('token',data.token,{expires : expires ,secure:true})
           $cookies.put('user',data.user)
       
           auth.user = user
@@ -71,7 +69,7 @@
         
             
       }else{
-        $q.reject({success:false,message:'operation logout without auth.user and no cookies token'}) 
+        return $q.reject({success:false,message:'operation logout without auth.user and no cookies token'}) 
       }
     
     
