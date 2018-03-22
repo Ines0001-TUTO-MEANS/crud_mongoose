@@ -1,7 +1,7 @@
 (function(app) {
 	app.directive('helloWorld', function() {
    return {
-     restric: 'AEC',
+     restrict: 'AEC',
      replace: true,
      template :'Hello World'
    
