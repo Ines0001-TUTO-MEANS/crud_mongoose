@@ -39,7 +39,14 @@
                 <md-progress-circular ng-disabled="!activated" md-mode="indeterminate"></md-progress-circular>
              
 
-              <md-button class="md-raised md-primary" type="submit" ng-disabled="form.login.$invalid" >Login</md-button>
+              <md-button class="md-raised md-primary" type="submit" ng-disabled="form.login.$invalid" >
+                
+                <span ng-show="!showSpinner">Login</span>
+                <md-progress-circular md-mode="indeterminate" md-diameter="20" ng-show="showSpinner"></md-progress-circular>
+                Login
+              
+              
+              </md-button>
 
             </form>
           
