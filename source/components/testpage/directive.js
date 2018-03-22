@@ -3,6 +3,9 @@
    return {
      restrict: 'AEC',
      replace: true,
+     scope:{
+       message:'=messageAttrb'
+     },
      templateUrl :'components/test/hello.world.html',
      link: function(scope,elem,attrbs){
        scope.clearMessage= function(){
