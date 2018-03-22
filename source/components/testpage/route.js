@@ -5,7 +5,8 @@
             url: '/test',
             views:{
               'content':{
-                templateUrl: 'components/testpage/page.html'
+                templateUrl: 'components/testpage/page.html',
+                controller:  'testpagecontroller'
               }
             }
         })

@@ -1,13 +1,11 @@
 (function(app) {
-	app.directive('helloWorld', [function() {
+	app.directive('helloWorld', function() {
    return {
      restric: 'AEC',
      replace: true,
-     template :'Hello World',
-     
-     link : function( scope,elem
+     template :'Hello World'
    
    } 
     
-	}]);
+	});
 })(CrudMongoose);
