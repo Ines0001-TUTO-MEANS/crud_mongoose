@@ -4,8 +4,8 @@
      restrict: 'AEC',
      replace: true,
      scope:{
-       message:'=messageAttrb',
-       
+       message: '=messageAttrb',
+       showMessage: '&callbackShowMessage'
      },
      templateUrl :'components/test/hello.world.html',
      link: function(scope,elem,attrbs){
@@ -15,7 +15,7 @@
        }
        
        scope.$watch('message',function(value){
-         console.log('message Changed!')
+         scope.showMessage({arg:value});
        
        });
        
