@@ -38,12 +38,13 @@
               
                 <md-progress-circular ng-disabled="!activated" md-mode="indeterminate"></md-progress-circular>
              
-
-              <md-button class="md-raised circular-progress-button md-warn" type="submit" ng-disabled="form.login.$invalid" >
-                <span ng-show="!showSpinner">Login</span>
-                <md-progress-circular md-mode="indeterminate" md-diameter="20" ng-show="showSpinner"></md-progress-circular>
-              </md-button>
-
+              <div layout="row" layout-align="center center">
+                <md-button class="md-raised circular-progress-button md-warn" type="submit" ng-disabled="form.login.$invalid" >
+                  <span ng-show="!showSpinner">Login</span>
+                  <md-progress-circular md-mode="indeterminate" md-diameter="20" ng-show="showSpinner"></md-progress-circular>
+                </md-button>
+              </div>
+              
             </form>
           
           </md-tab>
