@@ -7,7 +7,7 @@
     
     $scope.login = function(form){
       $scope.showSpinner = true;
-      form.$invalid = true;
+      
       // Call authenticate service
       AuthServices.login($scope.user).then(function(data){
           // Switch consult users.list link
