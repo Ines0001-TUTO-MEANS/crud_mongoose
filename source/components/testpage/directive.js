@@ -3,12 +3,12 @@
    return {
      restrict: 'AEC',
      replace: true,
-     transclude:true,
+     
      scope:{
        message: '=messageAttrb',
        callback: '&onClickConsole'
      },
-     templateUrl :'components/test/hello.world.html',
+     
      link: function(scope,elem,attrbs){
        scope.clearMessage= function(){
          
@@ -22,7 +22,10 @@
        
        })
      
-     }
+     },
+   
+     templateUrl :'components/test/hello.world.html',
+    transclude:true
    
    } 
     
