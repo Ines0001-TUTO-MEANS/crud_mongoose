@@ -3,7 +3,24 @@
    return {
      restrict: 'AEC',
      replace: true,
-     templateUrl :'components/test/hello.world.html'
+     templateUrl :'components/test/hello.world.html',
+     link: function(scope,elem,attrbs){
+       scope.clearMessage= function(){
+         scope.message = "";
+         
+       }
+       
+       scope.$watch('message',function(value){
+         console.log('message Changed!')
+       
+       });
+       
+       elem.bind('mouseover',function(){
+         elem.css('cursor','pointer');
+       
+       })
+     
+     }
    
    } 
     
