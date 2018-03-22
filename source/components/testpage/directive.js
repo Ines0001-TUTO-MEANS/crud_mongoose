@@ -5,19 +5,16 @@
      replace: true,
      scope:{
        message: '=messageAttrb',
-       showMessage: '&callbackShowMessage'
+       callback: '&onClickConsole'
      },
      templateUrl :'components/test/hello.world.html',
      link: function(scope,elem,attrbs){
        scope.clearMessage= function(){
+         
+         scope.callback({arg:scope.message});
          scope.message = "";
          
        }
-       
-       scope.$watch('message',function(value){
-         scope.showMessage({arg:value});
-       
-       });
        
        elem.bind('mouseover',function(){
          elem.css('cursor','pointer');
