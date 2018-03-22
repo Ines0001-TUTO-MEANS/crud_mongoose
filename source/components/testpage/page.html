@@ -1,4 +1,9 @@
 <div>
   <input type="text" ng-model="message" placeholder="Enter message">
-  <hello-world message-attrb="message" on-click-console="showMessage(arg)"  ></hello-world>
+  <hello-world message-attrb="message" on-click-console="showMessage(arg)"  >
+    <p>
+      Partie injecté dans la transclusion
+    </p>
+  
+  </hello-world>
 </div>

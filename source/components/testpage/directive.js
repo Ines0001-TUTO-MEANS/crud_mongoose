@@ -3,6 +3,7 @@
    return {
      restrict: 'AEC',
      replace: true,
+     transclude:true,
      scope:{
        message: '=messageAttrb',
        callback: '&onClickConsole'
