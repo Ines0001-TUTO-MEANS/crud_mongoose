@@ -3,7 +3,7 @@
    return {
      restrict: 'AEC',
      replace: true,
-     template :'Hello World'
+     templateUrl :'components/error/page.html'
    
    } 
     
