@@ -4,7 +4,8 @@
      restrict: 'AEC',
      replace: true,
      scope:{
-       message:'=messageAttrb'
+       message:'=messageAttrb',
+       
      },
      templateUrl :'components/test/hello.world.html',
      link: function(scope,elem,attrbs){
