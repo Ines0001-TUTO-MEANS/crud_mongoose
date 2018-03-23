@@ -5,7 +5,7 @@
      replace: true,
      
      scope:{
-       message: '=messageAttrb',
+       message: '@messageAttrb',
        callback: '&onClickConsole'
      },
      
@@ -24,7 +24,7 @@
      
      },
    
-     templateUrl :'components/test/hello.world.html',
+     templateUrl :'components/testpage/hello.world.html',
     transclude:true
    
    } 
