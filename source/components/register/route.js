@@ -6,10 +6,8 @@
             url: '/register',
             views:{
               'content':{
-                  templateUrl: 'components/testPage/page.html',
-                  controller: function($scope) {
-                                $scope.message = {Page:'register'};
-                              }
+                  templateUrl: 'components/testpage/page.html',
+                  controller: 'testpagecontroller'
                 }
               }})
           .state('login',{
