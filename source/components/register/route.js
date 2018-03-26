@@ -14,10 +14,11 @@
             views:{
               'content':{
                   templateUrl: 'components/testpage/page.html',
-                  controller: 'testpagecontroller',
                   resolve: {
-                    name:function(){return 'Register Form'}
-                  }
+                      name:function(){return 'Register Form'}
+                  },
+                  controller: 'testpagecontroller'
+                  
                 }
               }})
           .state('auth.login',{
@@ -25,10 +26,11 @@
             views:{
               'content': {
                   templateUrl: 'components/testpage/page.html',
-                  controller: 'testpagecontroller',
                   resolve: {
-                    name:function(){return 'Login Form'}
-                  }
+                      name:function(){return 'Login Form'}
+                  },
+                  controller: 'testpagecontroller'
+                  
                 }
             }})
           .state('logout',{

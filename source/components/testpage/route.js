@@ -6,6 +6,9 @@
             views:{
               'content':{
                 templateUrl: 'components/testpage/page.html',
+                resolve: {
+                    name:function(){return 'test page'}
+                },
                 controller: 'testpagecontroller'
               }
             }
