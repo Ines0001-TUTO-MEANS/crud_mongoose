@@ -22,7 +22,10 @@
             views:{
               'content': {
                   templateUrl: 'components/testpage/page.html',
-                  controller: 'testpagecontroller'
+                  controller: 'testpagecontroller',
+                  resolve: {
+                    
+                  }
                 }
             }})
           .state('logout',{
