@@ -7,7 +7,9 @@
               'content':{
                 templateUrl: 'components/testpage/page.html',
                 resolve: {
-                    name:function(){return 'test page'}
+                    name:  function(){
+                              return {page: 'simple page'};
+                           }
                 },
                 controller: 'testpagecontroller'
               }
