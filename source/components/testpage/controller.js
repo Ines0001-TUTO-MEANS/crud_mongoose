@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('testpagecontroller', ['$scope','name',function($scope,name) {
+	app.controller('testpagecontroller', ['$scope',function($scope) {
     $scope.message = name.page 
     $scope.info = 'Information mail controller'
       

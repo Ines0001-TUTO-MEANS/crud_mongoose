@@ -9,7 +9,7 @@
                 
                 controller: 'testpagecontroller',
                 resolve: {
-                    name:  function(){
+                    allo:  function(){
                               return {page: 'simple page'};
                            }
                 }
