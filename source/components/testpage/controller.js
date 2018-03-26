@@ -1,6 +1,6 @@
 (function(app) {
-	app.controller('testpagecontroller', ['$scope',function($scope) {
-    $scope.message='I love AngularJS!'
+	app.controller('testpagecontroller', ['$scope','name',function($scope,name) {
+    $scope.message = name || 'Init page'
     $scope.info = 'Information mail controller'
       
     $scope.showMessage = function(arg){
