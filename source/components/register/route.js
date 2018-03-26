@@ -2,7 +2,14 @@
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
         $stateProvider
-          .state('register',{
+          .state('auth',{
+            url: '/auth',
+            views:{
+              'content':{
+                  templateUrl: 'components/register/user.auth.html'
+                }
+              }})
+          .state('auth.register',{
             url: '/register',
             views:{
               'content':{
@@ -10,12 +17,12 @@
                   controller: 'testpagecontroller'
                 }
               }})
-          .state('login',{
+          .state('auth.login',{
             url: '/login',
             views:{
               'content': {
-                  templateUrl: 'components/register/user.login.html',
-                  controller: 'LoginUserController'
+                  templateUrl: 'components/testpage/page.html',
+                  controller: 'testpagecontroller'
                 }
             }})
           .state('logout',{
