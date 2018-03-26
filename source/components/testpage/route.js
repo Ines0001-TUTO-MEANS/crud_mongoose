@@ -6,12 +6,13 @@
             views:{
               'content':{
                 templateUrl: 'components/testpage/page.html',
+                
+                controller: 'testpagecontroller',
                 resolve: {
-                    name:  [function(){
+                    name:  function(){
                               return {page: 'simple page'};
-                           }]
-                },
-                controller: 'testpagecontroller'
+                           }
+                }
               }
             }
         })
