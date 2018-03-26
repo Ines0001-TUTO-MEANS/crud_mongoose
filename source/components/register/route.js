@@ -14,7 +14,10 @@
             views:{
               'content':{
                   templateUrl: 'components/testpage/page.html',
-                  controller: 'testpagecontroller'
+                  controller: 'testpagecontroller',
+                  resolve: {
+                    message:'Register Form'
+                  }
                 }
               }})
           .state('auth.login',{
@@ -24,7 +27,7 @@
                   templateUrl: 'components/testpage/page.html',
                   controller: 'testpagecontroller',
                   resolve: {
-                    
+                    message:'Login Form'
                   }
                 }
             }})
