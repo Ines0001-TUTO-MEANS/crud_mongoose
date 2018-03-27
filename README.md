@@ -12,6 +12,8 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 **Design front**
 1. [Material Login/Register form](https://www.supinfo.com/articles/single/184-decouverte-angular-material)
 1. [Progress Circular in md-button](https://codepen.io/1kohei1/pen/XbwMLQ?editors=1010)
+1. [Confirm password validation angularjs material design
+](https://stackoverflow.com/questions/45102658/confirm-password-validation-angularjs-material-design)
 
 **Routing**
 1. [ui-router Multiple name View](https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views)
