@@ -6,20 +6,20 @@
             url: '/auth',
             views:{
                     'content':{
-                        templateUrl: 'components/register/user.auth.html'
+                        templateUrl: 'components/register/user.auth.html',
+                        controller:'AuthController'
                     }
             }
            
           })
           .state('auth.register',{
             url: '/register',
-            templateUrl: 'components/register/auth.register.html
+            templateUrl: 'components/register/auth.register.html'
             
           })
           .state('auth.login',{
             url: '/login',
-            templateUrl: 'components/register/auth.register.html,
-            controller: 'testpagecontroller'
+            templateUrl: 'components/register/auth.login.html'
               
           })
           .state('logout',{
