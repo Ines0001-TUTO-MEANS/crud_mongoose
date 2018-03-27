@@ -1,8 +1,8 @@
 (function(app) {
-	app.controller('testpagecontroller', ['$scope','simpleObj',function($scope,simpleObj) {
+	app.controller('testpagecontroller', ['$scope','initName',function($scope,initName) {
     $scope.message = name.page 
     $scope.info = 'Information mail controller'
-    $scope.simple = simpleObj.value;
+    $scope.simple = initName.value;
       
     $scope.showMessage = function(arg){
       console.log('testpagecontroller : showMessage with:'+ arg + 'parameter')

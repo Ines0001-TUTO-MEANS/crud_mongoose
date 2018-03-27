@@ -15,7 +15,7 @@
               'content':{
                   templateUrl: 'components/testpage/page.html',
                   resolve: {
-                      name:function(){return 'Register Form'}
+                      initName:function(){return 'Register Form'}
                   },
                   controller: 'testpagecontroller'
                   
@@ -27,7 +27,7 @@
               'content': {
                   templateUrl: 'components/testpage/page.html',
                   resolve: {
-                      name:function(){return 'Login Form'}
+                      initName:function(){return 'Login Form'}
                   },
                   controller: 'testpagecontroller'
                   

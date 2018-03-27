@@ -8,8 +8,8 @@
 
          // Example using function with simple return value.
          // Since it's not a promise, it resolves immediately.
-         simpleObj:  function(){
-            return {value: 'simple valeur en resolve'};
+         initName:  function(){
+            return {value: 'Valeur de test..'};
          }
 
       },
