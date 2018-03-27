@@ -8,44 +8,30 @@
             })
           .state('auth.register',{
             url: '/register',
-            
-            views:{
-              'content':{
-                  templateUrl: 'components/testpage/page.html',
-                  controller: 'testpagecontroller'
-                  
-                }
-              },
+            templateUrl: 'components/testpage/page.html',
             resolve: {
                     initName:function(){return 'Register Form'}
-            }
+            },
+            controller: 'testpagecontroller'
             })
           .state('auth.login',{
             url: '/login',
-            
-            views:{
-              'content': {
-                  templateUrl: 'components/testpage/page.html',
-                  controller: 'testpagecontroller'
-                  
-                }
-            },
+            templateUrl: 'components/testpage/page.html',
             resolve: {
                     initName:function(){return 'Login Form'}
-                }
-        
+            },
+            controller: 'testpagecontroller'
+            
           })
           .state('logout',{
             url: '/logout',  
-            views:{
-              'content': {
-                  templateUrl: 'components/testPage/page.html',
-                  controller: function($scope) {
-                                $scope.message = {Page:'logout'};
-                              }
-                  
-                }
-            }})
+            templateUrl: 'components/testpage/page.html',
+            resolve: {
+                    initName:function(){return 'Logout Form'}
+            },
+            controller: 'testpagecontroller'
+            
+          })
 
         //$urlRouterProvider.otherwise('/login')
     }]);
