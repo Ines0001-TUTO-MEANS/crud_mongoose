@@ -4,24 +4,18 @@
         $stateProvider
           .state('auth',{
             url: '/auth',
-            templateUrl: 'components/register/user.auth.html'
+            templateUrl: 'components/register/user.auth.html',
+            controller : 'AuthController'
             })
           .state('auth.register',{
             url: '/register',
-            templateUrl: 'components/testpage/page.html',
-            resolve: {
-                    initName:function(){return 'Register Form'}
-            },
-            controller: 'testpagecontroller'
+            templateUrl: 'components/register/auth.register.html'
+            
             })
           .state('auth.login',{
             url: '/login',
-            templateUrl: 'components/testpage/page.html',
-            resolve: {
-                    initName:function(){return 'Login Form'}
-            },
-            controller: 'testpagecontroller'
-            
+            templateUrl: 'components/register/auth.login.html'
+              
           })
           .state('logout',{
             url: '/logout',  
