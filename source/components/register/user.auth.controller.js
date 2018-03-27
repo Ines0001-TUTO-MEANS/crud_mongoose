@@ -4,6 +4,7 @@
     $scope.errorMessage = '';
     $scope.showSpinner = false;
     $scope.imagePath = '/img/icons/nodejs.png';
+    $scope.currentNavItem = 'login'
     
     $scope.login = function(form){
       $scope.showSpinner = true;

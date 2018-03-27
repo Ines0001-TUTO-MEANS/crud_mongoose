@@ -14,13 +14,18 @@
           })
           .state('auth.register',{
             url: '/register',
-            templateUrl: 'components/register/auth.register.html'
+            templateUrl: 'components/register/auth.register.html',
+            controller: function($scope){
+              $scope.currentNavItem = 'register'
+            }
             
           })
           .state('auth.login',{
             url: '/login',
             templateUrl: 'components/register/auth.login.html',
-            controller:
+            controller: function($scope){
+              $scope.currentNavItem = 'login'
+            }
               
           })
           .state('logout',{
