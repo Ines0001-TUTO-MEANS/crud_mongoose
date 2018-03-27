@@ -15,16 +15,16 @@
           .state('auth.register',{
             url: '/register',
             templateUrl: 'components/register/auth.register.html',
-            controller: function(){
-              this.currentNavItem = 'register'
+            controller: function($scope){
+              $scope.$parent.currentNavItem = 'register'
             }
             
           })
           .state('auth.login',{
             url: '/login',
             templateUrl: 'components/register/auth.login.html',
-            controller: function(){
-              this.currentNavItem = 'login'
+            controller: function($scope){
+              $scope.$parent.currentNavItem = 'login'
             }
               
           })
