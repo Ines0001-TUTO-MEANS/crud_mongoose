@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('LoginUserController', ['$q','$scope', '$state','AuthServices',function($q,$scope,$state,AuthServices,LoginToastController) {
+	app.controller('AuthController', ['$q','$scope', '$state','AuthServices',function($q,$scope,$state,AuthServices,LoginToastController) {
     $scope.user={};
     $scope.errorMessage = '';
     $scope.showSpinner = false;
