@@ -19,7 +19,8 @@
           })
           .state('auth.login',{
             url: '/login',
-            templateUrl: 'components/register/auth.login.html'
+            templateUrl: 'components/register/auth.login.html',
+            controller:
               
           })
           .state('logout',{
