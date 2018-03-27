@@ -4,6 +4,7 @@
         $stateProvider
           .state('auth',{
             url: '/auth',
+            abstract: true,
             views:{
                     'content':{
                         templateUrl: 'components/register/user.auth.html',
