@@ -5,16 +5,23 @@
       replace: true,
 
       scope:{
-       title: '='
+       title: '@'
 
       },
 
       link: function(scope,elem,attrbs){
        scope.ngtoggle = false;
+       var oldTitle ='';
 
        scope.toggle= function(){
 
          scope.ngtoggle = !scope.ngtoggle
+         if(scope.ngtoggle){ 
+           oldTitle = scope.title
+           scope.title= scope.title+' -ouvert-'
+         }else{
+           if(oldTitle) scope.title = oldTitle
+         }
 
        }
 

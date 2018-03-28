@@ -4,6 +4,7 @@
         $stateProvider
         .state('users', {
                 url: '/users',
+                abstract: true,
                 views:{
                   'content':{
                      templateUrl: 'components/users/index.html' 
