@@ -10,11 +10,11 @@
       },
 
       link: function(scope,elem,attrbs){
-       scope.toggle = false;
+       scope.ngtoggle = false;
 
        scope.toggle= function(){
 
-         scope.toggle = !scope.toggle
+         scope.ngtoggle = !scope.ngtoggle
 
        }
 
