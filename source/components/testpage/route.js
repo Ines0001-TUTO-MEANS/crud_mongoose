@@ -3,14 +3,9 @@
 
       $stateProvider.state('test', {
       url: '/test',
-      templateUrl: 'components/testpage/page.html',  
+      templateUrl: 'components/testpage/expander.page.html',  
       resolve:{
 
-         // Example using function with simple return value.
-         // Since it's not a promise, it resolves immediately.
-         initName:  function(){
-            return {value: 'Valeur de test..'};
-         }
 
       },
 
@@ -19,7 +14,10 @@
       // controller will not instantiate until promiseObj's promise has 
       // been resolved. Then those objects are injected into the controller
       // and available for use.  
-      controller: 'testpagecontroller'
+      controller: function($scope){
+        $scope.title = 'Titre article';
+        $scope.message='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nisl pharetra, placerat sem sit amet, convallis justo. Pellentesque dictum.'
+      }
      })
       
       
