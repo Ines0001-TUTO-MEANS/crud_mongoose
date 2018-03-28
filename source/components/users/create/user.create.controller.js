@@ -2,6 +2,7 @@
 	app.controller('UserCreateController', ['$scope','User_factory', function($scope,User_factory) {
     
     $scope.user = {};
+    $scope.$parent.currentNavItem = 'users.create';
     
     $scope.saveCreateForm = function(user){
       User_factory.save(user,function(data){

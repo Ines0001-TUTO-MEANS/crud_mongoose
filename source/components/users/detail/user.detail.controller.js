@@ -1,6 +1,7 @@
 (function(app) {
 	app.controller('UserDetailController', ['$scope', '$stateParams','User_factory','$mdDialog',function($scope,$stateParams,User_factory,$mdDialog) {
     $scope.user={};
+    $scope.$parent.currentNavItem = 'users.detail';
     
     /*
     $http.get('/data/user.json').
