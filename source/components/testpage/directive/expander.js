@@ -1,31 +1,32 @@
 (function(app) {
-	app.directive('helloWorld', function() {
+	app.directive('expander', function() {
    return {
-     restrict: 'AEC',
-     replace: true,
-     
-     scope:{
-       message: '@messageAttrb',
-       callback: '&onClickConsole'
-     },
-     
-     link: function(scope,elem,attrbs){
-       scope.clearMessage= function(){
-         
-         scope.callback({arg:scope.message});
-         scope.message = "";
-         
+      restrict: 'E',
+      replace: true,
+
+      scope:{
+       title: '='
+
+      },
+
+      link: function(scope,elem,attrbs){
+       scope.toggle = false;
+
+       scope.toggle= function(){
+
+         scope.toggle = !scope.toggle
+
        }
-       
+
        elem.bind('mouseover',function(){
          elem.css('cursor','pointer');
-       
+
        })
-     
-     },
-   
-     templateUrl :'components/testpage/hello.world.html',
-    transclude:true
+
+      },
+
+      templateUrl :'components/testpage/directive/expander.html',
+      transclude:true
    
    } 
     
