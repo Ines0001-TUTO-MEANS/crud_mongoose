@@ -15,7 +15,11 @@
         .state('users.list', {
                 url: '/list',
                 templateUrl: 'components/users/list/users.list.html',
-                controller: 'UsersListController'
+                controller: 'UsersListController',
+                resolve: {
+                  
+                
+                }
             })
         .state('users.detail', {
                 url: '/detail/:idUser',
