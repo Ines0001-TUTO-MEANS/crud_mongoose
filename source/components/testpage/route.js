@@ -6,7 +6,7 @@
       
       views:{
         'content':{
-            templateUrl: 'components/testpage/accordion.page.html',  
+            templateUrl: 'components/testpage/page.html',  
             controller: function($scope){
               $scope.expanders=[{
                 title: 'Titre article',
