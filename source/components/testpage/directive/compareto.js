@@ -9,7 +9,7 @@
       },
       link: function(scope,elem,attrbs,ngModelCtrl){
           scope.$watch('compareTo',function(){
-            ngModelCtrl.
+            console.log('vmPassword.confirm_password',ngModelCtrl.vmPassword.confirm_password)
           })    
 
       }
