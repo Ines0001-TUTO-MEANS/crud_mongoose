@@ -17,7 +17,7 @@
 
 
   <div flex>
-    <md-input-container class="md-block" >
+   <md-input-container class="md-block" flex-gt-sm>
       <label>Password</label>
       <input type="password" name="password" ng-model="vmPassword.password" required />
       <div ng-messages="passwordForm.password.$error" role="alert" class="form-errors first-name-error">
@@ -25,7 +25,7 @@
       </div>
     </md-input-container>
 
-    <md-input-container class="md-block" >
+    <md-input-container class="md-block" flex-gt-sm>
       <label>Confirm Password</label>
       <input type="password" name="confirm_password" ng-model="vmPassword.confirm_password" required compare-to="vmPassword.password" />
       <div ng-messages="passwordForm.confirm_password.$error" role="alert" class="form-errors first-name-error">
