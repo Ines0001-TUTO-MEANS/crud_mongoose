@@ -6,7 +6,7 @@
       
       views:{
         'content':{
-            templateUrl: 'components/testpage/expander.page.html',  
+            templateUrl: 'components/testpage/accordion.page.html',  
             controller: function($scope){
               $scope.title = 'Titre article';
               $scope.message='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nisl pharetra, placerat sem sit amet, convallis justo. Pellentesque dictum.'
