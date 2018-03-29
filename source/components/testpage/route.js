@@ -11,7 +11,13 @@
               $scope.expanders=[{
                 title: 'Titre article',
                 message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nisl pharetra, placerat sem sit amet, convallis justo. Pellentesque dictum.'
-              }]
+              },{
+                title: 'Titre article',
+                message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nisl pharetra, placerat sem sit amet, convallis justo. Pellentesque dictum.'
+              },{
+              title: 'Titre article',
+              message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nisl pharetra, placerat sem sit amet, convallis justo. Pellentesque dictum.'
+              }];
         }
       }
       // The controller waits for every one of the above items to be

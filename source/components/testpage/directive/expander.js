@@ -5,12 +5,19 @@
    return {
       restrict: 'E',
       replace: true,
+      transclude: true,
       template :'<div ng-transclude></div>',
       controller: function($scope){
           var expanders = [];
         
           this.addExpander = function(expander){
             expanders.push(expander);
+          }
+          
+          this.collapseAll = function(expander){
+            expanders.forEach(function(item){
+              if(item!=expander) expander.ngtoggle = false
+            })
           }
       
       
@@ -25,7 +32,7 @@
    return {
       restrict: 'E',
       replace: true,
-      require: '',
+      require: '^accordion',
       scope:{
        title: '@'
 
