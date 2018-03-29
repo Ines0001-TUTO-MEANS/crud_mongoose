@@ -8,8 +8,8 @@
             compareTo: "="
       },
       link: function(scope,elem,attrbs,ngModelCtrl){
-          scope.$watch('compareTo',function(){
-            console.log('vmPassword.confirm_password')
+          scope.$watch('ngModelCtrl.confirm_password',function(){
+            console.log('confirm_password')
           })    
 
       }

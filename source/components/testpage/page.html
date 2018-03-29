@@ -20,7 +20,7 @@
     <form name="passwordForm">
       <md-input-container class="md-block" flex-gt-sm>
         <label>Password</label>
-        <input type="password" name="password" ng-model="vmPassword.password" required />
+        <input type="password" name="password" ng-model="password" required />
         <div ng-messages="passwordForm.password.$error" role="alert" class="form-errors first-name-error">
           <div ng-message="required">Password is required.</div>
         </div>
@@ -28,7 +28,7 @@
 
       <md-input-container class="md-block" flex-gt-sm>
         <label>Confirm Password</label>
-        <input type="password" name="confirm_password" ng-model="vmPassword.confirm_password" required compare-to="vmPassword.password" />
+        <input type="password" name="confirm_password" ng-model="confirm_password" required compare-to="password" />
         <div ng-messages="passwordForm.confirm_password.$error" role="alert" class="form-errors first-name-error">
           <div ng-message="required">Password is required.</div>
           <div ng-message="compareTo">Must not match</div>
