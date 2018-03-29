@@ -16,7 +16,7 @@
           
           this.collapseAll = function(expander){
             expanders.forEach(function(item){
-              if(item!=expander) expander.ngtoggle = false
+              if(item!=expander) item.ngtoggle = false
             })
           }
       
@@ -32,25 +32,25 @@
    return {
       restrict: 'E',
       replace: true,
+      transclude:true,
       require: '^accordion',
       scope:{
        title: '@'
 
       },
 
-      link: function(scope,elem,attrbs){
+      link: function(scope,elem,attrbs,accordionController){
        scope.ngtoggle = false;
-       var oldTitle ='';
-
+       
+       
+       accordionController.addExpander(scope)
+        
+        
        scope.toggle= function(){
-
+         
          scope.ngtoggle = !scope.ngtoggle
-         if(scope.ngtoggle){ 
-           oldTitle = scope.title
-           scope.title= scope.title+' -ouvert-'
-         }else{
-           if(oldTitle) scope.title = oldTitle
-         }
+         accordionController.collapseAll(scope)
+         
 
        }
 
@@ -61,8 +61,8 @@
 
       },
 
-      templateUrl :'components/testpage/directive/expander.html',
-      transclude:true
+      templateUrl :'components/testpage/directive/expander.html'
+      
    
    } 
     
