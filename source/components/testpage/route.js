@@ -8,9 +8,10 @@
         'content':{
             templateUrl: 'components/testpage/accordion.page.html',  
             controller: function($scope){
-              $scope.title = 'Titre article';
-              $scope.message='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nisl pharetra, placerat sem sit amet, convallis justo. Pellentesque dictum.'
-            }
+              $scope.expanders=[{
+                title: 'Titre article',
+                message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nisl pharetra, placerat sem sit amet, convallis justo. Pellentesque dictum.'
+              }]
         }
       }
       // The controller waits for every one of the above items to be
@@ -19,7 +20,7 @@
       // been resolved. Then those objects are injected into the controller
       // and available for use.  
       
-     })
+     }})
      
     }]);
   
