@@ -1,9 +1,31 @@
 (function(app) {
-	app.directive('expander', function() {
+	
+  
+  app.directive('accordion', function() {
    return {
       restrict: 'E',
       replace: true,
-
+      template :'<div ng-transclude></div>',
+      controller: function($scope){
+          var expanders = [];
+        
+          this.addExpander = function(expander){
+            expanders.push(expander);
+          }
+      
+      
+      }
+      
+   } 
+    
+	});
+  
+  
+  app.directive('expander', function() {
+   return {
+      restrict: 'E',
+      replace: true,
+      require: '',
       scope:{
        title: '@'
 
@@ -38,4 +60,7 @@
    } 
     
 	});
+  
+  
+  
 })(CrudMongoose);
