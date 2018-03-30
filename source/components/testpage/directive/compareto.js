@@ -3,15 +3,19 @@
   
   app.directive('compareTo', function() {
    return {
-      //require:'ngModel',
+      require:'ngModel',
       scope: {
             compareTo: "="
       },
-      link: function(scope,elem,attrbs,ngModelCtrl){
-          scope.$watch('scope.confirm_password',function(){
-            console.log('confirm_password')
-          })    
+      link: function(scope,elem,attrbs,ngModel){
+          ngModel.$validators.compareTo = function(modelValue) {
 
+              return modelValue == scope.compareTo;
+          };
+
+          scope.$watch("compareTo", function() {
+              ngModel.$validate();
+          });
       }
       
    } 
