@@ -3,12 +3,12 @@
   
   app.directive('compareTo', function() {
    return {
-      require:'^ngModel',
+      //require:'ngModel',
       scope: {
             compareTo: "="
       },
       link: function(scope,elem,attrbs,ngModelCtrl){
-          scope.$watch('ngModelCtrl.confirm_password',function(){
+          scope.$watch('scope.confirm_password',function(){
             console.log('confirm_password')
           })    
 
