@@ -9,12 +9,13 @@
       },
       link: function(scope,elem,attrbs,ngModel){
           ngModel.$validators.compareTo = function(modelValue) {
-
+              console.log('ngModel.$validators.compareTo')
               return modelValue == scope.compareTo;
           };
 
           scope.$watch("compareTo", function() {
-              ngModel.$validate();
+            console.log('scope.$watch')  
+            ngModel.$validate();
           });
       }
       
