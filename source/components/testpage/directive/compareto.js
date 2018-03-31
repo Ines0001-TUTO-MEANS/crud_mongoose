@@ -15,7 +15,7 @@
 
           scope.$watch("compareTo", function() {
             console.log('scope.$watch')  
-            ngModel.$validate();
+            //ngModel.$validate();
           });
       }
       
