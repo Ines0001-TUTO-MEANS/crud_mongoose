@@ -9,7 +9,7 @@
       },
       link: function(scope,elem,attrbs,ngModel){
           ngModel.$validators.compareTo = function(modelValue,viewValue) {
-              console.log('ngModel.$validators.compareTo:',modelValue,viewValue)
+              console.log('ngModel.$validators.confirm_password:',modelValue,viewValue)
               return modelValue == scope.compareTo;
           };
 
