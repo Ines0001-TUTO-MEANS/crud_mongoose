@@ -20,13 +20,13 @@
             compareTo: "="
       },
       link: function(scope,elem,attrbs,ngModel){
-          ngModel.$validators.compareTo = function(modelValue,viewValue) {
+          ngModel.$validators.confirm_password = function(modelValue,viewValue) {
               console.log('ngModel.$validators.confirm_password:',modelValue,viewValue)
               return modelValue == scope.compareTo;
           };
 
           scope.$watch("compareTo", function() {
-            //console.log('scope.$watch')  
+            console.log('scope.$watch')  
             ngModel.$validate();
           });
         
