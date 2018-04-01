@@ -31,16 +31,19 @@
         <input type="password" name="confirm_password" ng-model="confirm_password" required compare-to="password" />
         <div ng-messages="passwordForm.confirm_password.$error" role="alert" class="form-errors first-name-error">
           <div ng-message="required">Password is required.</div>
-          <div ng-message="compareTo">Must not match</div>
+          <div ng-message="notmatch">Must not match</div>
         </div>
       </md-input-container>
       
-      
-      <div>
-        Téléphone:
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Téléphone</label>
         <input type="text" ng-model="phone" name="phone" phone-validator />
-        <span ng-show="passwordForm.phone.$error.phone">Le numéro de téléphone est incorrect</span>
-      </div>
+        <div ng-messages="passwordForm.phone.$error" role="alert" class="form-errors first-name-error">
+          <div ng-message="required">Password is required.</div>
+          <div ng-message="phone">Le numéro de téléphone est incorrect</div>
+        </div>
+      </md-input-container>
+      
       
       
       
