@@ -29,9 +29,9 @@
       
       <md-input-container class="md-block">
         <label>Password (Confirm)</label>
-        <input type="password" name="password2" ng-model="password2" required>
-        <div ng-messages="form.register.password.$error" ng-show="form.register.password.$dirty">
-          <div ng-message="wrongpassword">{{errorMessage}}</div>
+        <input type="password" name="password2" ng-model="password2" required compare-password="user.password">
+        <div ng-messages="form.register.password2.$error" ng-show="form.register.password2.$dirty">
+          <div ng-message="notmatch">not match password !</div>
           <div ng-message="required">required password condirm</div>
         </div>
       </md-input-container>
