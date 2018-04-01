@@ -1,6 +1,18 @@
 (function(app) {
 	
   
+  app.directive("phoneValidator", function () {
+      return {
+          require : 'ngModel',
+          restrict: 'A',
+          link: function (scope, element, attrs, ngModel) {
+              ngModel.$validators.phone = function(value) {
+                  return !value || /0[\d]{9}/.test(value);
+              };
+          }
+      };
+  });
+  
   app.directive('compareTo', function() {
    return {
       require:'ngModel',

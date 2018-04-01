@@ -33,7 +33,18 @@
           <div ng-message="required">Password is required.</div>
           <div ng-message="compareTo">Must not match</div>
         </div>
-      </md-input-container> 
+      </md-input-container>
+      
+      
+      <div>
+        Téléphone:
+        <input type="text" ng-model="phone" name="phone" phone-validator />
+        <span ng-show="passwordForm.phone.$error.phone">Le numéro de téléphone est incorrect</span>
+      </div>
+      
+      
+      
+      
     </form>
     <code>{{confirm_password}}</code>
     
