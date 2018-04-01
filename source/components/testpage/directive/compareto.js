@@ -8,17 +8,17 @@
       },
       link: function(scope,elem,attrbs,ngModel){
           
-          /*
+          
           ngModel.$validators.notmatch = function(modelValue) {
               return modelValue == scope.compareTo;
           };
-          */
-        
-          ngModel.$asyncValidators.nomatch = function(modelvalue){
+          
+          /*
+          ngModel.$asyncValidators.notmatch = function(modelvalue){
             var def = $q.defer();
      
             $timeout(function() {
-                if (modelValue === scope.compareTo) {
+                if (modelvalue === scope.compareTo) {
                     
                     def.resolve();
                 } else {
@@ -29,6 +29,7 @@
             return def.promise;
             
           };
+          */
 
           scope.$watch("compareTo", function() {
             ngModel.$validate();
