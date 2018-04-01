@@ -8,8 +8,8 @@
             compareTo: "="
       },
       link: function(scope,elem,attrbs,ngModel){
-          ngModel.$validators.compareTo = function(modelValue) {
-              //console.log('ngModel.$validators.compareTo')
+          ngModel.$validators.compareTo = function(modelValue,viewValue) {
+              console.log('ngModel.$validators.compareTo:',modelValue,viewValue)
               return modelValue == scope.compareTo;
           };
 
@@ -18,9 +18,7 @@
             ngModel.$validate();
           });
         
-          ngModel.$valid.compareTo = function(modelValue){
-            console.log('scope.$valide')  
-          }
+        
       }
       
    } 
