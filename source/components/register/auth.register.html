@@ -1,9 +1,9 @@
 <content>
-  <form name="form.register" ng-submit="Register()" novalidate>
+  <form name="formregister" ng-submit="Register()" novalidate>
     <md-input-container class="md-block">
         <label>Name</label>
         <input type="type" name="name" ng-model="user.name" required>
-        <div ng-messages="form.register.name.$error" ng-show="form.register.name.$dirty">
+        <div ng-messages="formregister.name.$error" ng-show="formregister.name.$dirty">
           <div ng-message="required">require value</div>
           
         </div>
@@ -12,7 +12,7 @@
     <md-input-container class="md-block">
         <label>E-mail</label>
         <input type="email" name="email" ng-model="user.email" required>
-        <div ng-messages="form.register.email.$error" ng-show="form.register.email.$dirty">
+        <div ng-messages="formregister.email.$error" ng-show="formregister.email.$dirty">
           <div ng-message="required">required adress mail</div>
           <div ng-message="email">wrong format</div>
         </div>
@@ -26,12 +26,12 @@
         </div>
       </md-input-container>
      
-      <md-input-container class="md-block">
-        <label>Password (Confirm)</label>
-        <input type="password" name="password2" ng-model="password2" required compare-password="password">
-        <div ng-messages="form.register.password2.$error" ng-show="form.register.password2.$dirty">
-          <div ng-message="notmatch">not match password !</div>
-          <div ng-message="required">required password condirm</div>
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Confirm Password</label>
+        <input type="password" name="confirm_password" ng-model="confirm_password" required compare-to="password" />
+        <div ng-messages="form.register.confirm_password.$error" role="alert" class="form-errors first-name-error">
+          <div ng-message="required">Password is required.</div>
+          <div ng-message="notmatch">Must not match</div>
         </div>
       </md-input-container>
 

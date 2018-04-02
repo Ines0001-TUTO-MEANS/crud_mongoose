@@ -10,7 +10,8 @@
           
           
           ngModel.$validators.notmatch = function(modelValue) {
-              return modelValue == scope.compareTo;
+            console.log('validators')  
+            return modelValue == scope.compareTo;
           };
           
           /*
@@ -32,6 +33,7 @@
           */
 
           scope.$watch("compareTo", function() {
+            console.log('$watch')  
             ngModel.$validate();
           });
         
