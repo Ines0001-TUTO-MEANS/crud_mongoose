@@ -4,14 +4,14 @@
    return {
       require:'ngModel',
       scope: {
-            compareTo: "="
+            comparePassword: "="
       },
       link: function(scope,elem,attrbs,ngModel){
           ngModel.$validators.notmatch = function(modelValue) {
-              return modelValue == scope.compareTo;
+              return modelValue == scope.comparePassword;
           };
           
-          scope.$watch("compareTo", function() {
+          scope.$watch("comparePassword", function() {
             ngModel.$validate();
           });
         
