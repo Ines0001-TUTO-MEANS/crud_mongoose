@@ -26,6 +26,9 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 2. très bonne source d'information sur le mécanisme de passage du token by [Angular Security - Authentication With JSON Web Tokens (JWT): The Complete Guide](https://blog.angular-university.io/angular-jwt-authentication/)
 3. AUtre source en français [AUTHENTIFICATION D’API VIA JWT ET LES COOKIES](http://website.simplx.fr/blog/2016/09/27/authentification-api-via-jwt-et-cookies/)
 
+**Email Verification in Node Solution**
+1. [Email Verification in Node](https://codemoto.io/coding/nodejs/email-verification-node-express-mongodb)
+
 **Bower**
 1. [MOMENT.JS - MANIPULER LES DATES JAVASCRIPT SIMPLEMENT](https://momentjs.com/)
 ```
