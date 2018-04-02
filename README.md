@@ -28,6 +28,7 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 
 **Email Verification in Node Solution**
 1. [Email Verification in Node](https://codemoto.io/coding/nodejs/email-verification-node-express-mongodb)
+1. [email verification](https://github.com/whitef0x0/node-email-verification)
 
 **Bower**
 1. [MOMENT.JS - MANIPULER LES DATES JAVASCRIPT SIMPLEMENT](https://momentjs.com/)
