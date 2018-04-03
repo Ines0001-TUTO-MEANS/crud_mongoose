@@ -30,6 +30,7 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 1. [Email Verification in Node](https://codemoto.io/coding/nodejs/email-verification-node-express-mongodb)
 1. [email verification](https://github.com/whitef0x0/node-email-verification)
 1. [Node for API: Express et Hapi en pratique](https://blog.octo.com/node-for-api-express-and-hapi-en-pratique/)
+1. [Github solution Cron-J/JWT-Hapi-Mongoose-Mongodb-with-email-verification-and-forgot-password](https://github.com/Cron-J/JWT-Hapi-Mongoose-Mongodb-with-email-verification-and-forgot-password)
 1. [A quick way to work with Hapi.js, Mongoose, Angular.js](https://www.cronj.com/blog/hapi-mongoose/)
 
 **Bower**
