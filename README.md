@@ -33,6 +33,10 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 1. [Github solution Cron-J/JWT-Hapi-Mongoose-Mongodb-with-email-verification-and-forgot-password](https://github.com/Cron-J/JWT-Hapi-Mongoose-Mongodb-with-email-verification-and-forgot-password)
 1. [A quick way to work with Hapi.js, Mongoose, Angular.js](https://www.cronj.com/blog/hapi-mongoose/)
 
+**nodemailer**
+1. [Send mails from Gmail using Nodemailer](https://gist.github.com/tanaikech/d225c7adab818a6dc1dfd7783f8c8e4d)
+1. [Youtube : NodeJS - Send free emails using Nodemailer and Gmail](https://youtu.be/JJ44WA_eV8E)
+
 **Bower**
 1. [MOMENT.JS - MANIPULER LES DATES JAVASCRIPT SIMPLEMENT](https://momentjs.com/)
 ```
