@@ -21,7 +21,7 @@ var User = new Schema({
     */
     userName: {
       type: String,
-      //unique: true,
+      unique: true,
       required :'email is mandatory',
       validate: [
           validate({

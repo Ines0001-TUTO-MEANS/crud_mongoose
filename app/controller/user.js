@@ -15,7 +15,8 @@ exports.create = function(req, res) {
           res.json('Please confirm your email id by clicking on link in email');  
           
         } else {
-            return res.status(404).send('ERROR:',err);
+            return res.status(404).send('ERROR:'+err);
+         
         }
     });
 };
