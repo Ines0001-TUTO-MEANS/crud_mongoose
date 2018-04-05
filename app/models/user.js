@@ -1,3 +1,5 @@
+const SALT_WORK_FACTOR = 13;
+
 var mongoose = require('mongoose'),
     validate = require('mongoose-validator'),
     bcrypt = require('bcrypt'), // to hash password
@@ -46,7 +48,15 @@ var User = new Schema({
         required: true
     },
 
-   
+    /** 
+    Scope. It can only contain string, is required field, and should have value from enum array.
+    */
+    scope: {
+        type: String,
+        enum: ['Customer'],
+        required: true
+    }, 
+  
     /** 
       isVerified. false default.
     */
