@@ -4,29 +4,24 @@ var Common = require('./common'),
     User = require('../models/user').User;
 
 
-
-
-
-exports.create = function(request, reply) {
+exports.create = function(req, res) {
     
-    User.saveUser(request, function(err, user) {
+    User.saveUser(req.body, function(err, user) {
         if (!err) {
             var tokenData = {
                 userName: user.userName,
                 scope: [user.scope],
                 id: user._id
             };
-            Common.sentMailVerificationLink(user,Jwt.sign(tokenData, privateKey));
-            reply("Please confirm your email id by clicking on link in email");
+          res.json('Please confirm your email id by clicking on link in email');  
+          
         } else {
-            if (11000 === err.code || 11001 === err.code) {
-                reply(Boom.forbidden("please provide another user email"));
-            } else reply(Boom.forbidden(err)); // HTTP 403
+            return res.status(404).send('ERROR:',err);
         }
     });
 };
 
-
+/*
 exports.login = {
     validate: {
         payload: {
@@ -144,3 +139,4 @@ exports.verifyEmail = {
         });
     }
 };
+*/
