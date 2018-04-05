@@ -162,7 +162,7 @@ User.statics.findUserByIdAndUserName = function(id, userName, callback) {
     }, callback);
 };
 
-var user = mongoose.model('user', User);
+var user = mongoose.model('crud_user', User);
 
 /** export schema */
 module.exports = {
