@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var User = require('./user');
 
 
 // middleware that is specific to this router
@@ -10,4 +11,6 @@ router.use(function timeLog(req, res, next) {
 });
 */
 // define the home page route
-router.post('/user', require('./app/routes/users'));
+router.post('/user', User.create);
+
+module.exports = router;

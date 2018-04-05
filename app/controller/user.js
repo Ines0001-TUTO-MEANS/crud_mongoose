@@ -1,5 +1,4 @@
-var Common = require('./common'),
-    Config = require('../config/config'),
+var Config = require('../config/config'),
     Jwt = require('jsonwebtoken'),
     User = require('../models/user').User;
 

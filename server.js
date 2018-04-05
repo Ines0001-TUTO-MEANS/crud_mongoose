@@ -42,6 +42,7 @@ app.use('/', require('./app/routes/users'))
 app.use('/', require('./app/routes/tasks'))
 
 //app.use(authenticate)
+app.use('/test', require('./app/controller/route'))
 
 
 

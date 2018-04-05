@@ -137,8 +137,8 @@ function preRemovePerson(next){
    
 }
 
-Schema.pre("save",preSavePerson);
-Schema.pre("remove",preRemovePerson);
+User.pre("save",preSavePerson);
+User.pre("remove",preRemovePerson);
 
 
 
