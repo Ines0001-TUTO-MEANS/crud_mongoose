@@ -9,7 +9,7 @@ var Common = require('./common'),
 
 exports.create = function(request, reply) {
     
-    User.saveUser(request.payload, function(err, user) {
+    User.saveUser(request, function(err, user) {
         if (!err) {
             var tokenData = {
                 userName: user.userName,
