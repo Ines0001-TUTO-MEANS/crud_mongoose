@@ -1,11 +1,14 @@
+var Common = require('./common'),
+    Config = require('../config/config'),
+    Jwt = require('jsonwebtoken'),
+    User = require('../models/user').User;
 
 
 
 
 
 exports.create = function(request, reply) {
-    request.payload.password = Common.encrypt(request.payload.password);
-    request.payload.scope = "Customer";
+    
     User.saveUser(request.payload, function(err, user) {
         if (!err) {
             var tokenData = {
