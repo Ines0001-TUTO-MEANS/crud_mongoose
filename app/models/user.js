@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
     validate = require('mongoose-validator'),
+    bcrypt = require('bcrypt'), // to hash password
     Schema = mongoose.Schema,
     opt = {
             // If set timestamps, mongoose assigns createdAt and updatedAt fields to your schema,
@@ -86,6 +87,50 @@ var User = new Schema({
     tasks : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tasks' }]
 
 },opt);
+
+
+/*  Document middleware
+    pre save action to allow to apply hash password if told
+    schema.pre("save",function(next){...})
+*/
+function preSavePerson(next){
+  var user = this;
+  
+   // only hash the password if it has been modified (or is new)
+  if (!user.isModified('password') || !user.password || user.password.length === 0) {
+      return next();
+  }
+  
+  bcrypt.hash(user.password, SALT_WORK_FACTOR, function(err, hash) {
+    if(err) return next(err);
+    user.password = hash;
+          next();
+    
+  });
+}
+
+/*  Document middleware
+    pre remove action to allow to test admin user if request delete user
+    schema.pre("remove",function(next){...})
+*/
+function preRemovePerson(next){
+  var user = this;
+  // not authorized to delete admin user
+  if (!user.admin ) {
+      return next();
+  }
+  else{
+      var err = new Error('not authorized to delete user');
+      
+      next(err); 
+  }
+   
+}
+
+Schema.pre("save",preSavePerson);
+Schema.pre("remove",preRemovePerson);
+
+
 
 User.statics.saveUser = function(requestData, callback) {
     this.create(requestData, callback);
