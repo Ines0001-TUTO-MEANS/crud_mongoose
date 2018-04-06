@@ -16,11 +16,9 @@ exports.create = function(req, res) {
           res.json('Please confirm your email id by clicking on link in email');  
           
         } else {
-            return res.status(404).send('ERROR:'+err);
-          
-           if (11000 === err.code || 11001 === err.code) {
-                    res.json(Boom.forbidden("please provide another user email"));
-                } else reply(Boom.forbidden(err)); // HTTP 403
+            if (11000 === err.code || 11001 === err.code) {
+                  res.send(Boom.forbidden("please provide another user email"));
+              } else res.send(Boom.forbidden(err)); // HTTP 403
          
         }
     });
