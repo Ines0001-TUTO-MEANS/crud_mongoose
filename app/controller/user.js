@@ -7,13 +7,13 @@ var Config = require('../config/config'),
 
 
 
-export.myLogger = function (req, res, next) {
+exports.myLogger = function (req, res, next) {
   console.log('LOGGED');
   next();
 };
 
 
-export.create = function(req, res, next) {
+exports.create = function(req, res, next) {
     
     User.saveUser(req.body, function(err, user) {
         if (!err) {
