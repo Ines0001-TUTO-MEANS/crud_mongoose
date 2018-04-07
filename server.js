@@ -43,7 +43,7 @@ app.use(favicon(__dirname + '/source/img/icons/nodejs_125x125.png'));
 //app.use('/api', require('./app/routes/authenticate')) // must before api/ routing
 //app.use('/', require('./app/routes/users'))
 //app.use('/', require('./app/routes/tasks'))
-app.use(require('./app/controller/user').myLogger)
+app.use(require('./app/controller/user').Boom)
 
 
 

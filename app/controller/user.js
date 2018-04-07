@@ -1,13 +1,13 @@
 var Config = require('../config/config'),
     Jwt = require('jsonwebtoken'),
     express = require('express'),
-    boom = require('boom'),
+    Boom = require('boom'),
 
     User = require('../models/user').User;
 
 
 
-exports.myLogger = function (req, res, next) {
+exports.Boom = function (req, res, next) {
   console.log('LOGGED');
   next();
 };
