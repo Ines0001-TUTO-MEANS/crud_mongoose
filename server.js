@@ -1,12 +1,13 @@
 // server.js
 // where your node app starts
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const methodOverride = require('method-override');
-const mongoose = require('mongoose');
-const morgan  = require('morgan');
+var express = require('express');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+var mongoose = require('mongoose');
+var morgan  = require('morgan');
 var favicon = require('serve-favicon');
+var Boom = require('express-boom');
 
 
 // module api routing
@@ -21,6 +22,9 @@ app.set('superSecret', "My secret"); // secret variable
 /// configuration ===============================================================
 app.use(bodyParser.json());
 app.use(methodOverride());
+
+/// configuration Boom-express===================================================
+app.use(Boom());
 
 // use morgan to log requests to the console
 app.use(morgan('dev'));
