@@ -7,7 +7,7 @@ var Config = require('../config/config'),
 
 
 
-exports.Boom = function (req, res, next) {
+exports.Boom = function (err,req, res, next) {
   console.log('exports.boom')
   if(Boom.isBoom(err))
       console.log('Boom error')
@@ -29,9 +29,9 @@ exports.create = function(req, res, next) {
           
         } else {
             if (11000 === err.code || 11001 === err.code) {
-                  return next(Boom.forbidden("please provide another user email"));
+                  next(new Error("please provide another user email"));
               } else{
-                  return next(Boom.forbidden(err)); // HTTP 403
+                  next(Boom.forbidden(err)); // HTTP 403
               }
          
         }

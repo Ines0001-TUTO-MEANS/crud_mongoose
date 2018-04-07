@@ -43,7 +43,7 @@ app.use(favicon(__dirname + '/source/img/icons/nodejs_125x125.png'));
 //app.use('/api', require('./app/routes/authenticate')) // must before api/ routing
 //app.use('/', require('./app/routes/users'))
 //app.use('/', require('./app/routes/tasks'))
-app.use(require('./app/controller/user').Boom)
+
 
 
 
@@ -58,7 +58,7 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + '/index.html');
 });
 
-
+app.use(require('./app/controller/user').Boom)
 
 // listen for requests :)
 var listener = app.listen(port, function () {
