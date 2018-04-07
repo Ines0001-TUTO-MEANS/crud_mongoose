@@ -1,14 +1,19 @@
 var Config = require('../config/config'),
     Jwt = require('jsonwebtoken'),
-    var express = require('express'),
+    express = require('express'),
     boom = require('boom'),
 
     User = require('../models/user').User;
 
 var app = express();
 
-app.use(function(err, req, res, next) {
-  if(res.
+app.use(function( req, res, next) {
+  console.log('route commun')
+  if(boom.isBoom(err))
+      console.log('isboom error')
+  else
+      console.log('not boom error')
+  next()
 });
 
 exports.create = function(req, res, next) {
