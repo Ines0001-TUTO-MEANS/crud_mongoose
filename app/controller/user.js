@@ -12,7 +12,6 @@ var myLogger = function (req, res, next) {
   next();
 };
 
-app.use(myLogger);
 
 exports.create = function(req, res, next) {
     
