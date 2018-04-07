@@ -1,21 +1,15 @@
 var Config = require('../config/config'),
     Jwt = require('jsonwebtoken'),
-    express = require('express'),
-    boom = require('express-boom'),
+    
+    boom = require('boom'),
 
     User = require('../models/user').User;
 
-app = express();
-/// configuration Boom-express===================================================
-app.use(boom());
-
-
-app.use(function (req, res) {
-  console.log('terminée')
-  res.boom.notFound(); // Responds with a 404 status code 
+app.use(function(err, req, res, next) {
+  // logic
 });
 
-exports.create = function(req, res) {
+exports.create = function(req, res, next) {
     
     User.saveUser(req.body, function(err, user) {
         if (!err) {
@@ -28,9 +22,9 @@ exports.create = function(req, res) {
           
         } else {
             if (11000 === err.code || 11001 === err.code) {
-                  res.boom.forbidden("please provide another user email");
+                  next(boom.forbidden("please provide another user email"));
               } else{
-                  res.boom.forbidden(err); // HTTP 403
+                  next(boom.forbidden(err)); // HTTP 403
               }
          
         }
