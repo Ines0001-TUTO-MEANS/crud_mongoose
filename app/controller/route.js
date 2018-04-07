@@ -4,12 +4,8 @@ var User = require('./user');
 
 
 // middleware that is specific to this router
-/*
-router.use(function timeLog(req, res, next) {
-  console.log('Time: ', Date.now());
-  next();
-});
-*/
+var app = express();
+app.use(User.myLogger)
 // define the home page route
 router.post('/user', User.create);
 

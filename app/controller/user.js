@@ -5,15 +5,15 @@ var Config = require('../config/config'),
 
     User = require('../models/user').User;
 
-var app = express();
 
-var myLogger = function (req, res, next) {
+
+export.myLogger = function (req, res, next) {
   console.log('LOGGED');
   next();
 };
 
 
-exports.create = function(req, res, next) {
+export.create = function(req, res, next) {
     
     User.saveUser(req.body, function(err, user) {
         if (!err) {
@@ -34,6 +34,8 @@ exports.create = function(req, res, next) {
         }
     });
 };
+
+
 
 /*
 exports.login = {
