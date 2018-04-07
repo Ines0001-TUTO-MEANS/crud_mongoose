@@ -40,8 +40,8 @@ app.use(express.static('source'));
 app.use(favicon(__dirname + '/source/img/icons/nodejs_125x125.png'));
 
 // Routing
-app.use('/api', require('./app/routes/authenticate')) // must before api/ routing
-app.use('/', require('./app/routes/users'))
+//app.use('/api', require('./app/routes/authenticate')) // must before api/ routing
+//app.use('/', require('./app/routes/users'))
 //app.use('/', require('./app/routes/tasks'))
 
 
@@ -58,7 +58,7 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + '/index.html');
 });
 
-app.use(require('./app/controller/user').Boom)
+app.use(require('./app/utils/boom'))
 
 // listen for requests :)
 var listener = app.listen(port, function () {

@@ -1,5 +1,6 @@
 var Config = require('../config/config'),
     Jwt = require('jsonwebtoken'),
+    Boom = require('boom'),
     User = require('../models/user').User;
 
 
