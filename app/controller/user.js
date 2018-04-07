@@ -9,6 +9,12 @@ app = express();
 /// configuration Boom-express===================================================
 app.use(boom());
 
+
+app.use(function (req, res) {
+  console.log('terminée')
+  res.boom.notFound(); // Responds with a 404 status code 
+});
+
 exports.create = function(req, res) {
     
     User.saveUser(req.body, function(err, user) {
