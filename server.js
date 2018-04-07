@@ -41,7 +41,7 @@ app.use(favicon(__dirname + '/source/img/icons/nodejs_125x125.png'));
 
 // Routing
 //app.use('/api', require('./app/routes/authenticate')) // must before api/ routing
-//app.use('/', require('./app/routes/users'))
+app.use('/', require('./app/routes/users'))
 //app.use('/', require('./app/routes/tasks'))
 
 
