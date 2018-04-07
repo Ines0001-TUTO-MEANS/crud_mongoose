@@ -7,14 +7,12 @@ var Config = require('../config/config'),
 
 var app = express();
 
-app.use(function( req, res, next) {
-  console.log('route commun')
-  if(boom.isBoom(err))
-      console.log('isboom error')
-  else
-      console.log('not boom error')
-  next()
-});
+var myLogger = function (req, res, next) {
+  console.log('LOGGED');
+  next();
+};
+
+app.use(myLogger);
 
 exports.create = function(req, res, next) {
     
