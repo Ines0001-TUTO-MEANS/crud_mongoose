@@ -7,7 +7,6 @@ var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var morgan  = require('morgan');
 var favicon = require('serve-favicon');
-var Boom = require('express-boom');
 
 
 // module api routing
@@ -23,8 +22,7 @@ app.set('superSecret', "My secret"); // secret variable
 app.use(bodyParser.json());
 app.use(methodOverride());
 
-/// configuration Boom-express===================================================
-app.use(Boom());
+
 
 // use morgan to log requests to the console
 app.use(morgan('dev'));
