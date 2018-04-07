@@ -1,17 +1,6 @@
 var Config = require('../config/config'),
     Jwt = require('jsonwebtoken'),
-    express = require('express'),
-    Boom = require('boom'),
-
     User = require('../models/user').User;
-
-
-
-exports.Boom = function (err,req, res, next) {
-   if(Boom.isBoom(err))
-      res.status(err.output.statusCode).send(err)
-   next();
-};
 
 
 exports.create = function(req, res, next) {
@@ -27,7 +16,7 @@ exports.create = function(req, res, next) {
           
         } else {
             if (11000 === err.code || 11001 === err.code) {
-                  next(Boom.forbidden("please provide another user email"));
+                  next(new Error("please provide another user email"));
               } else{
                   next(Boom.forbidden(err)); // HTTP 403
               }
