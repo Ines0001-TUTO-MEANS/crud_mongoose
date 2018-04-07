@@ -1,12 +1,14 @@
 var Config = require('../config/config'),
     Jwt = require('jsonwebtoken'),
-    
+    var express = require('express'),
     boom = require('boom'),
 
     User = require('../models/user').User;
 
+var app = express();
+
 app.use(function(err, req, res, next) {
-  // logic
+  if(res.
 });
 
 exports.create = function(req, res, next) {
