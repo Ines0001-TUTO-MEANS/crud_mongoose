@@ -19,10 +19,7 @@ exports.create = function(req, res, next) {
                   id: user._id
               };
           
-          var token = Jwt.sign({
-                  iss: payload,
-                  exp: expires
-          },privateKey);
+          var token = Jwt.sign(payload,privateKey,{ expiresIn: expires });
 
           Mailer.sentMailVerificationLink(user.userName,token).then(function(data){
                 res.send('Please confirm your email id by clicking on link in email');

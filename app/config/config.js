@@ -2,7 +2,7 @@ module.exports = {
     server: {
         
             host: 'https://crud-mongoose.glitch.me',
-            port: 3000
+            port: 0
     },
     database: {
         host: '127.0.0.1',
@@ -13,7 +13,7 @@ module.exports = {
     },
     key: {
         privateKey: '37LvDSm4XvjYOh9Y',
-        tokenExpiry: 1 * 30 * 1000 * 60, //1 hour,
+        tokenExpiry: 60, //1 hour,
         clientId: '397172784826-oo8me91j1enfc5hp49485ult4jr8e33f.apps.googleusercontent.com',
         clientSecret: 'Ub656VSaCwV3yg59Q_B_qGXp',
         refreshToken: '1/btZPBOgvudQsVhF0yP28yJjQ3hVWbab6KsV0Z87qWtziSxX6ch2z3OucyTfY8qRE'
