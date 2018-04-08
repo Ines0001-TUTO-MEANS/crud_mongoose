@@ -75,10 +75,10 @@ exports.resendVerificationEmail = function(req, res, next) {
     User.findUser(username, function(err, user) {
         if (!err) {
             if (user === null) return next(Boom.forbidden("invalid username or password"));
-            if (req.body.password === Common.decrypt(user.password)) {
-
-                if(user.isVerified) res.send("your email address is already verified");
-
+            if(user.isVerified) res.send("your email address is already verified");
+            bcrypt.compare(password, user.password, function(err, res) {
+              if (err) next(err)
+              else{
                 var expires = tokenExpiry
                     ,payload = {
                       userName: user.userName,
@@ -87,15 +87,22 @@ exports.resendVerificationEmail = function(req, res, next) {
                     };
 
                 var token = Jwt.sign(payload,privateKey,{ expiresIn: expires });
-                  
                 Mailer.sentMailVerificationLink(user.userName,token).then(function(data){
                       res.send('Please confirm your email id by clicking on link in email');
                     },function(error){
                       next(Boom.notFound(error)); // HTTP 404
-
                 });
               
-                res.send("account verification link is sucessfully send to an email id");
+              }
+            
+            })
+            if (req.body.password === Common.decrypt(user.password)) {
+
+                
+
+                
+              
+                
             } else next(Boom.forbidden("invalid username or password"));
         } else {                
             console.error(err);
