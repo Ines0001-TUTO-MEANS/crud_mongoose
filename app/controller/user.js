@@ -79,7 +79,7 @@ exports.resendVerificationEmail = function(req, res, next) {
             if(user.isVerified) return res.send("your email address is already verified");
             bcrypt.compare(password, user.password, function(err, result) {
               if (err) next(err)
-              if (result===undefined) return next(Boom.forbidden("invalid username or password"));
+              if (!result) return next(Boom.forbidden("invalid username or password"));
               else{
                 
                 var expires = tokenExpiry
