@@ -1,7 +1,7 @@
 module.exports = {
     server: {
         
-            host: 'https://crud-mongoose.glitch.me/',
+            host: 'https://crud-mongoose.glitch.me',
             port: 3000
     },
     database: {

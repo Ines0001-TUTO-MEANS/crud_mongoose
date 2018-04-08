@@ -49,7 +49,7 @@ app.use('/api', require('./app/routes/users'))
 
 
 //app.use(authenticate)
-app.use('/test', require('./app/controller/route'))
+app.use('/', require('./app/controller/route'))
 
 
 
