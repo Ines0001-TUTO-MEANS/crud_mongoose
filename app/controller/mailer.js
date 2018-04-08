@@ -1,9 +1,6 @@
 var nodemailer = require("nodemailer")
     ,Promise  = require('promise')
     ,Config = require('../config/config');
-    
-
-var privateKey = Config.key.privateKey;
 
 // create reusable transport method (opens pool of SMTP connections)
 var auth = {

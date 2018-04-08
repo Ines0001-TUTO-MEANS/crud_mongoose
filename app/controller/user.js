@@ -1,10 +1,11 @@
 var Config = require('../config/config')
     ,Jwt = require('jsonwebtoken')
     ,Boom = require('boom')
-    ,Mailer = require('mailer');
-    ,Config = require('../config/config');
+    ,Mailer = require('mailer')
+    ,Config = require('../config/config')
     ,User = require('../models/user').User;
 
+var privateKey = Config.key.privateKey;
 
 exports.create = function(req, res, next) {
     
@@ -20,10 +21,14 @@ exports.create = function(req, res, next) {
           var token = jwt.sign({
                   iss: payload,
                   exp: expires
-          },Config.key.privateKey);
+          },privateKey);
 
-            
-          res.json('Please confirm your email id by clicking on link in email');  
+          Mailer.sentMailVerificationLink(user.userName,token).then(function(data){
+                res.json('Please confirm your email id by clicking on link in email');
+              },function(error){
+                next(Boom.notFound(error)); // HTTP 404
+                
+          });
           
         } else {
             if (11000 === err.code || 11001 === err.code) {
