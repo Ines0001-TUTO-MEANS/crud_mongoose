@@ -78,6 +78,7 @@ exports.resendVerificationEmail = function(req, res, next) {
             if(user.isVerified) res.send("your email address is already verified");
             bcrypt.compare(password, user.password, function(err, res) {
               if (err) next(err)
+              if (res===undefined) return next(Boom.forbidden("invalid username or password"));
               else{
                 var expires = tokenExpiry
                     ,payload = {
@@ -96,16 +97,8 @@ exports.resendVerificationEmail = function(req, res, next) {
               }
             
             })
-            if (req.body.password === Common.decrypt(user.password)) {
-
-                
-
-                
-              
-                
-            } else next(Boom.forbidden("invalid username or password"));
+            
         } else {                
-            console.error(err);
             return next(Boom.badImplementation(err));
         }
     });
