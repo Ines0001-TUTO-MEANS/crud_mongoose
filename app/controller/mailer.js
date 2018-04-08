@@ -30,7 +30,7 @@ exports.sentMailVerificationLink = function(user,token) {
       return new Promise(function (resolve, reject) {
         var from = Config.email.accountName;
         var mailbody = "<p>Thanks for Registering on "+Config.email.accountName+" </p><p>Please verify your email by clicking on the verification link below.<br/><a href='"+Config.server.host+"/"+Config.email.verifyEmailUrl+"/"+token+"'>Verification Link</a></p>"
-        console.log(from,user.email,mailbody)
+        
         mail(from, user , "Account Verification", mailbody).then(function(data){
           resolve(data);
         },function(error){
