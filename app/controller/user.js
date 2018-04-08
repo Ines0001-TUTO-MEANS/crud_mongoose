@@ -6,12 +6,13 @@ var Config = require('../config/config')
     ,User = require('../models/user').User;
 
 var privateKey = Config.key.privateKey;
+var tokenExpiry = Config.key.tokenExpiry;
 
 exports.create = function(req, res, next) {
     
     User.saveUser(req.body, function(err, user) {
         if (!err) {
-          var expires = Math.floor(Date.now() / 1000) + (60 * 60)
+          var expires = tokenExpiry
               ,payload = {
                   userName: user.userName,
                   scope: [user.scope],
