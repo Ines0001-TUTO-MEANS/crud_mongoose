@@ -7,6 +7,7 @@ var express = require('express')
     ,restify = require('express-restify-mongoose')
     ,jwt    = require('jsonwebtoken') // used to create, sign, and verify tokens
     ,bcrypt = require('bcrypt') // to hash password
+    ,Boom = require('boom');
 
 
 var schema = require('../models/Person')
@@ -86,10 +87,7 @@ router.use(function(req, res, next) {
     jwt.verify(token, 'superSecret', function(err, decoded) {      
       if (err) {
 
-        return res.status(401).send({ 
-                    success: false, 
-                    message: 'UNAUTHORIZED.The request has not been applied because it lacks valid authentication credentials for the target resource.' 
-                });
+        next(Boom.unauthorized('The request has not been applied because it lacks valid authentication credentials for the target resource.'));
          
 
       } else {
@@ -103,10 +101,7 @@ router.use(function(req, res, next) {
 
     // if there is no token
     // return an error
-    return res.status(403).send({ 
-        success: false, 
-        message: 'No token provided.' 
-    });
+    next(Boom.forbidden('No token provided.'));    
 
   }
 });

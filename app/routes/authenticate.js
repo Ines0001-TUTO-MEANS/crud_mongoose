@@ -6,6 +6,7 @@ var express = require('express')
   , jwt    = require('jsonwebtoken') // used to create, sign, and verify tokens
   , bcrypt = require('bcrypt') // to hash/compare password
   ,	schema = require('../models/Person')
+  , Boom = require('boom');
 
 
 // post authenticate
