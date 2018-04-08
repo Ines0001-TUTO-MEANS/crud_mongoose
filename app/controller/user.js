@@ -44,23 +44,21 @@ exports.create = function(req, res, next) {
 
 
 exports.verifyEmail = function(req, res, next) {
-    
-    res.send("account sucessfully verified");
+    var token = req.params.token;
+    //res.send("account sucessfully verified");
     // verifies secret and checks exp
     
-    jwt.verify(token, 'superSecret', function(err, decoded) {      
+    Jwt.verify(token, privateKey, function(err, decoded) {      
       if (err) {
-
-        next(Boom.unauthorized('The request has not been applied because it lacks valid authentication credentials for the target resource.'));
-         
-
-      } else {
-        // if everything is good, save to request for use in other routes
-        req.decoded = decoded;    
-        next();
+                console.error(err);
+                next(Boom.badImplementation(err));
       }
+      console.log(decoded)
+      if(decoded === undefined) next(Boom.forbidden("invalid verification link"));
+      //if(decoded.scope[0] != "Customer") next(Boom.forbidden("invalid verification link"));
+      res.send("account sucessfully verified");
     });  
-    */
+    
   
   /*
     Jwt.verify(request.headers.authorization.split(" ")[1], privateKey, function(err, decoded) {
