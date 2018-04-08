@@ -1,6 +1,7 @@
 var Config = require('../config/config')
     ,Jwt = require('jsonwebtoken')
     ,Boom = require('boom')
+    ,bcrypt = require('bcrypt') // to hash password
     ,Mailer = require('./mailer')
     ,Config = require('../config/config')
     ,User = require('../models/user').User;
@@ -75,11 +76,12 @@ exports.resendVerificationEmail = function(req, res, next) {
     User.findUser(username, function(err, user) {
         if (!err) {
             if (user === null) return next(Boom.forbidden("invalid username or password"));
-            if(user.isVerified) res.send("your email address is already verified");
-            bcrypt.compare(password, user.password, function(err, res) {
+            if(user.isVerified) return res.send("your email address is already verified");
+            bcrypt.compare(password, user.password, function(err, result) {
               if (err) next(err)
-              if (res===undefined) return next(Boom.forbidden("invalid username or password"));
+              if (result===undefined) return next(Boom.forbidden("invalid username or password"));
               else{
+                
                 var expires = tokenExpiry
                     ,payload = {
                       userName: user.userName,
@@ -93,6 +95,7 @@ exports.resendVerificationEmail = function(req, res, next) {
                     },function(error){
                       next(Boom.notFound(error)); // HTTP 404
                 });
+              
               
               }
             
