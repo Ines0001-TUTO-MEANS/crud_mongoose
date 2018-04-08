@@ -43,16 +43,40 @@ exports.create = function(req, res, next) {
 };
 
 
+exports.verifyEmail = function(request, reply, next) {
+    console.log(request.headers.authorization.split(" ")[1])
+    /*
+    Jwt.verify(request.headers.authorization.split(" ")[1], privateKey, function(err, decoded) {
+        if(decoded === undefined) return reply(Boom.forbidden("invalid verification link"));
+        if(decoded.scope[0] != "Customer") return reply(Boom.forbidden("invalid verification link"));
+        User.findUserByIdAndUserName(decoded.id, decoded.userName, function(err, user){
+            if (err) {
+                console.error(err);
+                return reply(Boom.badImplementation(err));
+            }
+            if (user === null) return reply(Boom.forbidden("invalid verification link"));
+            if (user.isVerified === true) return reply(Boom.forbidden("account is already verified"));
+            user.isVerified = true;
+            User.updateUser(user, function(err, user){
+                if (err) {
+                    console.error(err);
+                    return reply(Boom.badImplementation(err));
+                }
+                return reply("account sucessfully verified");
+
+            })
+        })
+
+    });
+    */
+};
+
+
+
 
 /*
-exports.login = {
-    validate: {
-        payload: {
-            userName: Joi.string().email().required(),
-            password: Joi.string().required()
-        }
-    },
-    handler: function(request, reply) {
+
+exports.login = function(req, res, next) {
         User.findUser(request.payload.userName, function(err, user) {
             if (!err) {
                 if (user === null) return reply(Boom.forbidden("invalid username or password"));
@@ -83,7 +107,7 @@ exports.login = {
             }
         });
     }
-};
+
 
 exports.resendVerificationEmail = {
     validate: {
