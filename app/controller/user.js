@@ -25,7 +25,7 @@ exports.create = function(req, res, next) {
           },privateKey);
 
           Mailer.sentMailVerificationLink(user.userName,token).then(function(data){
-                res.json('Please confirm your email id by clicking on link in email');
+                res.send('Please confirm your email id by clicking on link in email');
               },function(error){
                 next(Boom.notFound(error)); // HTTP 404
                 
@@ -43,9 +43,26 @@ exports.create = function(req, res, next) {
 };
 
 
-exports.verifyEmail = function(request, reply, next) {
-    console.log(request.headers.authorization.split(" ")[1])
-    /*
+exports.verifyEmail = function(req, res, next) {
+    
+    res.send("account sucessfully verified");
+    // verifies secret and checks exp
+    
+    jwt.verify(token, 'superSecret', function(err, decoded) {      
+      if (err) {
+
+        next(Boom.unauthorized('The request has not been applied because it lacks valid authentication credentials for the target resource.'));
+         
+
+      } else {
+        // if everything is good, save to request for use in other routes
+        req.decoded = decoded;    
+        next();
+      }
+    });  
+    */
+  
+  /*
     Jwt.verify(request.headers.authorization.split(" ")[1], privateKey, function(err, decoded) {
         if(decoded === undefined) return reply(Boom.forbidden("invalid verification link"));
         if(decoded.scope[0] != "Customer") return reply(Boom.forbidden("invalid verification link"));

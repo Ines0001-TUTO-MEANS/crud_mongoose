@@ -7,6 +7,6 @@ var User = require('./user');
 
 // define the home page route
 router.post('/user', User.create);
-router.get('/verifyEmail', User.verifyEmail);
+router.get('/verifyEmail/:token', User.verifyEmail);
 
 module.exports = router;
