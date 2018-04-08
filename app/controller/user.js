@@ -1,18 +1,28 @@
-var Config = require('../config/config'),
-    Jwt = require('jsonwebtoken'),
-    Boom = require('boom'),
-    User = require('../models/user').User;
+var Config = require('../config/config')
+    ,Jwt = require('jsonwebtoken')
+    ,Boom = require('boom')
+    ,Mailer = require('mailer');
+    ,Config = require('../config/config');
+    ,User = require('../models/user').User;
 
 
 exports.create = function(req, res, next) {
     
     User.saveUser(req.body, function(err, user) {
         if (!err) {
-            var tokenData = {
-                userName: user.userName,
-                scope: [user.scope],
-                id: user._id
-            };
+          var expires = Math.floor(Date.now() / 1000) + (60 * 60)
+              ,payload = {
+                  userName: user.userName,
+                  scope: [user.scope],
+                  id: user._id
+              };
+          
+          var token = jwt.sign({
+                  iss: payload,
+                  exp: expires
+          },Config.key.privateKey);
+
+            
           res.json('Please confirm your email id by clicking on link in email');  
           
         } else {
