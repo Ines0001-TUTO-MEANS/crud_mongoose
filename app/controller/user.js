@@ -1,7 +1,7 @@
 var Config = require('../config/config')
     ,Jwt = require('jsonwebtoken')
     ,Boom = require('boom')
-    ,Mailer = require('mailer')
+    ,Mailer = require('./mailer')
     ,Config = require('../config/config')
     ,User = require('../models/user').User;
 
