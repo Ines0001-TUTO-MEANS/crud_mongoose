@@ -9,7 +9,7 @@ var express = require('express')
 
 
 // post authenticate
-router.post('/authenticate', function(request, response) {
+router.post('/authenticate', function(request, response,next) {
   
 
 	var User = mongoose.model('Users', schema )
@@ -17,7 +17,9 @@ router.post('/authenticate', function(request, response) {
 		if (err) throw err;
 
     if (!user) {
-        response.json({ success: false, message: 'Authentication failed. User not found.' });
+        next(Boom.unauthorized('User not found'));
+        
+      
     } else {
       // check if password matches
       // Load hash from your password DB.
@@ -41,7 +43,8 @@ router.post('/authenticate', function(request, response) {
           );
           
         }else{
-          response.json({ success: false, message: 'Authentication failed. Wrong password.' });
+          next(Boom.unauthorized('invalid password'));
+          
         }          
         
         
