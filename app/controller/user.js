@@ -47,13 +47,12 @@ exports.verifyEmail = function(req, res, next) {
     
     Jwt.verify(token, privateKey, function(err, decoded) {      
       if (err) {
-                console.error(err);
                 next(Boom.badImplementation(err));
+      }else{
+        if(decoded === undefined) next(Boom.forbidden("invalid verification link"));
+        //if(decoded.scope[0] != "Customer") next(Boom.forbidden("invalid verification link"));
+        res.send("account sucessfully verified");
       }
-      console.log(decoded)
-      if(decoded === undefined) next(Boom.forbidden("invalid verification link"));
-      //if(decoded.scope[0] != "Customer") next(Boom.forbidden("invalid verification link"));
-      res.send("account sucessfully verified");
     });  
     
   
