@@ -55,7 +55,13 @@ exports.verifyEmail = function(req, res, next) {
             } 
             if (user === null) return next(Boom.forbidden("invalid verification link"));
             if (user.isVerified === true) return next(Boom.forbidden("account is already verified"));
-          
+            user.isVerified = true;
+            User.updateUser(user, function(err, user){
+              if (err) {
+                return next(Boom.badImplementation(err));
+              }
+              res.send("account sucessfully verified");
+            })
           
           
           })
