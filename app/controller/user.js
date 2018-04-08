@@ -72,7 +72,7 @@ exports.resendVerificationEmail = function(req, res, next) {
     var username = req.body.userName
         ,password = req.body.password;
   
-    User.findUser(req.body, function(err, user) {
+    User.findUser(username, function(err, user) {
         if (!err) {
             if (user === null) return next(Boom.forbidden("invalid username or password"));
             if (req.body.password === Common.decrypt(user.password)) {
