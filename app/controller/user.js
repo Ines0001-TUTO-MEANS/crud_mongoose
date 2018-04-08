@@ -42,9 +42,7 @@ exports.create = function(req, res, next) {
 
 exports.verifyEmail = function(req, res, next) {
     var token = req.params.token;
-    //res.send("account sucessfully verified");
-    // verifies secret and checks exp
-    
+  
     Jwt.verify(token, privateKey, function(err, decoded) {      
       if(decoded === undefined) return next(Boom.forbidden("invalid verification link"));
       if(decoded.scope[0] != "Customer") return next(Boom.forbidden("invalid verification link"));
@@ -67,32 +65,7 @@ exports.verifyEmail = function(req, res, next) {
           })
       }
     });  
-    
-  
-  /*
-    Jwt.verify(request.headers.authorization.split(" ")[1], privateKey, function(err, decoded) {
-        if(decoded === undefined) return reply(Boom.forbidden("invalid verification link"));
-        if(decoded.scope[0] != "Customer") return reply(Boom.forbidden("invalid verification link"));
-        User.findUserByIdAndUserName(decoded.id, decoded.userName, function(err, user){
-            if (err) {
-                console.error(err);
-                return reply(Boom.badImplementation(err));
-            }
-            if (user === null) return reply(Boom.forbidden("invalid verification link"));
-            if (user.isVerified === true) return reply(Boom.forbidden("account is already verified"));
-            user.isVerified = true;
-            User.updateUser(user, function(err, user){
-                if (err) {
-                    console.error(err);
-                    return reply(Boom.badImplementation(err));
-                }
-                return reply("account sucessfully verified");
-
-            })
-        })
-
-    });
-    */
+ 
 };
 
 
