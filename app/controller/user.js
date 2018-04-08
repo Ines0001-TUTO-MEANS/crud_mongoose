@@ -68,7 +68,41 @@ exports.verifyEmail = function(req, res, next) {
  
 };
 
+exports.resendVerificationEmail = function(req, res, next) {
+    var username = req.body.userName
+        ,password = req.body.password;
+  
+    User.findUser(req.body, function(err, user) {
+        if (!err) {
+            if (user === null) return next(Boom.forbidden("invalid username or password"));
+            if (req.body.password === Common.decrypt(user.password)) {
 
+                if(user.isVerified) res.send("your email address is already verified");
+
+                var expires = tokenExpiry
+                    ,payload = {
+                      userName: user.userName,
+                      scope: [user.scope],
+                      id: user._id
+                    };
+
+                var token = Jwt.sign(payload,privateKey,{ expiresIn: expires });
+                  
+                Mailer.sentMailVerificationLink(user.userName,token).then(function(data){
+                      res.send('Please confirm your email id by clicking on link in email');
+                    },function(error){
+                      next(Boom.notFound(error)); // HTTP 404
+
+                });
+              
+                res.send("account verification link is sucessfully send to an email id");
+            } else next(Boom.forbidden("invalid username or password"));
+        } else {                
+            console.error(err);
+            return next(Boom.badImplementation(err));
+        }
+    });
+}
 
 
 /*
