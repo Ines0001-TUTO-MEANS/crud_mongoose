@@ -19,7 +19,7 @@ exports.create = function(req, res, next) {
                   id: user._id
               };
           
-          var token = jwt.sign({
+          var token = Jwt.sign({
                   iss: payload,
                   exp: expires
           },privateKey);
