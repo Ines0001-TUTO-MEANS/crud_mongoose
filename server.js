@@ -7,7 +7,7 @@ var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 var morgan  = require('morgan');
 var favicon = require('serve-favicon');
-var util = require('util');
+//var util = require('util');
 
 
 
@@ -19,7 +19,6 @@ const port = process.env.PORT || 3000;
 /// configuration ===============================================================
 app.use(bodyParser.json());
 app.use(methodOverride());
-
 // routes...
 var routes = require('./routes')(app);
 
@@ -49,7 +48,7 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + '/index.html');
 });
 
-console.log(util.inspect(app.stack))
+//console.log(util.inspect(app.stack))
 // listen for requests :)
 var listener = app.listen(port, function () {
   console.log('Your app is listening on port ' + listener.address().port);
