@@ -18,7 +18,7 @@ function loginRequired (req, res, next) {
   }
 };
 
-//router.use(loginRequired);
+router.use(loginRequired);
 restify.serve(router, mongoose.model('Tasks', schema ))
 
 module.exports = router
