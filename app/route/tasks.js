@@ -10,7 +10,7 @@ var schema = require('../models/Task')
 
 
 
-var loginRequired (req, res, next) {
+function loginRequired (req, res, next) {
   if (req.headers['x-access-token'] || req.body.token || req.query.token) {
     next();
   } else {

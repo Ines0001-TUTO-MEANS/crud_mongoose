@@ -16,6 +16,9 @@ var favicon = require('serve-favicon');
 const app = express();
 const port = process.env.PORT || 3000;
 
+// routes...
+var routes = require('./routes')(app);
+
 ///set variable
 app.set('superSecret', "My secret"); // secret variable
 

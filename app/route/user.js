@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var User = require('./user');
+var User = require('../controller/user');
 
 
 // middleware that is specific to this router
