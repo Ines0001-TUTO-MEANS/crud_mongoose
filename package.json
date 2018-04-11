@@ -25,7 +25,8 @@
     "morgan": "^1.9.0",
     "nodemailer": "^4.6.4",
     "promise": "^8.0.1",
-    "serve-favicon": "^2.4.5"
+    "serve-favicon": "^2.4.5",
+    "util": "^0.10.3"
   },
   "engines": {
     "node": "8.x"

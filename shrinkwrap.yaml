@@ -15,6 +15,7 @@ dependencies:
   nodemailer: 4.6.4
   promise: 8.0.1
   serve-favicon: 2.5.0
+  util: 0.10.3
 devDependencies:
   browser-sync: 2.23.6
   gulp-run: 1.7.1
@@ -1904,6 +1905,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-ykMJ2t7mtUzAuNJH6NfHoJdb3Js=
+  /inherits/2.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-sX0I0ya0Qj5Wjv9xn5GwscvfafE=
   /inherits/2.0.3:
     resolution:
       integrity: sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
@@ -4167,6 +4172,12 @@ packages:
   /util-deprecate/1.0.2:
     resolution:
       integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
+  /util/0.10.3:
+    dependencies:
+      inherits: 2.0.1
+    dev: false
+    resolution:
+      integrity: sha1-evsa/lCAUkZInj23/g7TeTNqwPk=
   /utils-merge/1.0.0:
     dev: true
     engines:
@@ -4388,3 +4399,4 @@ specifiers:
   promise: ^8.0.1
   run-sequence: ^2.2.1
   serve-favicon: ^2.4.5
+  util: ^0.10.3
