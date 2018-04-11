@@ -15,6 +15,9 @@ var favicon = require('serve-favicon');
 
 const app = express();
 const port = process.env.PORT || 3000;
+/// configuration ===============================================================
+app.use(bodyParser.json());
+app.use(methodOverride());
 
 // routes...
 var routes = require('./routes')(app);
@@ -22,9 +25,6 @@ var routes = require('./routes')(app);
 ///set variable
 app.set('superSecret', "My secret"); // secret variable
 
-/// configuration ===============================================================
-app.use(bodyParser.json());
-app.use(methodOverride());
 
 
 
