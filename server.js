@@ -50,7 +50,6 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + '/index.html');
 });
 
-')
 // listen for requests :)
 var listener = app.listen(port, function () {
   console.log('Your app is listening on port ' + listener.address().port);
