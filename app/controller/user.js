@@ -22,7 +22,7 @@ exports.loginRequired = function(req, res, next) {
 
         } else {
           // if everything is good, save to request for use in other routes
-          res.decoded = decoded;    
+          res.append('decoded', 'userName='+decoded.userName+'; scope='+decoded.scope);  
           next();
         }
       });
