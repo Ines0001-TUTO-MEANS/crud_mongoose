@@ -52,7 +52,8 @@ var User = new Schema({
     */
     scope: {
         type: String,
-        enum: ['Customer'],
+        enum: ['Customer','Other'],
+        default :'Customer',
         required: true
     }, 
   
