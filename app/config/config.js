@@ -1,7 +1,7 @@
 module.exports = {
     server: {
         
-            host: 'https://crud-mongoose.glitch.me',
+            host: 'https://restfull-api.glitch.me',
             port: 0
     },
     database: {
