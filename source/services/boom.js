@@ -1,6 +1,6 @@
 (function(app) {
 	app.service('Boom_service', function(error) {
-      
+      this.
       return {
           get statusCode () {
               return error.output.statusCode;
