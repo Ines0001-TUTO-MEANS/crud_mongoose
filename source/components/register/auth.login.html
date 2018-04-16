@@ -2,10 +2,10 @@
   <form name="form.login" ng-submit="login(form.login)" novalidate >
       <md-input-container class="md-block">
         <label>E-mail</label>
-        <input type="email" name="email" ng-model="user.email" required>
-        <div ng-messages="form.login.email.$error" ng-show="form.login.email.$dirty">
+        <input type="userName" name="userName" ng-model="user.userName" required>
+        <div ng-messages="form.login.userName.$error" ng-show="form.login.userName.$dirty">
           <div ng-message="required">Merci de saisir une adresse mail</div>
-          <div ng-message="email">Le champ saisie n'est pas au format attendu</div>
+          <div ng-message="userName">Le champ saisie n'est pas au format attendu</div>
         </div>
       </md-input-container>
 
