@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('AuthController', ['$q','$scope', '$state','AuthServices','User_factory',function($q,$scope,$state,AuthServices,User_factory) {
+	app.controller('AuthController', ['$q','$scope', '$state','AuthServices','User_factory','BoomService',function($q,$scope,$state,AuthServices,User_factory,BoomService) {
     $scope.user={};
     $scope.errorMessage = '';
     $scope.showSpinner = false;
@@ -14,7 +14,7 @@
           // Switch consult users.list link
           $state.go('users.list',undefined,{reload:true})
           $scope.showSpinner = false;
-          
+          console.log('AuthServices.login :',data)
       
       },function(err){
           form.password.$error.wrongpassword = true;

@@ -26,9 +26,9 @@
           $cookies.put('user',data.user,{expires : expires ,secure:true})
       
           auth.user = user
-          deferred.resolve(data.message)
+          deferred.resolve(data)
         }else{
-          deferred.reject(data.message)
+          deferred.reject(data)
         }
 
       })
