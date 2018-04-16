@@ -1,17 +1,13 @@
 (function(app) {
 	app.service('BoomService', function(error) {
       function isBoom(){ return error.isBoom }
-      
-      return {
-          get statusCode () {
-              return isBoom()?error.output.statusCode:error;
-          },
-        
-          get error () {
-             return  isBoom()?error.output.payload.error:error
-          },
-        
-          get message() {
+      this.statusCode = get(error){ 
+          return isBoom()?error.output.statusCode:error;
+      }
+      this.error = get(error) {
+          return  isBoom()?error.output.payload.error:error
+      };
+      this.message = get() {
               return isBoom()?error.output.message:error
           }
           
