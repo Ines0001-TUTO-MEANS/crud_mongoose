@@ -29,6 +29,7 @@
           auth.user = user
           deferred.resolve(data)
         }else{
+          console.log('User.authenticate:',data)
           deferred.reject(data)
         }
 
