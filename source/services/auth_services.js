@@ -15,7 +15,7 @@
       var deferred = $q.defer();
 
       User.authenticate(user,function(data){
-        if(data.success && data.token && data.user){      
+        if(data.token && data.username){      
           /* Add token in cookies client
           Use by config.headers['x-access-token'] in request $http
           instanciate to app.config.js
