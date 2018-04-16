@@ -1,5 +1,5 @@
 <content layout="row">
-  <div flex>
+  <div flex ng-controller="boomCtrl">
     <input type="text" ng-model="message" placeholder="Enter message">
     <p message-attrb="{{message}}" on-click-console="showMessage(arg)"  >
       <p ng-click="onClickInfo()">

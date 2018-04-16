@@ -1,14 +1,14 @@
 (function(app) {
-    app.config(['$stateProvider', '$urlRouterProvider', 'Boom_service',function($stateProvider, $urlRouterProvider,Boom_service) {
-      //Boom_service.name='emmanuel'
+    app.config(['$stateProvider', '$urlRouterProvider',function($stateProvider, $urlRouterProvider) {
+  
       $stateProvider.state('test', {
       url: '/test',
       
       views:{
         'content':{
             templateUrl: 'components/testpage/page.html',  
-            controller: function($scope,Boom_service){
-              //console.log('controller Boom: ',Boom_service.name)
+            controller: function($scope){
+              
               $scope.expanders=[{
                 title: 'Titre article',
                 message: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis nisl pharetra, placerat sem sit amet, convallis justo. Pellentesque dictum.'
