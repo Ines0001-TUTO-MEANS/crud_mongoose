@@ -1,5 +1,5 @@
 (function(app) {
-	app.service('Boom_service', ['', function() {
+	app.service('Boom_service', function() {
       var first_name ='';
       return {
           get name() {
@@ -10,5 +10,5 @@
           }
       }
 
-	}]);
+	});
 })(CrudMongoose);
