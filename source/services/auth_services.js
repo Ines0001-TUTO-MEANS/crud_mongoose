@@ -32,6 +32,8 @@
           deferred.reject(data)
         }
 
+      },function(error){
+        deferred.reject(error.data)
       })
       return deferred.promise;
     }
