@@ -154,7 +154,7 @@ exports.login = function(req, res, next) {
             bcrypt.compare(password, user.password, function(err, result) {
               if (err) next(err)
               if (!result) return next(Boom.forbidden("invalid username or password"));
-              if(!user.isVerified) return res.send("Your email address is not verified. please verify your email address to proceed");
+              if(!user.isVerified) return res.json({message:'Your email address is not verified. please verify your email address to proceed'});
               
               var expires = tokenExpiry
                   ,payload = {
