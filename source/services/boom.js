@@ -1,17 +1,18 @@
 (function(app) {
-	app.service('Boom_service', function(error) {
-      this.
+	app.service('BoomService', function(error) {
+      function isBoom(){ return error.isBoom }
+      
       return {
           get statusCode () {
-              return error.output.statusCode;
+              return isBoom()?error.output.statusCode:error;
           },
         
           get error () {
-             return  error.output.payload.error
+             return  isBoom()?error.output.payload.error:error
           },
         
           get message() {
-              return error.output.message
+              return isBoom()?error.output.message:error
           }
           
       }
