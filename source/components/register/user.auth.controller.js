@@ -18,7 +18,8 @@
       
       },function(err){
           form.password.$error.wrongpassword = true;
-          $scope.errorMessage = err;
+          var boom = new BoomService(err)
+          $scope.errorMessage = boom.message();
           form.$invalid = true;
           $scope.user.password = '';
           $scope.showSpinner = false;
