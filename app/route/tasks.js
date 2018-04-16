@@ -6,12 +6,16 @@ var express = require('express')
    
 var User = require('../controller/user');
 var schema = require('../models/Task')
-
+var options = {
+  prefix:'api'
+  
+      
+};
 // Using query builder
 
 
-router.use('api/V1',User.loginRequired);
-restify.serve(router, mongoose.model('Tasks', schema ))
+router.use('/api',User.loginRequired);
+restify.serve(router, mongoose.model('Tasks', schema ),options)
 
 module.exports = router
 
