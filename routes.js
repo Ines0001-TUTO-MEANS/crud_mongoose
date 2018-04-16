@@ -1,7 +1,11 @@
+/*
+
+ Définitions des routes coté serveur
 
 
+*/
 
-module.exports = function(app){
+  module.exports = function(app){
   // Routing
   //app.use('/api', require('./app/routes/authenticate')) // must before api/ routing
   //app.use('/api', require('./app/routes/users'))
