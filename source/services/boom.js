@@ -11,7 +11,7 @@
           },
         
           get message() {
-              return error.output.message.
+              return error.output.message
           }
           
       }

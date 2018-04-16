@@ -1,7 +1,7 @@
 (function(app) {
 	app.controller('boomCtrl', ['$scope','Boom_service',function($scope,Boom_service) {
-    Boom_service.name='emmanuel';
-    console.log('boomCtrl',Boom_service.name)
+    var boom = Boom_service({output:{statusCode :'301'}});
+    console.log('boomCtrl',boom.statusCode)
         
 	}]);
 })(CrudMongoose);
