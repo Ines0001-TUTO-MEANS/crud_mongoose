@@ -7,7 +7,7 @@ var express = require('express')
 var User = require('../controller/user');
 var schema = require('../models/Task')
 var options = {
-  prefix:'api'
+  version:''
   
       
 };
