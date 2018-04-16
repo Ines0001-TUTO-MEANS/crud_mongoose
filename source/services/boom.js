@@ -1,17 +1,16 @@
 (function(app) {
-	app.service('BoomService', function(error) {
-      function isBoom(){ return error.isBoom }
-      this.error = error;
-      this.statusCode = function(){ 
-          return isBoom()?error.output.statusCode:error;
+	app.service('BoomService', function() {
+      this.error ={}
+      this.statusCode = function(error){ 
+          return error.isBoom ?error.output.statusCode:error;
       }
-      this.error = function() {
-          return  isBoom()?error.output.payload.error:error
+      this.error = function(error) {
+          return  error.isBoom ?error.output.payload.error:error
       };
-      this.message = function() {
-              return isBoom()?error.output.message:error
+      this.message = function(error) {
+              return error.isBoom ?error.output.message:error
       }
-      
+      return this.error
 
 	});
 })(CrudMongoose);
