@@ -4,49 +4,13 @@ var express = require('express')
     ,restify = require('express-restify-mongoose')
     ,Boom = require('boom');
    
-
+var User = require('../controller/user');
 var schema = require('../models/Task')
 
 // Using query builder
 
 
-
-function loginRequired (req, res, next) {
-  var token = (req.headers['x-access-token'] || req.body.token || req.query.token)
-    if (token) {
-
-        // verifies secret and checks exp
-        jwt.verify(token, 'superSecret', function(err, decoded) {      
-          if (err) {
-            
-            return next(Boom.unauthorized('The request has not been applied because it lacks valid authentication credentials for the target resource.')); // HTTP 401
-            
-          } else {
-            // if everything is good, save to request for use in other routes
-            req.decoded = decoded;    
-            next();
-          }
-        });
-
-      } else {
-
-        // if there is no token
-        // return an error
-        return next(Boom.unauthorized('The request has not been applied because it lacks valid authentication credentials for the target resource.')); // HTTP 401
-            
-
-      }
-    
-    
-    
-    
-    next();
-  } else {
-    return next(Boom.forbidden('No token provided')); // HTTP 403
-  }
-};
-
-router.use(loginRequired);
+router.use('api/V1',User.loginRequired);
 restify.serve(router, mongoose.model('Tasks', schema ))
 
 module.exports = router

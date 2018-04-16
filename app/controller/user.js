@@ -9,6 +9,35 @@ var Config = require('../config/config')
 var privateKey = Config.key.privateKey;
 var tokenExpiry = Config.key.tokenExpiry;
 
+
+exports.loginRequired = function(req, res, next) {
+  var token = (req.headers['x-access-token'] || req.body.token || req.query.token)
+  if (token) {
+
+      // verifies secret and checks exp
+      Jwt.verify(token, privateKey, function(err, decoded) {      
+        if (err) {
+
+          return next(Boom.unauthorized('The request has not been applied because it lacks valid authentication credentials for the target resource.')); // HTTP 401
+
+        } else {
+          // if everything is good, save to request for use in other routes
+          req.decoded = decoded;    
+          next();
+        }
+      });
+
+    } else {
+
+      // if there is no token
+      // return an error
+      return next(Boom.unauthorized('The request has not been applied because it lacks valid authentication credentials for the target resource.')); // HTTP 401
+
+    }
+
+};
+
+
 exports.create = function(req, res, next) {
     
     User.saveUser(req.body, function(err, user) {
