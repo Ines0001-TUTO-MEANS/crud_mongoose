@@ -1,0 +1,10 @@
+<content>
+  <md-nav-bar md-selected-nav-item="currentNavItem"  nav-bar-aria-label="navigation links">
+      <md-nav-item md-nav-sref="tasks.list"  name="tasks.list" >List tasks</md-nav-item>
+      <md-nav-item md-nav-sref="tasks.detail" name="tasks.detail"  ng-show="show_state=='tasks.detail'">Detail Task</md-nav-item>
+      <md-nav-item md-nav-sref="tasks.create" name="tasks.create"  ng-show="show_state=='tasks.create'">Create Task</md-nav-item>
+
+  </md-nav-bar>
+  <div ui-view layout="column"></div>  
+
+</content>

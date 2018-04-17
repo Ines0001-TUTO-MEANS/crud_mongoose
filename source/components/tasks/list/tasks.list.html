@@ -1,0 +1,51 @@
+
+<!--div ng-repeat="task in tasks">
+  <code>{{task|json}}<a ng-href="#" ng-click="detail(task)"><i class="material-icons">zoom_in</i></a></code>
+
+  
+</div-->
+<!--md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6" md-gutter="12px" md-row-height="4:2">
+  <md-grid-tile ng-repeat="task in tasks"  md-colors="{background: 'red-A100'}">
+    <md-grid-tile-header>
+        <h3>{{task.name}}</h3>
+    </md-grid-tile-header>
+    
+  </md-grid-tile>
+</md-grid-list-->
+<div layout="row" layout-wrap >
+  <md-card ng-repeat="task in tasks" flex="100" flex-gt-xs="33" flex-gt-sm="25">
+    <md-card-header md-colors="{background: 'red-A100'}">
+      <md-card-avatar>
+        <i class="material-icons">person</i>
+      </md-card-avatar>
+      <md-card-header-text>
+        <div layout="row" layout-align="space-between " class="md-title">
+          <span>{{task.name}}</span>
+          <span >{{task.age}} ans</span>
+        </div>
+        <span class="md-subhead" ng-if="task.email">{{task.email}}</span>
+        </md-card-header-text>
+    </md-card-header>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">In-card mixed actions</span>
+        <span class="md-subhead">Reversed</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+      <p>
+        The titles of Washed Out's breakthrough song and the first single from Paracosm share the
+        two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+      </p>
+    </md-card-content>
+      
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button class="md-icon-button" ng-click="detail(task)"><i class="material-icons">info</i></md-button>
+      <md-button class="md-icon-button" ng-click="delete(task)"><i class="material-icons">delete</i></md-button>
+      
+    </md-card-actions>
+  </md-card>
+  
+</div>
+
+
