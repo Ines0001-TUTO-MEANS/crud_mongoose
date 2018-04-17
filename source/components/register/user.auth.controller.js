@@ -14,8 +14,7 @@
           // Switch consult users.list link
           $state.go('users.list',undefined,{reload:true})
           $scope.showSpinner = false;
-          console.log('AuthServices.login :',data)
-      
+          
       },function(err){
           form.password.$error.wrongpassword = true;
           var boom = new BoomService(err)
