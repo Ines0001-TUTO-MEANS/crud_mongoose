@@ -10,13 +10,13 @@ Les actions:
 (function(app) {
 	app.controller('MainController', ['$scope','$state',function($scope,$state) {
     $scope.tabCreateShow = false;
-    $scope.currentNavItem ='users.list';
+    $scope.currentNavItem ='tasks.list';
     
     
     $scope.mainEventCreate = function(){
-      $scope.show_state= 'users.create';
-      $scope.currentNavItem ='users.create';
-      $state.go('users.create',undefined,{reload:true});
+      $scope.show_state= 'tasks.create';
+      $scope.currentNavItem ='tasks.create';
+      $state.go('tasks.create',undefined,{reload:true});
     }
     
     
@@ -25,7 +25,7 @@ Les actions:
       console.log('MainController:EVENT_MAIN_NOTIFICATION',data)
       $scope.show_state = data.state;
       $scope.currentNavItem =data.state;
-      $state.go(data.state,{idUser:data.id},{reload:true});
+      $state.go(data.state,{idTask:data.id},{reload:true});
       
     })
     
