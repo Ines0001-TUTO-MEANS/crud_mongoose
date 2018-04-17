@@ -18,8 +18,8 @@
                 controller: 'tasksListController'
             })
         .state('tasks.detail', {
-                url: '/detail/:idUser',
-                templateUrl: 'components/tasks/detail/user.detail.html',
+                url: '/detail/:idTask',
+                templateUrl: 'components/tasks/detail/task.detail.html',
                 controller: 'TaskDetailController'
             })
         .state('tasks.create', {
