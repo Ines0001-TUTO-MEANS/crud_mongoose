@@ -15,6 +15,7 @@
       
       $scope.task = data; 
     },function(err){
+        console.log('TaskFactory.get:',err.data)
         var boom = new BoomService(err)
         $state.go('error',{status:boom.statusCode(),message:boom.message()},{reload:true});
         $scope.task = err || 'Request failed';
