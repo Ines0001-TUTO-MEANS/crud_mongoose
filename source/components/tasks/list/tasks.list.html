@@ -20,10 +20,10 @@
       </md-card-avatar>
       <md-card-header-text>
         <div layout="row" layout-align="space-between " class="md-title">
-          <span>{{task.name}}</span>
-          <span >{{task.age}} ans</span>
+          <span></span>
+          <span ></span>
         </div>
-        <span class="md-subhead" ng-if="task.email">{{task.email}}</span>
+        
         </md-card-header-text>
     </md-card-header>
     <md-card-title>
@@ -34,8 +34,7 @@
     </md-card-title>
     <md-card-content>
       <p>
-        The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-        two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+        {{task|json}}
       </p>
     </md-card-content>
       

@@ -12,7 +12,7 @@
       // Call authenticate service
       AuthServices.login($scope.user).then(function(data){
           // Switch consult users.list link
-          $state.go('users.list',undefined,{reload:true})
+          $state.go('tasks.list',undefined,{reload:true})
           $scope.showSpinner = false;
           
       },function(err){
