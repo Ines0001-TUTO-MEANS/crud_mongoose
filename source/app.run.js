@@ -13,7 +13,7 @@
     
     */
     
-    $transitions.onBefore({ to: 'users.**' }, function(transition) {
+    $transitions.onBefore({ to: 'tasks.**' }, function(transition) {
       // check if the state should be protected
       if (!AuthServices.isAuthenticated()) {
         // redirect to the 'login' state
