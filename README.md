@@ -32,6 +32,7 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 1. [Node for API: Express et Hapi en pratique](https://blog.octo.com/node-for-api-express-and-hapi-en-pratique/)
 1. [Github solution Cron-J/JWT-Hapi-Mongoose-Mongodb-with-email-verification-and-forgot-password](https://github.com/Cron-J/JWT-Hapi-Mongoose-Mongodb-with-email-verification-and-forgot-password)
 1. [A quick way to work with Hapi.js, Mongoose, Angular.js](https://www.cronj.com/blog/hapi-mongoose/)
+1. [Password Reset Using JWT](https://www.codementor.io/olatundegaruba/password-reset-using-jwt-ag2pmlck0) and [GitHub](https://github.com/generalgmt/RESTfulAPITutorial/tree/password-reset)
 
 **nodemailer**
 1. [Send mails from Gmail using Nodemailer](https://gist.github.com/tanaikech/d225c7adab818a6dc1dfd7783f8c8e4d)
