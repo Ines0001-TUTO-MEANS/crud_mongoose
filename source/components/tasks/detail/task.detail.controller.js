@@ -1,5 +1,5 @@
 (function(app) {
-	app.controller('TaskDetailController', ['$scope', '$stateParams','TaskFactory','$mdDialog',function($scope,$stateParams,TaskFactory,$mdDialog) {
+	app.controller('TaskDetailController', ['$scope', '$stateParams','TaskFactory','BoomService','$mdDialog',function($scope,$stateParams,TaskFactory,BoomService,$mdDialog) {
     $scope.task={};
     $scope.$parent.currentNavItem = 'tasks.detail';
     
@@ -15,9 +15,8 @@
       
       $scope.task = data; 
     },function(err){
-        console.log('TaskDetailController:error:',err)
         var boom = new BoomService(err)
-        $state.go('error',{status:err.status,message:boom.message()},{reload:true});
+        $state.go('error',{status:boom.statusCode(),message:boom.message()},{reload:true});
         $scope.task = err || 'Request failed';
     })
     
