@@ -1,5 +1,5 @@
 var CrudMongoose = angular.module('CrudMongoose', ['ngMaterial', 'ngAnimate', 'ngMessages', 'ngAria', 'ui.router','ngResource','ngCookies'])
-                          .config(['$httpProvider', function ($httpProvider) {
+                          .config(['$httpProvider', '$locationProvider',  function ($httpProvider,$locationProvider) {
                             $httpProvider.interceptors.push(function($q, $cookies) {
                               return {
                                'request': function(config) {
@@ -9,4 +9,10 @@ var CrudMongoose = angular.module('CrudMongoose', ['ngMaterial', 'ngAnimate', 'n
                                 }
                               };
                             });
+                            
+                            $locationProvider.html5Mode({
+                              enabled: true,
+                              requireBase: false
+                            });
+                            
                           }])

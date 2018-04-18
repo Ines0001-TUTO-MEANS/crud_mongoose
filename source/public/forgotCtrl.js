@@ -3,8 +3,8 @@
     
     //$scope.user = { userName:'ines@gmail.com',password:'ines'};
     
-    $scope.user = $location.url();
-    console.log('$location:',$location.url())
+    $scope.user = $location.search();
+    console.log('$location:',$location.search())
     $http({
       method: 'GET',
       url: '/api/tasks'
