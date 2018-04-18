@@ -26,7 +26,9 @@
     "nodemailer": "^4.6.4",
     "promise": "^8.0.1",
     "serve-favicon": "^2.4.5",
-    "util": "^0.10.3"
+    "util": "^0.10.3",
+    "nodemailer-express-handlebars": "^3.0.0",
+    "path": "^0.12.7"
   },
   "engines": {
     "node": "8.x"

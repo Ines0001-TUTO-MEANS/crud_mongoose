@@ -51,10 +51,10 @@ exports.sentMailVerificationLink = function(user,token) {
             context: {
               url: 'http://localhost:3000/auth/reset_password?token=' + token,
               
-              name: user.fullName.split(' ')[0]
+              name: ''
             }
         };
-        resolve(path.resolve(Config.server.host,Config.email.verifyEmailUrl,token)
+        resolve(path.resolve(Config.server.host,Config.email.verifyEmailUrl,token));
         /*
         smtpTransport.sendMail(mailOptions, function(error, response) {
           if (error) {
