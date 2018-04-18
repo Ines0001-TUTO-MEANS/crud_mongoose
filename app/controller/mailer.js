@@ -50,16 +50,22 @@ exports.sentMailVerificationLink = function(user,token) {
             template: 'send-verification-link-email',
             context: {
               url: 'http://localhost:3000/auth/reset_password?token=' + token,
+              
               name: user.fullName.split(' ')[0]
             }
         };
+        resolve(path.resolve(Config.server.host,Config.email.verifyEmailUrl,token)
+        /*
+        smtpTransport.sendMail(mailOptions, function(error, response) {
+          if (error) {
+            reject(error);
+          }else{
+            smtpTransport.close(); // shut down the connection pool, no more messages
+            resolve({message:'success send mail'});
+          }
+        });
+        */
         
-        mail(mailOptions).then(function(data){
-          resolve(data);
-        },function(error){
-          reject(error);
-        })
- 
       });      
 };
 
