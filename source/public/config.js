@@ -6,7 +6,13 @@ var mApp = angular.module('mForgotPassword', ['ngMaterial'])
 
                                     console.log(config)
                                     return config;
-                                }
+                                },
+                                
+                                // optional method
+                                'response': function(response) {
+                                  console.log(response)
+                                  return response;
+                                },
                               };
                             });
                           }])
