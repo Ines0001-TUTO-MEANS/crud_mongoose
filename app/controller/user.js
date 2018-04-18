@@ -125,7 +125,7 @@ exports.resendVerificationEmail = function(req, res, next) {
 
                 var token = Jwt.sign(payload,privateKey,{ expiresIn: expires });
                 Mailer.sentMailVerificationLink(user.userName,token).then(function(data){
-                      res.send('Please confirm your email id by clicking on link in email');
+                      res.send(data);
                     },function(error){
                       next(Boom.notFound(error)); // HTTP 404
                 });
