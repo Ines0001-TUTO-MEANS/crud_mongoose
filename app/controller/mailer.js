@@ -23,7 +23,7 @@ var smtpTransport = nodemailer.createTransport({
 // Access model template
 var handlebarsOptions = {
   viewEngine: 'handlebars',
-  viewPath: path.resolve('./api/templates/'),
+  viewPath: path.resolve('./app/templates/'),
   extName: '.html'
 };
 
@@ -40,10 +40,21 @@ exports.encrypt = function(password) {
 
 exports.sentMailVerificationLink = function(user,token) {
       return new Promise(function (resolve, reject) {
-        var from = Config.email.accountName;
-        var mailbody = "<p>Thanks for Registering on "+Config.email.accountName+" </p><p>Please verify your email by clicking on the verification link below.<br/><a href='"+Config.server.host+"/"+Config.email.verifyEmailUrl+"/"+token+"'>Verification Link</a></p>"
         
-        mail(from, user , "Account Verification", mailbody).then(function(data){
+        var mailOptions = {
+            from: Config.email.accountName, // sender address
+            to: user, // list of receivers
+            subject: "Account Verification", // Subject line
+            //text: result.price, // plaintext body
+            //html: mailbody  // html body
+            template: 'send-verification-link-email',
+            context: {
+              url: 'http://localhost:3000/auth/reset_password?token=' + token,
+              name: user.fullName.split(' ')[0]
+            }
+        };
+        
+        mail(mailOptions).then(function(data){
           resolve(data);
         },function(error){
           reject(error);
@@ -85,7 +96,12 @@ function mail(from, email, subject, mailbody){
         to: email, // list of receivers
         subject: subject, // Subject line
         //text: result.price, // plaintext body
-        html: mailbody  // html body
+        //html: mailbody  // html body
+        template: 'send-verification-link-email',
+        context: {
+          url: 'http://localhost:3000/auth/reset_password?token=' + token,
+          name: user.fullName.split(' ')[0]
+        }
     };
 
     
