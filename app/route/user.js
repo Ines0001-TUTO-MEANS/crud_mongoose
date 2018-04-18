@@ -12,10 +12,10 @@ module.exports = function(app){
       .post(User.resendVerificationEmail);
   app.route('/login')
       .post(User.login);
-  /*
+  
   app.route('/forgot_password')
       .get(User.render_forgot_password_template)
       .post(User.forgot_password);
-  */
+  
   
 }
