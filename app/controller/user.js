@@ -186,9 +186,12 @@ exports.login = function(req, res, next) {
 exports.render_forgot_password_template = function(req, res, next) {
     var username = req.body.userName
         ,password = req.body.password;
-    
+  res.set({
+    "X-name":"Emmanuel",
+    "X-firsname":"ines"
+  })
   res.sendFile(path.resolve('./source/public/forgot-password.html'));
-  //res.end('render_forgot_password_template:ok')
+  
 }
 
 exports.forgot_password = function(req, res, next) {
