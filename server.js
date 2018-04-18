@@ -15,28 +15,29 @@ var util = require('util');
 //const authenticate = require('./app/routes/authenticate');
 
 const app = express();
-const port = process.env.PORT || 3000;
+app.set('port', process.env.PORT || 3000);
 /// configuration ===============================================================
 app.use(bodyParser.json());
 app.use(methodOverride());
-
+// use morgan to log requests to the console
+app.use(morgan('dev'));
 
 ///set variable
 app.set('superSecret', "My secret"); // secret variable
 
+// Chargement de index.html automatiquement
+app.use(express.static('source'));
 
 
 
-// use morgan to log requests to the console
-app.use(morgan('dev'));
+
 
 // active mongoose debug
 mongoose.set('debug', true);
 // mongoose instance connection url connection
 mongoose.connect('mongodb://admin:ines1970@ds239117.mlab.com:39117/nodejs-test'); 
 
-// Chargement de index.html automatiquement
-app.use(express.static('source'));
+
 
 // favicon
 app.use(favicon(__dirname + '/source/img/icons/nodejs_125x125.png'));
@@ -46,11 +47,11 @@ app.use(favicon(__dirname + '/source/img/icons/nodejs_125x125.png'));
 var routes = require('./routes')(app);
 
 app.get("/", function (request, response) {
-  
+  console.log('__dirname:',__dirname)
   response.sendFile(__dirname + '/index.html');
 });
 
 // listen for requests :)
-var listener = app.listen(port, function () {
+var listener = app.listen(app.get('port'), function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
