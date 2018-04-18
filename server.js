@@ -28,6 +28,7 @@ app.set('superSecret', "My secret"); // secret variable
 // Chargement de index.html automatiquement
 app.use(express.static(__dirname + '/source'));
 
+
 // active mongoose debug
 mongoose.set('debug', true);
 // mongoose instance connection url connection
