@@ -1,6 +1,8 @@
 var nodemailer = require("nodemailer")
     // the path module provides utilities for working with file and directory paths.
     ,path = require('path')
+    // compose url
+    ,url = require('url')
     // This plugin works with nodemailer 4.x. And uses the express-handlebars view engine to generate html emails.
     ,hbs = require('nodemailer-express-handlebars')
     ,Promise  = require('promise')
@@ -54,7 +56,13 @@ exports.sentMailVerificationLink = function(user,token) {
               name: ''
             }
         };
-        resolve(path.resolve(Config.server.host,Config.email.verifyEmailUrl,token));
+        resolve(
+          url.resolve(
+            url.resolve(Config.server.host,Config.email.verifyEmailUrl),
+            token
+          )
+        );
+        
         /*
         smtpTransport.sendMail(mailOptions, function(error, response) {
           if (error) {

@@ -22,6 +22,6 @@ module.exports = {
         username: "ines0001@gmail.com",
         password: "password",
         accountName: "ines0001@gmail.com",
-        verifyEmailUrl: "verifyEmail"
+        verifyEmailUrl: "verifyEmail/"
     }
 };
