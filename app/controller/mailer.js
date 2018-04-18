@@ -51,28 +51,24 @@ exports.sentMailVerificationLink = function(user,token) {
             //html: mailbody  // html body
             template: 'send-verification-link-email',
             context: {
-              url: 'http://localhost:3000/auth/reset_password?token=' + token,
+              url: url.resolve(
+                      url.resolve(Config.server.host,Config.email.verifyEmailUrl),
+                      token
+                    ),
               
-              name: ''
+              name: user
             }
         };
-        resolve(
-          url.resolve(
-            url.resolve(Config.server.host,Config.email.verifyEmailUrl),
-            token
-          )
-        );
-        
-        /*
+         
         smtpTransport.sendMail(mailOptions, function(error, response) {
           if (error) {
             reject(error);
           }else{
             smtpTransport.close(); // shut down the connection pool, no more messages
-            resolve({message:'success send mail'});
+            resolve({ message: 'Kindly check your email for further instructions' });
           }
         });
-        */
+        
         
       });      
 };
