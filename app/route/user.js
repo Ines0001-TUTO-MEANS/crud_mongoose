@@ -1,18 +1,22 @@
-var express = require('express');
-var router = express.Router();
-var User = require('../controller/user');
-
-
-// middleware that is specific to this router
-
-// define the home page route
-router.post('/user', User.create);
-router.get('/verifyEmail/:token', User.verifyEmail);
-router.post('/resendVerificationEmail', User.resendVerificationEmail);
-router.post('/login', User.login);
-router.get('/')
+'use strict';
 
 
 
+module.exports = function(app){
+  var User = require('../controller/user');
 
-module.exports = router;
+  
+  app.route('/user')
+      .post(User.create)
+  app.route('/verifyEmail/:token')
+      .get(User.verifyEmail);
+  app.route('/resendVerificationEmail')
+      .post(User.resendVerificationEmail);
+  app.route('/login')
+      .post(User.login);
+  app.route('/forgot_password')
+      .get(User.render_forgot_password_template)
+      .post(User.forgot_password)
+  
+  
+}
