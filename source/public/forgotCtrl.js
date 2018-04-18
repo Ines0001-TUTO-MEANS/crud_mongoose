@@ -5,13 +5,11 @@
     
     $http({
       method: 'GET',
-      url: '/someUrl'
+      url: '/api/tasks'
     }).then(function successCallback(response) {
-        // this callback will be called asynchronously
-        // when the response is available
+        console.log('successCallback',response)
       }, function errorCallback(response) {
-        // called asynchronously if an error occurs
-        // or server returns response with an error status.
+        console.log('errorCallback',response)
       });
     
 	}]);

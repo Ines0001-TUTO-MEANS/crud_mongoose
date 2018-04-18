@@ -4,13 +4,13 @@ var mApp = angular.module('mForgotPassword', ['ngMaterial'])
                               return {
                                'request': function(config) {
 
-                                    console.log(config)
+                                    console.log('request:',config)
                                     return config;
                                 },
                                 
                                 // optional method
                                 'response': function(response) {
-                                  console.log(response)
+                                  console.log('response:',response)
                                   return response;
                                 },
                               };
