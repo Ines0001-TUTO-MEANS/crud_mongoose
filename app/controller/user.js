@@ -185,7 +185,8 @@ exports.login = function(req, res, next) {
 exports.render_forgot_password_template = function(req, res, next) {
     var username = req.body.userName
         ,password = req.body.password;
-    app.use(express.static(__dirname + '/public'))
+    
+  res.sendFile(__dirname + '/index.html');
 }
 /*
 render_forgot_password_template
