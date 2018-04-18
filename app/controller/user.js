@@ -1,5 +1,6 @@
 var Config = require('../config/config')
     ,Jwt = require('jsonwebtoken')
+    ,path = require('path')
     ,Boom = require('boom')
     ,bcrypt = require('bcrypt') // to hash password
     ,Mailer = require('./mailer')
@@ -185,8 +186,8 @@ exports.login = function(req, res, next) {
 exports.render_forgot_password_template = function(req, res, next) {
     var username = req.body.userName
         ,password = req.body.password;
-    
-    res.sendFile(__dirname + '/public/forgot-password.html');
+    console.log(path.jo)
+    res.sendFile('public/forgot-password.html');
 }
 
 exports.forgot_password = function(req, res, next) {
