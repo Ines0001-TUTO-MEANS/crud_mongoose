@@ -16,7 +16,7 @@
 
 
   //app.use(authenticate)
-  app.use('/', require('./app/route/user'))
+  require('./app/route/user')(app)
 
 
 
