@@ -1,4 +1,8 @@
 var nodemailer = require("nodemailer")
+    // the path module provides utilities for working with file and directory paths.
+    ,path = require('path')
+    // This plugin works with nodemailer 4.x. And uses the express-handlebars view engine to generate html emails.
+    ,hbs = require('nodemailer-express-handlebars')
     ,Promise  = require('promise')
     ,Config = require('../config/config');
 
@@ -16,6 +20,14 @@ var smtpTransport = nodemailer.createTransport({
     auth: auth,
 });
 
+// Access model template
+var handlebarsOptions = {
+  viewEngine: 'handlebars',
+  viewPath: path.resolve('./api/templates/'),
+  extName: '.html'
+};
+
+smtpTransport.use('compile', hbs(handlebarsOptions));
 
 
 exports.decrypt = function(password) {
