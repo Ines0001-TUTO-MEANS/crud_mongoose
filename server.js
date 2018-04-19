@@ -10,7 +10,9 @@ var  express = require('express')
     ,favicon = require('serve-favicon')
     ,util = require('util');
 
+var config = require('app/config/config');
 
+console.log('Mondb connect adress:',config.getUri())
 
 // module api routing
 //const authenticate = require('./app/routes/authenticate');
