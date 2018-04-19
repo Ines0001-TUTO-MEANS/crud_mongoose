@@ -26,7 +26,7 @@ app.use(morgan('dev'));
 app.set('superSecret', "My secret"); // secret variable
 
 // Chargement de index.html automatiquement
-app.use(express.static(__dirname + '/source'));
+app.use('/',express.static(__dirname + '/source'));
 
 
 // active mongoose debug
@@ -43,10 +43,15 @@ app.use(favicon(__dirname + '/source/img/icons/nodejs_125x125.png'));
 // routes...
 var routes = require('./routes')(app);
 
-app.get("/", function (request, response) {
-  console.log('__dirname:',__dirname)
-  response.sendFile(__dirname + '/index.html');
+app.get("/*", function (request, response) {
+  response.sendFile(path.join(__dirname + '/source/index.html'));
 });
+
+app.get('/*', function(req, res) {
+res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
+});
+
+app.use('/',express.static(__dirname + '/public'));
 
 // listen for requests :)
 var listener = app.listen(app.get('port'), function () {
