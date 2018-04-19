@@ -10,9 +10,7 @@ var  express = require('express')
     ,favicon = require('serve-favicon')
     ,util = require('util');
 
-var config = require('app/config/config');
-
-console.log('Mondb connect adress:',config.getUri())
+var config = require('./app/config/config');
 
 // module api routing
 //const authenticate = require('./app/routes/authenticate');
@@ -35,7 +33,7 @@ app.use(express.static(__dirname + '/source'));
 // active mongoose debug
 mongoose.set('debug', true);
 // mongoose instance connection url connection
-mongoose.connect('mongodb://admin:ines1970@ds239117.mlab.com:39117/nodejs-test'); 
+mongoose.connect(config.database.getUri()); 
 
 
 

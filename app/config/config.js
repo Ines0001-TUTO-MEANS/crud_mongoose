@@ -5,15 +5,15 @@ module.exports = {
             port: 0
     },
     database: {
-        host: 'mongodb://admin:ines1970@ds239117.mlab.com:39117/nodejs-test',
-        name: 'mongodb',
+        host: '',
+        nameDb: 'mongodb',
         deployement:'ds239117.mlab.com',
         port: 39117,
         db: 'nodejs-test',
         username: 'admin',
         password: 'ines1970',
         getUri: function(){
-          return (name+'://'+this.username+':'+this.password+'@'+this.deployement+':'+this.port+'/'+this.db);
+          return (this.host = (this.nameDb+'://'+this.username+':'+this.password+'@'+this.deployement+':'+this.port+'/'+this.db));
            
         }
     },
