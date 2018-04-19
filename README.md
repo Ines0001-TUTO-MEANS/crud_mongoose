@@ -9,6 +9,9 @@ Fournir un serveur RESTfuly pour la gestion de fiche `Person` rattaché à des f
 
 ## Source d'information
 
+**Angularjs source**
+1. [angularjs-providers-explained](https://gist.github.com/demisx/9605099)
+
 **Design front**
 1. [Material Login/Register form](https://www.supinfo.com/articles/single/184-decouverte-angular-material)
 1. [Progress Circular in md-button](https://codepen.io/1kohei1/pen/XbwMLQ?editors=1010)
