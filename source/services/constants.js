@@ -2,6 +2,6 @@
 
 (function(app) {
 	'use strict';
-  app.constant('xxxx', '')
-     .constant('','') 
+  app.constant('version', '0.1.0')
+     .constant('cookies_exprires',moment().add(1,'minutes').toDate()) 
 })(CrudMongoose);
