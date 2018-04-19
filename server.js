@@ -27,7 +27,7 @@ app.use(morgan('dev'));
 app.set('superSecret', "My secret"); // secret variable
 
 // Chargement de index.html automatiquement
-app.use('/',express.static(__dirname + '/source'));
+app.use(express.static(__dirname + '/source'));
 
 
 // active mongoose debug
@@ -38,7 +38,7 @@ mongoose.connect('mongodb://admin:ines1970@ds239117.mlab.com:39117/nodejs-test')
 
 
 // favicon
-app.use(favicon(__dirname + '/source/img/icons/nodejs_125x125.png'));
+app.use(favicon(path.join(__dirname + '/source/img/icons/nodejs_125x125.png')));
 
 
 // routes...

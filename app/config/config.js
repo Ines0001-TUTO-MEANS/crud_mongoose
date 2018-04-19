@@ -5,11 +5,14 @@ module.exports = {
             port: 0
     },
     database: {
-        host: '127.0.0.1',
-        port: 27017,
-        db: 'Cronj',
-        username: '',
-        password: ''
+        host: 'mongodb://admin:ines1970@ds239117.mlab.com:39117/nodejs-test',
+        port: 39117,
+        db: 'nodejs-test',
+        username: 'admin',
+        password: 'ines1970',
+        get: function(){
+          
+        }
     },
     key: {
         privateKey: '37LvDSm4XvjYOh9Y',
