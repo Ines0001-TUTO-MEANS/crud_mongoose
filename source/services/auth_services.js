@@ -1,6 +1,6 @@
 (function(app) {
 	
-  app.factory('AuthServices', ['$q','$resource','$cookies','$mdDialog', function($q,$resource,$cookies,$mdDialog) {
+  app.factory('AuthServices', ['GLOBAL','$q','$resource','$cookies','$mdDialog', function(GLOBAL,$q,$resource,$cookies,$mdDialog) {
     var auth ={};
     
     var User = $resource('/login',undefined,{'authenticate': {method:'POST'}});
@@ -21,7 +21,7 @@
           Use by config.headers['x-access-token'] in request $http
           instanciate to app.config.js
           */
-          var expires = moment().add(1,'minutes').toDate();
+          var expires = moment().add(GLOBAL.COOKIES_DELAY_MINUTES,'minutes').add(GLOBAL.COOKIES_DELAY_HOURS,'hours').toDate();
           
           $cookies.put('token',data.token,{expires : expires ,secure:true})
           $cookies.put('user',data.username,{expires : expires ,secure:true})
