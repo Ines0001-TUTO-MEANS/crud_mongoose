@@ -3,7 +3,6 @@
     
     // Init user session with cookies value
     AuthServices.user = $cookies.get('user') || undefined;
-    console.log('run.app: AuthServices.user',AuthServices.user)
     
     /*
     Redirecting a transition 

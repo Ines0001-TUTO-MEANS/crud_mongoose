@@ -3,16 +3,7 @@
     $scope.tasks={};
     $scope.$parent.currentNavItem = 'tasks.list';
     
-    /*   
-    $http.get('/data/tasks.json').
-      then(function(response) {
-        console.log('currentNavItem:',$rootScope.currentNavItem);
-        $scope.tasks = response.data;
-      }, function(response) {
-        $scope.tasks = response.data || 'Request failed';
-
-    }) 
-    */
+    
     ListTask();
     
     $scope.detail = function(task){
@@ -35,11 +26,7 @@
         });
       
     }
-     /*
-     $scope.$watchCollection('tasks',function(){
-       console.log('watcher')
-       })
-     */
+     
     function ListTask(){
       TaskFactory.query(function(data){
             $scope.tasks = data;
