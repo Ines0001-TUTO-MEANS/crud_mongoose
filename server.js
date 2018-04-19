@@ -1,13 +1,14 @@
 // server.js
 // where your node app starts
 
-var express = require('express');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var mongoose = require('mongoose');
-var morgan  = require('morgan');
-var favicon = require('serve-favicon');
-var util = require('util');
+var  express = require('express')
+    ,bodyParser = require('body-parser')
+    ,methodOverride = require('method-override')
+    ,mongoose = require('mongoose')
+    ,path = require('path')
+    ,morgan  = require('morgan')
+    ,favicon = require('serve-favicon')
+    ,util = require('util');
 
 
 
@@ -43,15 +44,15 @@ app.use(favicon(__dirname + '/source/img/icons/nodejs_125x125.png'));
 // routes...
 var routes = require('./routes')(app);
 
+/*
+Lorsque html5Mode est activé, le caractère # ne sera plus utilisé dans vos URL. 
+Le symbole # est utile car il ne nécessite aucune configuration côté serveur. 
+Sans #, l'URL semble beaucoup plus agréable, mais elle nécessite également des réécritures côté serveur
+*/
 app.get("/*", function (request, response) {
   response.sendFile(path.join(__dirname + '/source/index.html'));
 });
 
-app.get('/*', function(req, res) {
-res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
-});
-
-app.use('/',express.static(__dirname + '/public'));
 
 // listen for requests :)
 var listener = app.listen(app.get('port'), function () {
