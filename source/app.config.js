@@ -9,10 +9,11 @@ var CrudMongoose = angular.module('CrudMongoose', ['ngMaterial', 'ngAnimate', 'n
                                 }
                               };
                             });
-                            
+                            /*
                             $locationProvider.html5Mode({
                               enabled: true,
                               requireBase: false
                             });
+                            */
                             
                           }])
