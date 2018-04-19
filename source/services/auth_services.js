@@ -3,7 +3,7 @@
   app.factory('AuthServices', ['$q','$resource','$cookies','$mdDialog', function($q,$resource,$cookies,$mdDialog) {
     var auth ={};
     
-    var User = $resource('/login',undefined,{'authenticate': {method:'POST',url:'/login'}});
+    var User = $resource('/login',undefined,{'authenticate': {method:'POST'});
 
     
     auth.isAuthenticated = function(){
