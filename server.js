@@ -42,12 +42,12 @@ app.use(favicon(__dirname + '/source/img/icons/nodejs_125x125.png'));
 
 // routes...
 var routes = require('./routes')(app);
-/*
+
 app.get("/", function (request, response) {
   console.log('__dirname:',__dirname)
   response.sendFile(__dirname + '/index.html');
 });
-*/
+
 // listen for requests :)
 var listener = app.listen(app.get('port'), function () {
   console.log('Your app is listening on port ' + listener.address().port);
