@@ -22,7 +22,7 @@ var environment = './source',
         'source/sass/**/*.scss',
         'source/css/**/*.*css',
         'source/components/**/*.css',
-        'source/shared/**/*.scss',
+        'source/shared/**/*.*css',
         'source/modules/**/*.scss',
         bowerFolder + '/angular-material/angular-material.min.css'
     ],
